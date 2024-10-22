@@ -1,0 +1,164 @@
+\documentclass[11pt, a4paper]{article} %tamaño mínimo de letra 11pto.
+
+\usepackage{graphicx} 
+\usepackage{listings} 
+\usepackage{siunitx} 
+\usepackage{caption} 
+\usepackage{hyperref} 
+\usepackage{amsmath} 
+\graphicspath{ {./images/} }
+\usepackage[spanish]{babel} %Español 
+\usepackage[utf8]{inputenc} %Para poder poner tildes
+\usepackage{vmargin} %Para modificar los márgenes
+\usepackage{float} 
+\setmargins{2.5cm}{1.5cm}{16.5cm}{23.42cm}{10pt}{1cm}{0pt}{2cm}
+%margen izquierdo, superior, anchura del texto, altura del texto, altura de los encabezados, espacio entre el texto y los encabezados, altura del pie de página, espacio entre el texto y el pie de página
+\captionsetup{textfont=it}
+\sisetup{binary-units=true}
+\lstset{breaklines=true, basicstyle=\ttfamily\small,
+keywordstyle=\color{red}, % Color for keywords
+    commentstyle=\color{blue}, % Color for comments
+    }
+
+\begin{document}
+%%%%%%Portada%%%%%%%
+\begin{titlepage}
+\centering
+{ \bfseries \Large UNIVERSIDAD COMPLUTENSE DE MADRID}
+\vspace{0.5cm}
+
+{\bfseries  \Large FACULTAD DE CIENCIAS FÍSICAS} 
+\vspace{1cm}
+
+{\large DEPARTAMENTO DE ESTRUCTURA DE LA MATERIA, FÍSICA TÉRMICA Y ELECTRÓNICA}
+\vspace{0.8cm}
+
+%%%%Logo Complutense%%%%%
+{\includegraphics[width=0.35\textwidth]{logo_UCM}}
+
+%%Para ajustar la portada a una sola página se puede reducir el tamaño del logo
+\vspace{0.8cm}
+
+%%PORTADA
+
+{\bfseries \Large TRABAJO DE FIN DE GRADO}
+\vspace{2cm}
+
+{\Large Código de TFG:  [C\'odigo TFG] } \vspace{5mm}
+
+{\Large Sistema de comunicaciones inalámbricas}\vspace{5mm}
+
+{\Large Wireless communication system}\vspace{5mm}
+
+{\Large Supervisor/es: Javier Olea Ariza}\vspace{20mm} 
+
+{\bfseries \LARGE Jose Luis Gutiérrez Moreno}\vspace{5mm} 
+
+{\large Grado en Ingeniería Electrónica de Comunicaciones}\vspace{5mm} 
+
+{\large Curso acad\'emico 2023-2024}\vspace{5mm} 
+
+{\large Convocatoria XXXX}\vspace{5mm} 
+
+\end{titlepage}
+
+%% AGRADECIMIENTOS
+% \newpage
+%    \input{gc.tex}
+% \newpage
+
+\newpage
+
+%%CONTRAPORTADA
+
+{\bfseries \large [Título extendido del TFG (si procede)] }\vspace{10mm} 
+
+{\bfseries \large Resumen:} \vspace{5mm}
+
+Esto es una prueba para probar el formato del Resumen. Esto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del Resumen.
+\vspace{1cm}
+
+{\bfseries \large Abstract: }\vspace{5mm} 
+
+This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.
+\vspace{1cm}
+
+%%Comentar estas notas para que no salgan en la memoria
+{\Large\textbf{Nota: el título extendido (si procede), el resumen y el abstract deben estar en una misma página y su extensión no debe superar una página. Tamaño mínimo 11pto.}}
+\vspace{1cm}
+
+{\Large\textbf{Extensión máxima 50 páginas sin contar portada, contraportada y declaración responsable (sí se incluye índice, introducción, conclusiones y bibliografía}}
+\newpage
+
+%%Incluir aquí la declaración responsable de autoría y uso de las herramientas de IA.
+% 
+% {\bfseries \large INCLUIR AQUÍ la Declaración Responsable sobre Autoría y Uso Ético de Herramientas de Inteligencia Artificial}
+% \vspace{1cm}
+% 
+% El documento se puede descargar en la página web: https://fisicas.ucm.es/tfg-gradoiec
+% \vspace{1cm}
+% 
+% Y en https://fisicas.ucm.es/file/declaracion-responsable-sobre-autoria-y-uso-etico-de-ia?ver
+
+\includegraphics[width=1\textwidth]{./normas-documentacion/iadeclaracion.pdf}
+\newpage
+
+
+\tableofcontents
+
+\newpage
+
+
+\section{Introducción}
+   \input{intro.tex}
+   \subsection{Objetivos y motivaci\'on}
+   \input{intro_obj.tex}
+\section{Marco Teórico}
+   %\input{teo.tex}
+   \subsection{Sistemas de comunicaci\'on y Transmisión ASK}
+   \input{teo_fmfsk.tex}
+   \subsection{Transistores y sus parámetros característicos}
+   \label{sec:teo_transistor}
+   \input{teo_2n2222.tex}
+   \subsection{Realimentaci\'on}
+   \input{teo_osc.tex}
+   \subsection{Sistemas integrados: Atmega328p}
+   \input{teo_micro.tex}
+\section{Desarrollo}
+   \input{des.tex}
+   \subsection{Parte anal\'ogica}
+   \input{anal_intro.tex}
+   \subsubsection{Diseño del "front-end" del TRANSMISOR de RF anal\'ogico}
+   \input{des_tx.tex}
+   \subsubsection{Diseño del "front-end" del RECEPTOR de RF anal\'ogico}
+   \input{des_rx.tex}
+   \subsection{Parte digital}
+   \input{digital_intro.tex}
+   \subsubsection{Diseño del demodulador digital para la recepci\'on}
+   \input{des_digital_rx.tex}
+   \subsubsection{Diseño del codificador digital para la transmisi\'on}
+   \input{des_digital_tx.tex}
+   \subsection{Diseño conversor AC-DC y actuadores}
+   \input{des_acdc.tex}
+
+\section{Cronolog\'ia del proyecto y diagrama de Grant}
+   \input{crono.tex}
+   \subsection{transmisor FM a varactor}
+   \input{crono_txfm.tex}
+   \subsection{receptor superheterodino FM}
+   \input{crono_rxfm.tex}
+   \subsection{M\'aquina de estados digital}
+   \input{crono_digital.tex}
+   \subsection{Diagrama de Grant}
+   \input{grant.tex}
+
+\section{Resultados y conclusiones}
+   \input{result.tex}
+
+\section{Bibliografía}
+
+\section{Indice de figuras}
+\listoffigures
+
+\end{document}
+

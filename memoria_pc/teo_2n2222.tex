@@ -1,0 +1,137 @@
+\paragraph{}
+Un transistor es un dispositivo semiconductor de tres terminales, entrada, salida y terminal común, capaz de amplificar la corriente que circula a través de él. 
+Las numerosas técnicas de fabricación de estos dispositivos, dan lugar a los distintos tipos de transistores que existen: BJT, MOSFET, JFET, entre otros.
+En este trabajo se utilizarán transistores bipolares BJT, tanto NPN como PNP, para la realización del enlace de radio frecuencia, mientras que, el microconrtolador utilizado en el apartado digital, utiliza principalmente transistores de efecto campo MOSFET.
+\paragraph{}
+Los transistores BJT logran la amplificación gracias a dos uniones p-n interconectadas entre sí, donde, un pequeño flujo de corriente de entrada, regula un gran flujo de corriente de salida. Por otro lado, en un transistor MOSFET la amplificación se logra por medio de la regulación del estrechamiento del canal por donde circula la corriente, aplicando una tensión inversa.
+\paragraph{Polarizaci\'on:}
+Para lograr que un transistor realice la función de amplificación, es necesario proporcionar al dispositivo, las tensiones de trabajo adecuadas para que funcione de forma deseada. Esta acci\'on es conocida como polarizaci\'on del transistor.
+En función de la polarización aplicada, el transistor puede trabajar de diferentes formas, algunas de las cuales son: activa directa, donde se trabaja en amplificación de señales; o corte y saturación, que son utilizadas principalmente en circuitos digitales.
+Existen numerosas técnicas para lograr la polarización deseada, estas serán expuestas en los apartados de desarrollo correspondientes.
+
+\paragraph{Modelo de gran señal del transistor bipolar:}
+Existen numerosos modelos matemáticos para definir el comportamiento de un transistor, en este trabajo se utilizará el modelo SPICE del transistor caracterizado por el siguiente modelo circuital y sus ecuaciones características:
+\begin{align*} 
+   I_E &= \frac { I_{be} }{ B_F } + I_{be} - I_{bc}   & I_{be} &= I_s \cdot \left(e^{\left(\frac {V_{BE}}{N_{T} \cdot V_t} \right)} - 1\right)\\
+   I_C &= I_{be} - \frac{I_{bc}}{B_R} - I_{bc}  & I_{bc} &= I_s \cdot \left(e^{\left(\frac {V_{BC}}{N_{T} \cdot V_t} \right)} - 1\right)\\
+   I_B &= \frac{I_{be}}{B_F} + \frac{I_{bc}}{B_R} 
+\end{align*}
+
+Considerando una polarización en activa directa, donde la amplificación de señales se realiza de manera óptima, las ecuaciones quedan simplificadas al despreciar $I_{bc}$, ya que $V_{CB} < 0$. El resultado de las ecuaciones, a las cuales se aplica el efecto Early, que no se puede considerar despreciable, queda de la siguiente forma. 
+\begin{align} 
+   \label{eq:1}
+   I_C &= I_s \cdot \left(e^{\left(\frac {V_{BE}}{N_{T} \cdot V_t} \right)} - 1\right) \cdot \left(1 + \frac{V_{CE}} {V_{AF}} \right)\\ 
+   \label{eq:2}
+   I_B &= \frac{I_s}{B_F} \cdot \left(e^{\left(\frac {V_{BE}}{N_{T} \cdot V_t} \right)} - 1\right)
+\end{align}
+
+\paragraph{Pequeña señal:}
+Como se ha mencionado anteriormente, si se dispone de un transistor que trabaja en activa directa, se consigue la amplificación de las señales. 
+Debido a que el transitor es un dispositivo no lineal, la señal introducida debe ser suficientemente pequeña para poder aproximar al dispositivo como un elemento lineal.
+Por tanto, a la hora de trabajar con pequeña señal, se modelará al transistor como un cuadripolo lineal de dos puertos. 
+En función de las variables de entrada o salida que se elijan, el modelo circuital del cuadripolo variará. El modelo principal con el que se trabajará será el de parámetros híbridos, el cual, se caracteriza por usar como variables independientes $i_1, v_2$ y dependientes $i_2, v_1$. Cabe mencionar la existencia de otras configuraciones de parámetros característicos como son el modelo de admitancias, cuyas variables independientes son $v_1, v_2$, o el modelo de impedancias, cuyas variables independientes son $i_1, i_2$.
+El modelo general del cuadripolo lineal así como sus parámetros de entrada y salida se muestran en la figura \ref{fig:1} a continuaci\'on:
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1, width=.3\textwidth]{1}
+    \caption{Representación de un transistor como cuadripolo lineal.}
+    \label{fig:1}
+\end{figure}
+\paragraph{}
+En general, las ecuaciones que describen el conjunto de los modelos son:
+\begin{align} 
+   dY_1 = \frac {\partial f_1}{\partial X_1} \cdot \partial X_1 &+ \frac {\partial f_1}{\partial X_2} \cdot \partial X_2 \\ 
+   dY_2 = \frac {\partial f_2}{\partial X_1} \cdot \partial X_1 &+ \frac {\partial f_2}{\partial X_2} \cdot \partial X_2 
+\end{align}
+Donde $X_1$ y $X_2$ corresponden a las variables independientes y $Y_1$ e $Y_2$ a las variables dependientes\\
+\paragraph{}
+Las ecuaciones que definen al modelo de par\'ametros híbridos en concreto son por tanto:
+\begin{align*} 
+   v_1 &= h_{11} \cdot i_1 + h_{12} \cdot v_2 \\
+   i_2 &= h_{21} \cdot i_1 + h_{22} \cdot v_2
+\end{align*}
+El valor de los parámetros $h_{nm}$ se deriva de las ecuaciones del modelo de gran señal, simplificadas para una polarización activa directa.
+Al derivar dichas ecuaciones se obtiene un modelo de parámetros en admitancias, fácilmente transformable al modelo de parámetros híbridos.
+Además, en función de la configuración del terminal común del transistor, el valor de los parámetros característicos cambiará, en este caso, se supondrá una configuración en emisor común. Los valores de los parámetros para las distintas configuraciones pueden ser deducidos utilizando relaciones matemáticas sencillas.
+A continuación se expone la obtención de los valores de los parámetros híbridos, para la configuración de emisor común, a partir de las ecuaciones de gran señal, ecuaciones \ref{eq:1} y \ref{eq:2}.
+\[
+\begin{array}{rcl} 
+      \begin{array}{l}
+	 \begin{cases}
+	    i_b = \frac {\partial I_B}{\partial V_{BE}} \cdot v_{be} + \frac {\partial I_B}{\partial V_{CE}} \cdot v_{ce} \\
+	    i_c = \frac {\partial I_C}{\partial V_{BE}} \cdot v_{be} + \frac {\partial I_C}{\partial V_{CE}} \cdot v_{ce} 
+	 \end{cases}
+      \end{array}
+      &
+      \begin{array}{l}
+	  =>
+      \end{array}
+      &
+      \begin{array}{l}
+	 \begin{cases}
+	 i_b = y_{11} \cdot v_{be} + y_{12} \cdot v_{ce} \\ 
+	 i_c = y_{21} \cdot v_{be} + y_{22} \cdot v_{ce} 
+	 \end{cases}
+      \end{array}
+\end{array}
+\]
+\[
+\begin{array}{rcl} 
+      \begin{array}{l}
+	 \begin{cases}
+	    v_{be} = h_{ie} \cdot i_b + h_{re} \cdot v_{ce} \\
+	    i_c = h_{fe} \cdot i_b + h_{oe} \cdot v_{ce}
+	 \end{cases}
+      \end{array}
+      &
+      \begin{array}{l}
+	  =>
+      \end{array}
+      &
+      \begin{array}{l}
+	 \begin{cases}
+	    v_{be} = \frac{1}{y_{11}} \cdot i_b + \left(\frac{-y_{12}}{y_{11}}\right) \cdot v_{ce} \\
+	    i_c = \frac{y_{21}}{y_{11}} \cdot i_b + \left( y_{22} - \frac{y_{12} \cdot y{21}}{y_{11}}\right) \cdot v_{ce} 
+	 \end{cases}
+      \end{array}
+\end{array}
+\]
+
+\paragraph{}
+Teniendo en cuenta las relaciones obtenidas, se puede establecer la relación de los parámetros híbridos con su valor numérico como se muestra a continuación.
+\begin{align*} 
+   h_{ie} &= \frac { 1 }{ y_{11} } = \frac{N_F \cdot V_t}{I_B} & h_{re} &= \frac{-y_{12}}{y_{11}} \approx 0 \\
+   h_{fe} &= \frac { y_{21} }{ y_{11} } = \frac{I_C}{I_B} & h_{oe} &=  y_{22} - \frac{y_{12} \cdot y_{21}}{y_{11}}\approx \frac{I_C}{V_{AF}}
+\end{align*}
+
+\paragraph{}
+Seguidamente, se establecen las relaciones de los parámetros híbridos en emisor com\'un para las demás configuraciones de terminal común. Las relaciones se obtienen de manera similar a las anteriores dadas:
+\[
+\begin{array}{rrcll} 
+      \begin{array}{l}
+	 h_{ic} = h_{ie} \\
+	 h_{fc} = - (1+ h_{fe} )
+      \end{array}
+      &
+      \begin{array}{l}
+	 h_{rc} = 1 - h_{re} \\
+	 h_{oc} = h_{oe}
+      \end{array}
+      &
+      \begin{array}{l}
+	 \bigg|
+      \end{array}
+      &
+      \begin{array}{l}
+	 h_{ib} = \frac{h_{ie}}{1+h_{fe}} \\
+	 h_{fb} = -\frac{h_{fe}}{1+h_{fe}} 
+      \end{array}
+      &
+      \begin{array}{l}
+	 h_{rb} = \frac{h_{ie} \cdot h_{oe}}{1+h_{fe}} - h_{re}\\
+	 h_{ob} = \frac{h_{oe}}{1+h_{fe}} 
+      \end{array}
+\end{array}
+\]
+
+Por último, cabe mencionar que los transistores por su construcción física poseen elementos denominados parásitos. Estos elementos se modelan, de manera circuital principalmente como condensadores, y pueden influir en los valores de las impedancias de entrada, salida o realimentaciones. Estos efectos se incluirán cuando sean necesarios en el desarrollo del proyecto.

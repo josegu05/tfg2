@@ -1,0 +1,24 @@
+\paragraph{Introducción} El objetivo del microcontrolador en la parte de transmisión, codifica mensajes según los botones pulsados.
+Consiste en tres pulsadores, donde cada cual codifica un símbolo diferente, para que el receptor actúe de manera distinta según el botón pulsado. El algoritmo de comunicación entre transmisor y receptor se realiza de manera asíncrona. Para diferenciar los símbolos digitales se ha de tener en cuenta el tipo de modulación ASK, donde el 1 implica recibir señal y el 0 no se ha recibido. 
+Los relojes o timers encargados de la codificación y decodificación tanto en transmisión como en recepción, deben trabajar a la misma tasa de baudios para identificar correctamente los mensajes.
+
+\paragraph{Configuraci\'on de reloj} 
+\paragraph{Codificaci\'on de los mensajes} 
+La codificación de los diferentes símbolos se desarrolla de forma que, los algoritmos de codificación y decodificación se realicen de la forma más sencilla y robusta posible, teniendo en cuenta el tipo de modulación ASK.
+Es por eso que cada símbolo se representa por el número de unos lógicos transmitidos de forma que si quisieramos transmitir N símbolos, la serie de codificación sería:
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Symbol} & \textbf{Codification} \\ 
+        \hline
+        1 & 0b1 \\ 
+        2 & 0b11 \\ 
+        3 & 0b111 \\ 
+        N & 0b$111 \ldots 1 \cdot N \text{ times} $ \\ 
+        \hline
+    \end{tabular}
+    \caption{Codification of Digital Symbols}
+\end{table}
+
+\lstinputlisting[language=C]{/home/jose/Documents/tfg2/digital/transmisor/main.c}

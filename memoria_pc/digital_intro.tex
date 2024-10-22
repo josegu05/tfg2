@@ -1,0 +1,12 @@
+\paragraph{Introducci\'on}
+para establecer un canal de comunicación de datos digital, se utilizan dos microcontroladores para la codificación y la demodulación de los mismos. En este caso, el modelo de microcontrolador utlizado es el mismo en ambos dispositivos, el Atmega328p, pero con distintos programas dependiendo de si se utiliza en el transmisor o receptor.
+
+\paragraph{Configuraci\'on del entorno de trabajo}
+El microcontrolador se programa por medio de un proyecto escrito en C. Para ello, se trabaja con las herramientas que permiten la compilación de este lenguaje a un archivo ejecutable entendible para la plataforma de AVR.
+En primer lugar, se necesita compilar el programa a un archivo binario ejecutable para la plataforma objetivo, para ello se usar\'a el compilador avr-gcc. Este binario generado no puede ser grabado directamente a la flash del microcontrolador, si no que se necesita la traducción a código hexadecimal del mismo. Para ello, se utiliza el programa avr-objcopy. 
+Finalmente, el programa es grabado en la flash. Este proceso se realiza de la siguiente forma: el archivo hexadecimal debe ser grabado en el microcontrolador configurando el micro en modo programaci\'on de la flash y transfiriendo el programa por medio del protocolo ISP. Para ello se har\'a uso de un programador software, avrdude, y un programador hardware que traduzca el protocolo usb del ordenador de trabajo a ISP para ser grabado en la memoria del micro objetivo. En este proyecto se utiliza un microcontrolador Atmega2560 montado en la placa Mega2560 R3. Este micro será programado con un programa que permita el proceso de traducción anteriormente descrito. Este software se ofrece oficialmente desde la p\'agina web de Arduino.
+Para conseguir automatizar todo este proceso se hace uso de la herramienta make. A continuaci\'on se muestra el archivo Makefile utilizado para clarificar el proceso anteriormente descrito:
+
+\lstinputlisting[language=make]{/home/jose/Documents/tfg2/digital/gpio_signaldriven/v6_final/Makefile}
+
+
