@@ -1,0 +1,5 @@
+avr-gcc -mmcu=atmega328p blink.c -o blink.elf
+avr-objcopy -O ihex blink.elf blink.hex
+
+avrdude -p m328p -c arduino -P /dev/ttyACM0 -b 19200 -U flash:w:blink.hex
+
