@@ -50,10 +50,10 @@
 \contentsline {paragraph}{Diseño del oscilador}{13}{section*.49}%
 \contentsline {paragraph}{Polarizaci\'on:}{13}{section*.50}%
 \contentsline {paragraph}{}{14}{section*.51}%
-\contentsline {paragraph}{}{14}{section*.52}%
+\contentsline {paragraph}{}{15}{section*.52}%
 \contentsline {paragraph}{Modelo en pequeña señal:}{15}{section*.54}%
 \contentsline {paragraph}{}{15}{section*.55}%
-\contentsline {paragraph}{}{15}{section*.56}%
+\contentsline {paragraph}{}{16}{section*.56}%
 \contentsline {paragraph}{}{16}{section*.57}%
 \contentsline {paragraph}{}{16}{section*.58}%
 \contentsline {paragraph}{}{16}{section*.59}%
@@ -61,7 +61,7 @@
 \contentsline {paragraph}{}{16}{section*.62}%
 \contentsline {paragraph}{}{16}{section*.63}%
 \contentsline {paragraph}{Antena}{16}{section*.64}%
-\contentsline {paragraph}{Resultado de la Simulaci\'on}{16}{section*.65}%
+\contentsline {paragraph}{Resultado de la Simulaci\'on}{17}{section*.65}%
 \contentsline {paragraph}{Resultado de la pr\'actica}{17}{section*.66}%
 \contentsline {paragraph}{}{17}{section*.67}%
 \contentsline {subsubsection}{\numberline {3.1.2}Diseño del "front-end" del RECEPTOR de RF anal\'ogico}{17}{subsubsection.3.1.2}%
@@ -73,7 +73,7 @@
 \contentsline {paragraph}{}{18}{section*.73}%
 \contentsline {paragraph}{Antena ??}{18}{section*.74}%
 \contentsline {paragraph}{Resultado simulaci\'on}{18}{section*.75}%
-\contentsline {paragraph}{Resultado práctico}{18}{section*.76}%
+\contentsline {paragraph}{Resultado práctico}{19}{section*.76}%
 \contentsline {subsection}{\numberline {3.2}Parte digital}{19}{subsection.3.2}%
 \contentsline {paragraph}{Introducci\'on}{19}{section*.77}%
 \contentsline {paragraph}{Configuraci\'on del entorno de trabajo}{19}{section*.78}%
@@ -94,8 +94,8 @@
 \contentsline {subsubsection}{\numberline {3.3.1}Fuente de alimentación}{25}{subsubsection.3.3.1}%
 \contentsline {paragraph}{Rectificacion}{25}{section*.91}%
 \contentsline {paragraph}{Filtro}{25}{section*.92}%
-\contentsline {subsubsection}{\numberline {3.3.2}actuadores}{25}{subsubsection.3.3.2}%
-\contentsline {paragraph}{resistencia}{25}{section*.93}%
+\contentsline {subsubsection}{\numberline {3.3.2}actuadores}{26}{subsubsection.3.3.2}%
+\contentsline {paragraph}{resistencia}{26}{section*.93}%
 \contentsline {paragraph}{ventilador}{26}{section*.94}%
 \contentsline {section}{\numberline {4}Cronolog\'ia del proyecto y diagrama de Grant}{26}{section.4}%
 \contentsline {paragraph}{}{26}{section*.95}%

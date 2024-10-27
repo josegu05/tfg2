@@ -3,6 +3,8 @@ datasheets ne555, 2n2222, octave
 En este apartado se expondr\'a el diseño del transmisor, los c\'alculos matem\'aticos necesarios, simulacion por ordenador y los resultados practicos.
 El transmisor está diseñado para generar una modulación ASK y emitir a una frecuencia de $30Mhz$. La frecuencia de emisión se sintoniza con la del receptor por medio de un condensador de capacidad variable.
 \paragraph{}
+NO REPETIR, EXPLICAR LA FOTO
+En la figura \ref{fig:tx} se puede observar el esquema eléctrico del transmisor.
 El principio de funcionamiento del transmisor es un oscilador, basado en un par resonante LC, el cual fija la frecuencia de emisión. Esto se realiza realizando un bucle de realimentación positiva, donde el transistor NPN juega el papel de elemento activo de amplificación, el circuito tanque LC es el filtro que permite que en cada iteración del bucle, se amplifique la frecuencia deseada. mientras que el condensador de realimentación, genera la realimentación positiva, sumando una fracción de la salida con la señal de entrada, que en este caso es el propio ruido generado por el circuito.
 El circuito se diseña para disipar la mayor potencia posible para que la señal alcance la mayor distancia posible. 
 Por otra parte, el cicuito permite modular la señal portadora eléctricamente cortando y produciendo la oscilación en función de las variaciones de la señal moduladora. Esto es posible gracias al segundo transistor PNP, el cual trabaja en corte y saturaci\'on y corta el paso de corriente general del circuito.
@@ -145,7 +147,11 @@ La obtenci\'on del diagrama de Bode se ha conseguido por medio del programa de c
 \paragraph{} la señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado CITAR. El transistor PNP es utilizado como conmutador.
 
 \paragraph{Antena} CALCULOS DEL TRANSFORMADOR, EXPLICAR EL CONDENSADOR ES PARA QUE AL TOCARLA NO PASE NADA.
+simulacion de potencia disipada por la antena?
 \paragraph{Resultado de la Simulaci\'on} SIMULACION LTSPICE
+son 3 capturas una la de la oscilacion con las medidas de frecuencia.
+una general con varios ciclos de digitalin.
+otra del flanco de subida y bajada de digitalin con vout y vbe viendo como se corta el transistor.
 \paragraph{Resultado de la pr\'actica} CAPTURA DEL OSCILOSCOPIO Y MEDIDA DE CORRIENTE
 \paragraph{}
 Explicacion de la relevancia de una buena antena en transmision, el cuerpo humano como antena(bibliografia)
