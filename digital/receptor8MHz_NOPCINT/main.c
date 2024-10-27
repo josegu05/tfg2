@@ -5,20 +5,23 @@
 #include <stdint.h>
 // definiciones de tipos estandar
 
-#define WAIT_TIME 10000UL
+#define WAIT_TIME 1000
 #define COUNT_MAX 79
 #define COUNT_MIN 79
 
-uint8_t volatile code = 0;
+uint8_t volatile decoding = 0;
 uint8_t volatile count = 0;
 uint8_t volatile count_before = 0;
 uint8_t volatile mean = 0;
 
 // AJUSTAR TIEMPOS DE LOS TIMERS CON EL OSCILOSCOPIO Y 2 SONDAS
-// ADD "SW" INTERRUPT BY PC_CHANGE IN PIN_OUT
-// EN 8mhz HABRA QUE AJUSTAR VALORES DE TIMERS O PRESCALERS meter un clk/8
-// PIN_OUT = PB0
 
+void set_sys_clk_prescaler_1(void)
+{
+   // setting clk_sys prescaler to 1 sets clk_sys = 8 MHz
+   CLKPR = (1 <<  CLKPCE);
+   CLKPR = 0;
+}
 void setup_timer_0_counter(void)
 {
    // set configuration registers
@@ -67,45 +70,56 @@ ISR(TIMER2_COMPA_vect)
    //mean = (count + count_before) >> 1;
 
    if(count > COUNT_MAX)
+   {
       // pinout PB0
       // digital_out = 0;
-      //code = (code + 1) % 256;
+      decoding++;
       PORTB &= ~(1 << PORTB0);
+   }
+
    if(count < COUNT_MIN)
-      // digital_out = 1;
-      PORTB |= (1 << PORTB0);
+   {
+      if(decoding)
+      {
+	 // digital_out = 1;
+	 PORTB |= (1 << PORTB0);
+	 switch (decoding)
+	 {
+	    case 1:
+	       // pinout1 = 1;
+	       break;
+	    case 2:
+	       break;
+	    case 3:
+	       break;
+	    default:
+	       break;
+	 }
+
+	 decoding = 0;
+      }
+   }
 
 //   count_before = count;
    count = 0;
 }
-void setup_gpio_pin_out(void)
+
+void wait_init(void)
 {
-   DDRB |= (1 << DDB0);
-   //poner salida 1 o 0 depende de logica positiva o negativa
-	PORTB |= (1 << PORTB0);
-
-	//activate pin change interrupts
-   // first activate PC2vector
-   PCICR |= (1 << PCIE0);
-   // second activate pb0 -> PC0 to trigger interrupt 
-   PCMSK0 |=  (1 << PCINT0);
-
+      for(int i=0; i<WAIT_TIME; i++);
 }
-
-ISR(PCINT0_vect)
-{
-	//decoder Low frequency
-	
-}
-
 int main(void)
 {
+   set_sys_clk_prescaler_1();
+   wait_init();
    setup_timer_0_counter();
    setup_timer_2_gate();
-   setup_gpio_pin_out();
+
+   DDRB |= (1 << DDB0);
 
    //enable global interrupts
    sei();
+
 
    while(1);
 }
