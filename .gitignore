@@ -1,0 +1,3 @@
+#include all asc's in directory ltspice 
+./ltspice
+!./ltspice/*.asc
