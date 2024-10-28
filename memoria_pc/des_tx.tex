@@ -124,7 +124,7 @@ Se muestra el desarrollo para el c\'alculo de $A = \frac{V_2}{i_E}$:
 Se calcula la ganancia en lazo abierto como $A_l = A \cdot f$ y sustituyendo los valores de $Y_{T1}$ e $Y_{T2}$:
 \begin{equation}
    \label{eq:Al_tx}
-   A_l = \frac{h_{fb} \cdot R_e \cdot s^2}{ \left( h_{ib}+R_e \right) \left( s \cdot \frac{ h_{ib} \cdot R_e (C_1+C_2)}{h_{ib}+R_e} + 1\right) \left( s^2 + s \cdot \frac{h_{ob}}{C_1} + \frac{1}{C_1 \cdot L_1}\right) }
+   A_l = \frac{h_{fb} \cdot C_1 \cdot s^2}{ \left( C_2+C_1 \right) \left( s \cdot h_{ib} \cdot C_2 + 1\right) \left( s^2 + s \cdot \frac{h_{ob}}{C_1 + C_2} + \frac{1}{(C_1 + C_2)\cdot L_1}\right) }
 \end{equation}
 \paragraph{}
 Al observar la expresi\'on obtenida en la ecuaci\'on \ref{eq:Al_tx}, se sacan conclusiones para esbozar el diagrama de Bode de manera anal\'itica. En primer lugar, se analiza el desfase, el cual a bajas frecuencias es 0, debido a la suma de los \SI{180}{\degree} del cero doble junto a los \SI{180}{\degree} de $h_{fb}$. El polo cuadr\'atico introduce un desfase de \SI{-180}{\degree}, al que se llega de manera asint\'otica pero de forma r\'apida debido al bajo valor del coeficiente de amortiguaci\'on. Si a este hecho se le añaden los \SI{-90}{\degree} del polo simple, se obtiene que la frecuencia de resonancia con desfase \SI{180}{\degree} se encontrará en algún lugar entre el polo simple y el polo cuadrático.
