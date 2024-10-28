@@ -1,12 +1,12 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Esquema de una posible modulaci\'on ASK}}{5}{figure.caption.9}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Representación de un transistor como cuadripolo lineal.}}{6}{figure.caption.16}%
-\contentsline {figure}{\numberline {3}{\ignorespaces a) Amplificador sin realimentaci\'on, b) Sistema realimentado}}{8}{figure.caption.23}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Amplificador de tensión con realimentaci\'on serie paralelo ideal.}}{9}{figure.caption.28}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Amplificador de transresistencia con realimentación paralelo paralelo real.}}{9}{figure.caption.29}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Esquema general de un SOC.}}{10}{figure.caption.31}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Diagrama de bloques del Atmega328p, en detalle la CPU}}{11}{figure.caption.36}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Mapa de memoria de datos direccionada por bytes}}{12}{figure.caption.40}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Esquema el\'ectrico del transmisor}}{14}{figure.caption.48}%
-\contentsline {figure}{\numberline {10}{\ignorespaces A) Modelo en pequeña señal del bucle de oscilación para frecuencias medias B) Modelo en pequeña señal del oscilador sustituyendo el condensador de realimentación $C_1$ por su equivalente en parámetros $Y$}}{15}{figure.caption.53}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Diagrama de Bode de la ganancia en lazo abierto del oscilador $A_l$ para frecuencias intermedias}}{17}{figure.caption.61}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Esquema de una posible modulaci\'on ASK\relax }}{5}{figure.caption.9}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Representación de un transistor como cuadripolo lineal.\relax }}{6}{figure.caption.16}%
+\contentsline {figure}{\numberline {3}{\ignorespaces a) Amplificador sin realimentaci\'on, b) Sistema realimentado\relax }}{8}{figure.caption.23}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Amplificador de tensión con realimentaci\'on serie paralelo ideal.\relax }}{9}{figure.caption.28}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Amplificador de transresistencia con realimentación paralelo paralelo real.\relax }}{9}{figure.caption.29}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Esquema general de un SOC.\relax }}{10}{figure.caption.31}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Diagrama de bloques del Atmega328p, en detalle la CPU\relax }}{11}{figure.caption.36}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Mapa de memoria de datos direccionada por bytes\relax }}{12}{figure.caption.40}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Esquema el\'ectrico del transmisor\relax }}{14}{figure.caption.48}%
+\contentsline {figure}{\numberline {10}{\ignorespaces A) Modelo en pequeña señal del bucle de oscilación para frecuencias medias B) Modelo en pequeña señal del oscilador sustituyendo el condensador de realimentación $C_1$ por su equivalente en parámetros $Y$\relax }}{15}{figure.caption.53}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Diagrama de Bode de la ganancia en lazo abierto del oscilador $A_l$ para frecuencias intermedias\relax }}{17}{figure.caption.61}%

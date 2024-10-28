@@ -82,13 +82,13 @@ V_{AF} = \frac{I_{Cdata}}{h_{OEdata}} =\frac{\SI{1}{\milli\ampere}}{\SI{6}{\micr
 \[
 \begin{array}{rl} 
       \begin{array}{l}
-	 Y_{11} = \frac{i_1}{v_1}|_{v_2 = 0} = s \cdot C_1 \\
-	 Y_{12} = \frac{i_1}{v_2}|_{v_1 = 0} = -s \cdot C_1 
+	 Y_{11} = \frac{i_1}{v_1}|_{v_2 = 0} = s \cdot C_2 \\
+	 Y_{12} = \frac{i_1}{v_2}|_{v_1 = 0} = -s \cdot C_2 
       \end{array}
       &
       \begin{array}{l}
-	 Y_{21} = \frac{i_2}{v_1}|_{v_2 = 0} = -s \cdot C_1 \\
-	 Y_{22} = \frac{i_2}{v_2}|_{v_1 = 0} = s \cdot C_1 
+	 Y_{21} = \frac{i_2}{v_1}|_{v_2 = 0} = -s \cdot C_2 \\
+	 Y_{22} = \frac{i_2}{v_2}|_{v_1 = 0} = s \cdot C_2 
       \end{array}
 \end{array}
 \]
@@ -105,20 +105,20 @@ Se muestra el desarrollo para el c\'alculo de $A = \frac{V_2}{i_E}$:
 \[
 \begin{array}{rl} 
       \begin{array}{l}
-   \frac{i_E}{V_1} = Y_{T1} = s\cdot C_1 + s\cdot C_2 + \frac{1}{h_{ib}} + \frac{1}{R_{e}} \\
+   \frac{i_E}{V_1} = Y_{T1} = s\cdot C_2 + \frac{1}{h_{ib}} \\
    \frac{i_e}{V_{1}} = \frac{1}{h_{ib}} \\
    i_E = Y_{T1} \cdot i_e \cdot h_{ib}
       \end{array}
       &
       \begin{array}{r}
    \frac{V_2}{h_{fb}\cdot i_e} = {Y_{T2}}^{-1} \\
-   Y_{T2} = s\cdot C_1 + \frac{1}{s\cdot L_1} + h_{ob} \\
+   Y_{T2} = s\cdot C_2 + s\cdot C_1 + \frac{1}{s\cdot L_1} + h_{ob} \\
    V_2 = \frac{h_{fb}\cdot i_e}{Y_{T2}} 
       \end{array}
 \end{array}
 \]
 \begin{equation}
-   A = \frac{-h_{fb}}{Y_{T2} \cdot Y_{T2} \cdot h_{ib}} 
+   A = \frac{-h_{fb}}{Y_{T1} \cdot Y_{T2} \cdot h_{ib}} 
 \end{equation}
 \paragraph{}
 Se calcula la ganancia en lazo abierto como $A_l = A \cdot f$ y sustituyendo los valores de $Y_{T1}$ e $Y_{T2}$:
