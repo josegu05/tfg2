@@ -99,14 +99,15 @@ A continuación se expone la obtención de los valores de los parámetros híbri
 
 \paragraph{}
 Teniendo en cuenta las relaciones obtenidas, se puede establecer la relación de los parámetros híbridos con su valor numérico como se muestra a continuación.
-\begin{align*} 
-   h_{ie} &= \frac { 1 }{ y_{11} } = \frac{N_F \cdot V_t}{I_B} & h_{re} &= \frac{-y_{12}}{y_{11}} \approx 0 \\
-   h_{fe} &= \frac { y_{21} }{ y_{11} } = \frac{I_C}{I_B} & h_{oe} &=  y_{22} - \frac{y_{12} \cdot y_{21}}{y_{11}}\approx \frac{I_C}{V_{AF}}
-\end{align*}
+\begin{align} 
+   h_{ie} &= \frac { 1 }{ y_{11} } = \frac{N_F \cdot V_t}{I_B} & h_{re} &= \frac{-y_{12}}{y_{11}} \approx 0 \label{eq:h_param1} \\
+   h_{fe} &= \frac { y_{21} }{ y_{11} } = \frac{I_C}{I_B} & h_{oe} &=  y_{22} - \frac{y_{12} \cdot y_{21}}{y_{11}}\approx \frac{I_C}{V_{AF}} \label{eq:h_param2}
+\end{align}
 
 \paragraph{}
 Seguidamente, se establecen las relaciones de los parámetros híbridos en emisor com\'un para las demás configuraciones de terminal común. Las relaciones se obtienen de manera similar a las anteriores dadas:
-\[
+   \begin{equation} \label{eq:h_conversion}
+%\[
 \begin{array}{rrcll} 
       \begin{array}{l}
 	 h_{ic} = h_{ie} \\
@@ -132,6 +133,7 @@ Seguidamente, se establecen las relaciones de los parámetros híbridos en emiso
 	 h_{ob} = \frac{h_{oe}}{1+h_{fe}} 
       \end{array}
 \end{array}
-\]
+%\]
+   \end{equation}
 
 Por último, cabe mencionar que los transistores por su construcción física poseen elementos denominados parásitos. Estos elementos se modelan, de manera circuital principalmente como condensadores, y pueden influir en los valores de las impedancias de entrada, salida o realimentaciones. Estos efectos se incluirán cuando sean necesarios en el desarrollo del proyecto.

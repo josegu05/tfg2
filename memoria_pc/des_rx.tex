@@ -2,6 +2,14 @@
 explicar separacion de partes entre oscilador y quench signal
 El diseño del receptor se ha de separar en tres partes diferenciadas. En primer lugar, lo correspondiente al punto de operación del transistor, donde se trabaja con la componente DC. En segundo lugar, se desarrolla la parte de RF correspondiente al oscilador, el cual define la frecuencia de trabajo. Por último la parte correspondiente a la quench signal, encargada de gestionar el paro y arranque de la oscilación. Esta parte trabaja a una frecuencia intermedia que puede diferenciarse claramente de la parte de RF y de la componente DC.
 
+El esquema completo del receptor se expone en la figura \ref{fig:rx}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1, width=1\textwidth]{receptor}
+    \caption{Esquema el\'ectrico del receptor}
+    \label{fig:rx}
+\end{figure}
+
 \paragraph{Polarización} EXPLICAR PORQUE ESE PUNTO DE OPERACION (MENOR RUIDO POSIBLE, MENOR CONSUMO DE POTENCIA)
 En este caso la estrategia para fijar el punto de operación es ligeramente distinta a como se diseña en el transmisor. El transistor debe trabajar en zona activa directa, por lo que se fijará $V_{CE} = \frac{V_{CC}}{2}$ para garantizar el mayor rango de linealidad posible. También se elige una $I_C = \SI{1}{\milli\ampere}$, en este caso para que el transistor trabaje introduciendo el mínimo ruido posible. Este hecho es importante pues, cuando el receptor se encuentra en la etapa de inicio de oscilación, un bajo nivel de ruido ayuda a aumentar la sensibilidad del receptor. Esto es debido a que la suma mínima de todos los ruidos generados por un transistor se encuentra en este rango de corriente de colector. REFERENCIA A ART OF ELECTRONICS.
 Cabe recalcar que la estructura del circuito de polarización es de la forma realimentación de colector. Esta forma, provoca una realimentación negativa, que fija el punto de operación de manera más independiente a los parámetros característicos del transistor. Esta realimentación negativa debe eliminarse en corriente alterna para provocar la oscilación. La estrategia para eliminarla se verá en el apartado de pequeña señal.
@@ -11,7 +19,40 @@ FIGURA AISLADA DE LA PARTE DC
 \paragraph{Parte oscilador RF} IGUAL QUE EN TRANSMISOR. SMALL-SIGNAL ETC 
 La estructura del oscilador en el receptor es idéntica al transmisor. Para lograr evitar la realimentación negativa provocada por la parte de polarización se coloca el condensador $C_X = \SI{470}{\nano\farad}$, este valor es suficiente para que la señal de RF vea un cortocircuito a tierra. La inclusión de este condensador es imprescindible para que el circuito funcione. 
 \paragraph{Modelo en pequeña señal:} Debido a que el diseño es estructuralmente igual que en el transmisor, los cálculos serán idénticos sustituyendo los valores correspondientes.
-AÑADIR FIGURA AISLADA DE LA PARTE RF, Y SUS MODELOS EN PEQUENITA SENAL
+Se incluyen los valores característicos junto a las ecuaciones de interés.
+En función de los valores del punto de operación obtenido, se calculan los parámetros híbridos para el receptor.
+
+\begin{equation}
+   \label{eq:result_pol1}
+V_{AF} = \frac{I_{Cdata}}{h_{OEdata}} =\frac{\SI{1}{\milli\ampere}}{\SI{6}{\micro\siemens}} =  \SI{50}{\volt} 
+\end{equation}
+\begin{equation}
+   \label{eq:result_pol2}
+%\[
+\begin{array}{rl} 
+      \begin{array}{l}
+	 h_{ib} =  \SI{8.4}{\ohm} \\
+	 h_{fb} =  -0.99
+      \end{array}
+      &
+      \begin{array}{l}
+	 h_{rb} =  0.014 \\
+	 h_{ob} =  \SI{6}{\micro\siemens}
+      \end{array}
+\end{array}
+%\]
+\end{equation}
+
+El modelo en pequeña señal para las frecuencias de RF es sustancialmente igual a la parte del receptor. En la figura REF, se muestra el modelo del receptor en pequeña señal para las frecuencias de RF. L2 tiene una impedancia suficientemente grande como para considerarla circuito abierto. El objetivo del modelo es la obtención de una expresión para la frecuencia de resonancia.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1, width=.8\textwidth]{small_signal_rx}
+    \caption{A) Modelo en pequeña señal del bucle de oscilación para frecuencias medias B) Modelo en pequeña señal del oscilador sustituyendo el condensador de realimentación $C_1$ por su equivalente en parámetros $Y$}
+    \label{fig:ss_rx}
+\end{figure}
+
+FALTA FUNCION DE TRANSFERENCIA IGUAL QUE TX Y CALCULO DE FREQ RESONANCIA IGUAL QUE TX. RAPIDAMENTE. DECIR QUE SE ANADE CONDENSADOR VARIABLE PARA SINTONIZAR ELUDIENDO LAS DISCREPANCIAS REALES DEL CIRCUITO.
 
 \paragraph{Parte quench-signal} AISLAR CIRCUITO, REALIZAR C\'ALCULOS, L(CHOKE) R Y C
 En este caso al contrario que en el receptor, la bobina de RFC no podrá ser arbitrariamente grande, pues debe permitir el paso de la frecuencia de quench pero no de la señal de RF.

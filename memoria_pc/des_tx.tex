@@ -1,5 +1,5 @@
 datasheets ne555, 2n2222, octave
-\paragraph{}
+\paragraph{Introducci\'on}
 En este apartado se expondr\'a el diseño del transmisor, los c\'alculos matem\'aticos necesarios, simulacion por ordenador y los resultados practicos.
 El transmisor está diseñado para generar una modulación ASK y emitir a una frecuencia de $30Mhz$. La frecuencia de emisión se sintoniza con la del receptor por medio de un condensador de capacidad variable.
 \paragraph{}
@@ -49,7 +49,7 @@ Se obtienen $I_c$ y $V_{CE}$ con las siguientes dos ecuaciones sustituyendo los 
    V_{CE}= \SI{5.68}{\volt} \quad& I_C = \SI{83}{\milli\ampere}
 \end{align*}
 \paragraph{}
-Una vez calculado el puto de operaci\'on se obtienen los par\'ametros h\'ibridos en base com\'un siguiendo las ecuaciones expuestas en el apartado \ref{sec:teo_transistor}. Adem\'as se debe calcular el dato $V_{AF}$ con ayuda de la hoja de datos del transistor, en este caso el dato se obtuvo como una media del rango de valores proporcionado. El resultado del c\'alculo de los par\'ametros es el siguiente:
+Una vez calculado el puto de operaci\'on se obtienen los par\'ametros h\'ibridos en base com\'un siguiendo la metodolog\'ia expuesta en el apartado \ref{sec:teo_transistor}. En primer lugar calcular los parámetros híbridos en emisor común a partir de los resultados obtenidos en el punto de operación, utilizando las ecuaciones \ref{eq:h_param1} y \ref{eq:h_param2}. En segundo lugar, aplicar las transformaciones indicadas en \ref{eq:h_conversion}. Adem\'as se debe calcular el dato $V_{AF}$ con ayuda de la hoja de datos del transistor, en este caso el dato se obtuvo como una media del rango de valores proporcionado. El resultado del c\'alculo de los par\'ametros es el siguiente:
 \begin{equation}
    \label{eq:result_pol1}
 V_{AF} = \frac{I_{Cdata}}{h_{OEdata}} =\frac{\SI{1}{\milli\ampere}}{\SI{6}{\micro\siemens}} =  \SI{50}{\volt} 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.6.8)  28 OCT 2024 21:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.6.8)  30 OCT 2024 21:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -402,6 +402,13 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./main.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
+
+
+LaTeX Warning: Label `eq:result_pol1' multiply defined.
+
+
+LaTeX Warning: Label `eq:result_pol2' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -540,20 +547,20 @@ LaTeX Warning: Command \guillemotright invalid in math mode on input line 57.
 
 LaTeX Warning: Command \guillemotleft invalid in math mode on input line 58.
 
-<./images//sp-tension.png, id=268, 634.37pt x 423.5825pt>
+<./images//sp-tension.png, id=271, 634.37pt x 423.5825pt>
 File: ./images//sp-tension.png Graphic file (type png)
 <use ./images//sp-tension.png>
 Package pdftex.def Info: ./images//sp-tension.png  used on input line 65.
 (pdftex.def)             Requested size: 634.36844pt x 423.58147pt.
 [8 <./images//fb.png>]
-<./images//pp-transres-real.png, id=283, 527.9725pt x 354.32375pt>
+<./images//pp-transres-real.png, id=286, 527.9725pt x 354.32375pt>
 File: ./images//pp-transres-real.png Graphic file (type png)
 <use ./images//pp-transres-real.png>
 Package pdftex.def Info: ./images//pp-transres-real.png  used on input line 72.
 
 (pdftex.def)             Requested size: 527.9712pt x 354.32288pt.
 ) (./teo_micro.tex
-<./images//soc.png, id=284, 628.3475pt x 369.38pt>
+<./images//soc.png, id=287, 628.3475pt x 369.38pt>
 File: ./images//soc.png Graphic file (type png)
 <use ./images//soc.png>
 Package pdftex.def Info: ./images//soc.png  used on input line 6.
@@ -563,7 +570,7 @@ Package pdftex.def Info: ./images//soc.png  used on input line 6.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [9 <./images//sp-tension.png> <./images//pp-transres-real.png>]
-<./images//avr-cpu.png, id=297, 669.50125pt x 685.56125pt>
+<./images//avr-cpu.png, id=301, 669.50125pt x 685.56125pt>
 File: ./images//avr-cpu.png Graphic file (type png)
 <use ./images//avr-cpu.png>
 Package pdftex.def Info: ./images//avr-cpu.png  used on input line 26.
@@ -573,14 +580,14 @@ Package pdftex.def Info: ./images//avr-cpu.png  used on input line 26.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [10 <./images//soc.png>]
-<./images//avr_datos.png, id=311, 390.45876pt x 256.96pt>
+<./images//avr_datos.png, id=314, 390.45876pt x 256.96pt>
 File: ./images//avr_datos.png Graphic file (type png)
 <use ./images//avr_datos.png>
 Package pdftex.def Info: ./images//avr_datos.png  used on input line 40.
 (pdftex.def)             Requested size: 390.4578pt x 256.95937pt.
 ) [11 <./images//avr-cpu.png>] (./des.tex)
 (./anal_intro.tex [12 <./images//avr_datos.png>]) (./des_tx.tex
-<./images//transmisor.png, id=334, 1270.7475pt x 944.52875pt>
+<./images//transmisor.png, id=337, 1270.7475pt x 944.52875pt>
 File: ./images//transmisor.png Graphic file (type png)
 <use ./images//transmisor.png>
 Package pdftex.def Info: ./images//transmisor.png  used on input line 17.
@@ -590,13 +597,13 @@ Package pdftex.def Info: ./images//transmisor.png  used on input line 17.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [13] [14 <./images//transmisor.png>]
-<./images//small_signal_tx.png, id=351, 1688.3075pt x 891.33pt>
+<./images//small_signal_tx.png, id=357, 1688.3075pt x 891.33pt>
 File: ./images//small_signal_tx.png Graphic file (type png)
 <use ./images//small_signal_tx.png>
 Package pdftex.def Info: ./images//small_signal_tx.png  used on input line 76.
 (pdftex.def)             Requested size: 1688.30339pt x 891.32784pt.
  [15 <./images//small_signal_tx.png>]
-<./images//bode_tx.png, id=372, 837.1275pt x 555.07375pt>
+<./images//bode_tx.png, id=378, 837.1275pt x 555.07375pt>
 File: ./images//bode_tx.png Graphic file (type png)
 <use ./images//bode_tx.png>
 Package pdftex.def Info: ./images//bode_tx.png  used on input line 136.
@@ -605,7 +612,23 @@ Package pdftex.def Info: ./images//bode_tx.png  used on input line 136.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16]) (./des_rx.tex [17 <./images//bode_tx.png>] [18]) (./digital_intro.tex
+[16]) (./des_rx.tex
+<./images//receptor.png, id=400, 927.465pt x 679.53876pt>
+File: ./images//receptor.png Graphic file (type png)
+<use ./images//receptor.png>
+Package pdftex.def Info: ./images//receptor.png  used on input line 8.
+(pdftex.def)             Requested size: 927.46274pt x 679.53711pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17 <./images//bode_tx.png>] [18 <./images//receptor.png>]
+<./images//small_signal_rx.png, id=420, 1688.3075pt x 891.33pt>
+File: ./images//small_signal_rx.png Graphic file (type png)
+<use ./images//small_signal_rx.png>
+Package pdftex.def Info: ./images//small_signal_rx.png  used on input line 50.
+(pdftex.def)             Requested size: 1688.30339pt x 891.32784pt.
+ [19 <./images//small_signal_rx.png>]) (./digital_intro.tex
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
@@ -618,38 +641,40 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 10.
 
-(/home/jose/Documents/tfg2/digital/gpio_signaldriven/v6_final/Makefile))
-(./des_digital_rx.tex [19]
+(/home/jose/Documents/tfg2/digital/gpio_signaldriven/v6_final/Makefile [20]))
+(./des_digital_rx.tex
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-)
-(/home/jose/Documents/tfg2/digital/gpio_signaldriven/v6_final/main.c [20]
-[21])) (./des_digital_tx.tex
-(/home/jose/Documents/tfg2/digital/transmisor/main.c [22] [23] [24]))
-(./des_acdc.tex [25]) (./crono.tex) (./crono_txfm.tex) (./crono_rxfm.tex)
-(./crono_digital.tex) (./grant.tex) (./result.tex) [26] (./main.lof
+) [21]
+(/home/jose/Documents/tfg2/digital/gpio_signaldriven/v6_final/main.c [22]))
+(./des_digital_tx.tex [23] (/home/jose/Documents/tfg2/digital/transmisor/main.c
+[24] [25]) [26]) (./des_acdc.tex) (./crono.tex) (./crono_txfm.tex)
+(./crono_rxfm.tex) (./crono_digital.tex) [27] (./grant.tex) (./result.tex)
+(./main.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
- [27]
-(./main.aux
+ [28] (./main.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: C4DFF3BABF3031D05C4655694437B291;5380.
  ) 
 Here is how much of TeX's memory you used:
- 18334 strings out of 477916
- 344489 string characters out of 5837424
- 2109330 words of memory out of 5000000
- 37795 multiletter control sequences out of 15000+600000
+ 18368 strings out of 477916
+ 345238 string characters out of 5837424
+ 2111330 words of memory out of 5000000
+ 37821 multiletter control sequences out of 15000+600000
  519846 words of font info for 58 fonts, out of 8000000 for 9000
  85 hyphenation exceptions out of 8191
  75i,19n,77p,1423b,2584s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -670,10 +695,10 @@ usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (28 pages, 666625 bytes).
+Output written on main.pdf (29 pages, 710129 bytes).
 PDF statistics:
- 911 PDF objects out of 1000 (max. 8388607)
- 808 compressed objects within 9 object streams
- 421 named destinations out of 1000 (max. 500000)
- 282 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 934 PDF objects out of 1000 (max. 8388607)
+ 827 compressed objects within 9 object streams
+ 429 named destinations out of 1000 (max. 500000)
+ 292 words of extra memory for PDF output out of 10000 (max. 10000000)
 
