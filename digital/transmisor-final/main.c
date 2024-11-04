@@ -5,7 +5,7 @@
 #include <stdint.h>
 // definiciones de tipos estandar
 
-#define PIN_OUT PINB0
+#define PIN_OUT PINB7
 
 uint8_t volatile lock_button = 0;
 uint8_t volatile code = 0;

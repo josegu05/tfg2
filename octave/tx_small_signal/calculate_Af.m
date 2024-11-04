@@ -9,16 +9,16 @@ hfb_num =hfb;
 hob_num =hob;
 hrb_num =hrb;
 re_num = re;
-l1_num = 630e-9;
-c1_num = 47e-12;
-c2_num = 47e-12;
+l1_num = 530e-9;
+c1_num = 30e-12;
+c2_num = 30e-12;
 
 
 syms s c2 c1 l1 hib hob hfb hrb re;
 % previamente transistor_parameters;
 
-yt2 = hob +(1/(s*l1))+(s*c1);
-yt1 = (s*c1) + (s*c2) + (1/re) + (1/hib);
+yt2 = hob +(1/(s*l1))+(s*c1)+(s*c2);
+yt1 = (s*c2) + (1/hib);
 
 % a = -hfb/(yt2*(1+ yt1/hib));
 a = -hfb/(yt2*yt1*hib);
