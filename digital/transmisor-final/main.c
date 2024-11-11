@@ -5,17 +5,24 @@
 #include <stdint.h>
 // definiciones de tipos estandar
 
+// while testing PB0, in board PB7
 #define PIN_OUT PINB7
+#define WAIT_TIME 100000UL
 
+uint8_t volatile count = 0;
 uint8_t volatile lock_button = 0;
 uint8_t volatile code = 0;
 /* code legend binary:
- * 0000 = Not_valid
- * 1000 = pd5
- * 1100 = pd6
- * 1110 = pd4
+ * XX00 0000 = Not_valid
+ * 1111 0000 = pd5
+ * 1111 1100 = pd6
+ * 1111 1111 = pd4
 */
 
+void wait_time(void)
+{
+      for(int i=0; i<WAIT_TIME; i++);
+}
 #ifdef DEBUG
 #define COUNT 100000UL
 void debug_stop_exec(void)
@@ -29,12 +36,29 @@ void debug_stop_exec(void)
 }
 #endif
 
+void transmit_sync(void)
+{
+	 // first transmit sync sequence
+	 PORTB &= ~(1 << PIN_OUT);
+	 wait_time();
+	 PORTB |= (1 << PIN_OUT);
+
+	 //clear possible timer2 interrupt to sync timer2
+	 // TIMER2 interrupt COMP_A interrupt clear by writing a logic 1 if a 1 is written
+	 TIFR2 |= (TIFR2 & (1 << OCIE2A));
+	 //restart the count
+	 TCNT2 = 0;
+
+	 //enable timer2 interrupt mask
+	 TIMSK2 = (1 << OCIE2A);
+}
+
 void setup_timer_2_gate(void)
 {
    // set CTC mode and COM on toggle with compare match
    TCCR2A = (1 << COM2A0) | (1 << WGM21);
    //TCCR2A = (0 << COM2A0) | (1 << WGM21);
-   OCR2A = 200;
+   OCR2A = 220;
 
 //   select clock source as internal prescaler 32
    TCCR2B = (1 << CS21) | (1 << CS20);
@@ -65,8 +89,8 @@ ISR(TIMER2_COMPA_vect)
    {
       // unlock button press
       lock_button = 0;
-      // write 0 in output pin
-      PORTB &= ~(1 << PIN_OUT);
+      // write 1 in output pin
+      PORTB |= (1 << PIN_OUT);
       // disable timer2 interrupts
       TIMSK2 &= ~(1 << OCIE2A);
    }
@@ -74,8 +98,8 @@ ISR(TIMER2_COMPA_vect)
    {
       // continue with lock button until a 0 is processed
       lock_button = 1;
-      // write 1 in output pin
-      PORTB |= (1 << PIN_OUT);
+      // write 0 in output pin
+      PORTB &= ~(1 << PIN_OUT);
    }
 
 }
@@ -90,56 +114,40 @@ ISR(PCINT2_vect)
 //   if (button_pressed & irq)
    if (!lock_button)
    {
+      if ( !(irq & (1 << PIND5)) )
+      {
+	 //lock button
+	 lock_button = 1;
+	 // set appropiate code variable
+	 code = 0b1111;
+
+	 //transmit sync and set timer interrupts
+	 transmit_sync();
+
+	 // with interrupts enabled, code will be transmitted
+      }
+
       // check if pd6 set interrupt flag and if lock button is in progress
       if ( !(irq & (1 << PIND6)) )
       {
 	 //lock button
 	 lock_button = 1;
-
 	 // set appropiate code variable
-	 code = 0b11;
+	 code = 0b111111;
 
-	 //clear possible timer2 interrupt to sync timer2
-	 // TIMER2 interrupt COMP_A interrupt clear by writing a logic 1 if a 1 is written
-	 //TIFR2 |= (TIFR2 & (1 << OCIE2A));
-	 TCNT2 = 0;
-
-	 //enable timer2 interrupt mask
-	 TIMSK2 = (1 << OCIE2A);
-      }
-
-      if ( !(irq & (1 << PIND5)) )
-      {
-	 //lock button
-	 lock_button = 1;
-
-	 // set appropiate code variable
-	 code = 0b01;
-
-	 //clear possible timer2 interrupt to sync timer2
-	 // TIMER2 interrupt COMP_A interrupt clear by writing a logic 1 if a 1 is written
-	 //TIFR2 |= (TIFR2 & (1 << OCIE2A));
-	 TCNT2 = 0;
-
-	 //enable timer2 interrupt mask
-	 TIMSK2 = (1 << OCIE2A);
+	 //transmit sync and set timer interrupts
+	 transmit_sync();
       }
 
       if ( !(irq & (1 << PIND7)) )
       {
 	 //lock button
 	 lock_button = 1;
-
 	 // set appropiate code variable
-	 code = 0b111;
+	 code = 0b11111111;
 
-	 //clear possible timer2 interrupt to sync timer2
-	 // TIMER2 interrupt COMP_A interrupt clear by writing a logic 1 if a 1 is written
-	 //TIFR2 |= (TIFR2 & (1 << OCIE2A));
-	 TCNT2 = 0;
-
-	 //enable timer2 interrupt mask
-	 TIMSK2 = (1 << OCIE2A);
+	 //transmit sync and set timer interrupts
+	 transmit_sync();
       }
    }
 }
@@ -164,10 +172,11 @@ void setup_gpio_pins(void)
 
    //config pb7 as output 
    DDRB |= (1 << PIN_OUT);
-   //set init low level 
-   //set init high level 
-   PORTB &= ~(1 << PIN_OUT);
+   //set init high level pnp transistor
+   PORTB |= (1 << PIN_OUT);
+   //PORTB &= ~(1 << PIN_OUT);
 }
+
 
 int main(void)
 {

@@ -1,3 +1,5 @@
+F_CPU=1000000UL
+
 all: main.hex
 
 main.hex: main.elf
