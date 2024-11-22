@@ -6,11 +6,13 @@
 // definiciones de tipos estandar
 
 #define WAIT_TIME 1000
-#define COUNT_MAX 109
-#define COUNT_MIN 109
+#define COUNT_MAX 116
+#define COUNT_MIN 110
 
 uint16_t volatile decoding = 0;
 uint16_t volatile count = 0;
+uint16_t volatile mean = 0;
+uint8_t volatile times = 0;
 
 // AJUSTAR TIEMPOS DE LOS TIMERS CON EL OSCILOSCOPIO Y 2 SONDAS
 
@@ -24,16 +26,18 @@ void setup_timer_0_counter(void)
 {
    // set configuration registers
    // set CTC mode and COM on toggle with compare match
-   TCCR0A = (1 << COM0A0) | (1 << WGM01);
-   //TCCR0A = (0 << COM0A0) | (1 << WGM01);
+   //TCCR0A = (1 << COM0A0) | (1 << WGM01);
+   // 
+   TCCR0A = (0 << COM0A0) | (1 << WGM01);
    // 4 count limit frecuency for F_in = 60 KHz and F_CPU = 1 MHz
    OCR0A = 3;
 
 //   select clock source as external source falling edge no prescaler
+//   PD4 is the Alternate function to External T0 clk
    TCCR0B = (1 << FOC2A) | (1 << FOC2B) | (1 << CS12) | (1 << CS11);
 
    // set PD6 as output wich is TIMER0 COMP_A OUTPUT
-   DDRD |= (1 << DDD6);
+   //DDRD |= (1 << DDD6);
 // set TIMER0 interrupt COMP_A mask enable 
    TIMSK0 = (1 << OCIE0A);
 }
@@ -65,7 +69,33 @@ void setup_timer_2_gate(void)
 ISR(TIMER2_COMPA_vect)
 {
    // gate
+   // nuevo -------
+   // el 2 y el >> 1 dependen entre si, deben ser potencias de 2 para facilitar la division
+   if(times >= 4)
+   {
+      //hacer la media de count actual
+      count = count >> 2;
+      //comparar con mean pasada
+      if(count > mean)
+      {
+	 // pinout PB0
+	 // digital_out = 0;
+	 //decoding = (decoding + 1) % sizeof(uint16_t);
+	 PORTB &= ~(1 << PORTB0);
+      }
+      else
+	 PORTB |= (1 << PORTB0);
 
+      //actualizar media
+      mean = count;
+      times = 0;
+      count = 0;
+   }
+   else
+      times++;
+   // --------------
+
+   /*
    if(count > COUNT_MAX)
    {
       // pinout PB0
@@ -78,22 +108,24 @@ ISR(TIMER2_COMPA_vect)
    //if(count < COUNT_MIN)
    {
 	 PORTB |= (1 << PORTB0);
-      if(decoding)
+      if(decoding > 2)
       {
 	 // digital_out = 1;
+	       PORTD ^= (1 << PORTD5);
+
 	 switch (decoding)
 	 {
 	    case 4:
 	       // pd5 = 1;
-	       PORTD |= (1 << PORTD5);
+	       PORTD ^= (1 << PORTD5);
 	       break;
 	    case 6:
 	       // pd6 = 1;
-	       PORTD |= (1 << PORTD6);
+	       PORTD ^= (1 << PORTD6);
 	       break;
 	    case 8:
 	       // pd7 = 1;
-	       PORTD |= (1 << PORTD7);
+	       PORTD ^= (1 << PORTD7);
 	       break;
 	    default:
 	       break;
@@ -104,6 +136,7 @@ ISR(TIMER2_COMPA_vect)
    }
 
    count = 0;
+   */
 }
 
 void setup_gpios(void)
