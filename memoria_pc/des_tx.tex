@@ -151,6 +151,20 @@ CALCULOS:
 Primero impedancia de salida del circuito sin bobina (usada de primario), y generador a la frecuencia de resonancia. 
 segundo, modelo del transformador y transformacion de impedancias a cable de 1k aprox?
 simulacion de potencia disipada por la antena?
+\paragraph{}
+Para asegurar la máxima transferencia de potencia de señal a la antena se diseña un transformador como adaptador de impedancias entre el transmisor y la antena. Se considera esta opción como la alternativa más sencilla de implementar y que no carga al circuito, ya que para producir la oscilación, el transmisor es bastante sensible.
+\paragraph{}
+El objetivo del diseño es calcular la relación del número de vueltas óptimo entre el primario y el secundario. Se sigue el siguiente modelo de relación de impedancias en un transformador.
+\paragraph{}
+METER FOTO MODELO TRANSFORMADOR
+\paragraph{}
+Siguiendo el modelo de la figura REF, se obtienen las siguientes relaciones:
+%\equation
+%	Np/Ns = n = V2/V1 .. n^2 = zp/zs
+\paragraph{}
+En particular para el diseño propio se debe calcular tanto la impedancia de salida del transmisor como la resistencia de radiación de la entena utilizada para la frecuencia de trabajo.
+
+
 \paragraph{Resultado de la Simulaci\'on} SIMULACION LTSPICE
 son 3 capturas una la de la oscilacion con las medidas de frecuencia.
 una general con varios ciclos de digitalin.
