@@ -6,8 +6,8 @@
 // definiciones de tipos estandar
 
 #define WAIT_TIME 1000
-#define COUNT_MAX 116
-#define COUNT_MIN 110
+#define COUNT_MAX 113
+#define COUNT_MIN 113
 
 uint16_t volatile decoding = 0;
 uint16_t volatile count = 0;
@@ -56,7 +56,9 @@ void setup_timer_2_gate(void)
    OCR2A = 220;
 
 //   select clock source as internal prescaler 32
-   TCCR2B = (1 << CS21) | (1 << CS20);
+//   TCCR2B = (1 << CS21) | (1 << CS20);
+//   select clock source as internal prescaler 32*8 at 8MHz
+   TCCR2B = (1 << CS22) | (1 << CS21) | (0 << CS20);
 
 // PB3 as output compare match A timer 2
 	DDRB |= (1 << DDB3);
@@ -69,6 +71,7 @@ void setup_timer_2_gate(void)
 ISR(TIMER2_COMPA_vect)
 {
    // gate
+   /*
    // nuevo -------
    // el 2 y el >> 1 dependen entre si, deben ser potencias de 2 para facilitar la division
    if(times >= 4)
@@ -94,8 +97,8 @@ ISR(TIMER2_COMPA_vect)
    else
       times++;
    // --------------
+   */
 
-   /*
    if(count > COUNT_MAX)
    {
       // pinout PB0
@@ -104,8 +107,8 @@ ISR(TIMER2_COMPA_vect)
       PORTB &= ~(1 << PORTB0);
    }
 
-   else
-   //if(count < COUNT_MIN)
+   //else
+   if(count < COUNT_MIN)
    {
 	 PORTB |= (1 << PORTB0);
       if(decoding > 2)
@@ -136,7 +139,6 @@ ISR(TIMER2_COMPA_vect)
    }
 
    count = 0;
-   */
 }
 
 void setup_gpios(void)
