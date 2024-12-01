@@ -169,6 +169,33 @@ En particular para el diseño propio se debe calcular tanto la impedancia de sal
 son 3 capturas una la de la oscilacion con las medidas de frecuencia.
 una general con varios ciclos de digitalin.
 otra del flanco de subida y bajada de digitalin con vout y vbe viendo como se corta el transistor.
+\paragraph{}
+En este apartado se muestra una simulación del circuito en función del tiempo de los puntos de interés del circuito. 
+En la figura \ref{fig:sim_vc_vdig} se observa el $V_C$, que es la tensión que se aplicará en el transformador de impedancias a la antena, y $V_{digital}$, la señal moduladora que produce la modulación ASK. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1, width=1\textwidth]{sim_vc_vdigital}
+    \caption{Simulaci\'on de $V_C$ modulada por $V_{digital}$}
+    \label{fig:sim_vc_vdig}
+\end{figure}
+\paragraph{}
+En la figura \ref{fig:sim_fft} se observa la FFT de la señal $V_C$ de forma general, con un span de frecuencias alto. Por otro lado, en la figura \ref{fig:fft_vc_zoom} se muestra ampliada la frecuencia de trabajo, para observar los detalles de la modulación AM.
+A la frecuencia de trabajo se observa la modulaci'on AM.
+En la figura general de la FFT, Al tratarse de una modulación ASK, se observa con acentuada potencia, la señal moduladora en banda base. Además, esta señal, al poseer una forma de onda cuadrada, su espectro se extiende ampliamente en el dominio de la frecuencia, aportando numerosos armónicos.
+En la figura \ref{fig:fft_vc_zoom}, se observa el espectro de la modulación ampliado a la frecuencia de trabajo. Se sitúan cursores a la frecuencia de trabajo y los armónicos fundamentales a \SI{10}{\kilo\hertz}. Además, se pueden observar multitud de armónicos secundarios a distancias múltiplos de la frecuencia fundamental \SI{10}{\kilo\hertz}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1, width=1\textwidth]{fft_vc}
+    \caption{Simulaci\'on de la FFT de $V_C$ de forma general}
+    \label{fig:sim_fft}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1, width=1\textwidth]{fft_vc_zoom}
+    \caption{Simulaci\'on de la FFT de $V_C$ ampliada a la frecuencia de trabajo}
+    \label{fig:sim_fft_zoom}
+\end{figure}
+
 \paragraph{Resultado de la pr\'actica} CAPTURA DEL OSCILOSCOPIO Y MEDIDA DE CORRIENTE
 
 % \paragraph{Modulaci\'on de los canales mediante NE555}
