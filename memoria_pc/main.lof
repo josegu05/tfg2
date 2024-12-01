@@ -11,7 +11,9 @@
 \contentsline {figure}{\numberline {10}{\ignorespaces A) Modelo en pequeña señal del bucle de oscilación para frecuencias medias B) Modelo en pequeña señal del oscilador sustituyendo el condensador de realimentación $C_1$ por su equivalente en parámetros $Y$}}{15}{figure.caption.53}%
 \contentsline {figure}{\numberline {11}{\ignorespaces Diagrama de Bode de la ganancia en lazo abierto del oscilador $A_l$ para frecuencias intermedias}}{17}{figure.caption.61}%
 \contentsline {figure}{\numberline {12}{\ignorespaces Simulaci\'on de $V_C$ modulada por $V_{digital}$}}{18}{figure.caption.72}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Simulaci\'on de la FFT de $V_C$ de forma general}}{18}{figure.caption.74}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Simulaci\'on de la FFT de $V_C$ de forma general}}{19}{figure.caption.74}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Simulaci\'on de la FFT de $V_C$ ampliada a la frecuencia de trabajo}}{19}{figure.caption.75}%
 \contentsline {figure}{\numberline {15}{\ignorespaces Esquema el\'ectrico del receptor}}{20}{figure.caption.78}%
 \contentsline {figure}{\numberline {16}{\ignorespaces A) Modelo en pequeña señal del bucle de oscilación para frecuencias de RF B) Modelo en pequeña señal del oscilador sustituyendo el condensador de realimentación $C_2$ por su equivalente en parámetros $Y$}}{21}{figure.caption.83}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Simulación de puntos de interés en varios ciclos ampliados}}{23}{figure.caption.93}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Simulación de $V_{out}$ junto a $V_{quench}$}}{23}{figure.caption.95}%

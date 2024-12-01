@@ -52,28 +52,28 @@
 \contentsline {paragraph}{}{14}{section*.51}%
 \contentsline {paragraph}{}{15}{section*.52}%
 \contentsline {paragraph}{Modelo en pequeña señal:}{15}{section*.54}%
-\contentsline {paragraph}{}{15}{section*.55}%
+\contentsline {paragraph}{}{16}{section*.55}%
 \contentsline {paragraph}{}{16}{section*.56}%
 \contentsline {paragraph}{}{16}{section*.57}%
 \contentsline {paragraph}{}{16}{section*.58}%
 \contentsline {paragraph}{}{16}{section*.59}%
 \contentsline {paragraph}{}{16}{section*.60}%
 \contentsline {paragraph}{}{16}{section*.62}%
-\contentsline {paragraph}{}{16}{section*.63}%
-\contentsline {paragraph}{Antena}{16}{section*.64}%
+\contentsline {paragraph}{}{17}{section*.63}%
+\contentsline {paragraph}{Antena}{17}{section*.64}%
 \contentsline {paragraph}{}{17}{section*.65}%
 \contentsline {paragraph}{}{17}{section*.66}%
 \contentsline {paragraph}{}{17}{section*.67}%
 \contentsline {paragraph}{}{17}{section*.68}%
 \contentsline {paragraph}{}{17}{section*.69}%
-\contentsline {paragraph}{Resultado de la Simulaci\'on}{17}{section*.70}%
-\contentsline {paragraph}{}{17}{section*.71}%
+\contentsline {paragraph}{Resultado de la Simulaci\'on}{18}{section*.70}%
+\contentsline {paragraph}{}{18}{section*.71}%
 \contentsline {paragraph}{}{18}{section*.73}%
 \contentsline {paragraph}{Resultado de la pr\'actica}{18}{section*.76}%
-\contentsline {subsubsection}{\numberline {3.1.2}Diseño del "front-end" del RECEPTOR de RF anal\'ogico}{19}{subsubsection.3.1.2}%
-\contentsline {paragraph}{Introducci\'on}{19}{section*.77}%
+\contentsline {subsubsection}{\numberline {3.1.2}Diseño del "front-end" del RECEPTOR de RF anal\'ogico}{18}{subsubsection.3.1.2}%
+\contentsline {paragraph}{Introducci\'on}{18}{section*.77}%
 \contentsline {paragraph}{Polarización}{19}{section*.79}%
-\contentsline {paragraph}{Parte oscilador RF}{19}{section*.80}%
+\contentsline {paragraph}{Parte oscilador RF}{20}{section*.80}%
 \contentsline {paragraph}{Modelo en pequeña señal:}{20}{section*.81}%
 \contentsline {paragraph}{}{20}{section*.82}%
 \contentsline {paragraph}{}{21}{section*.84}%
@@ -83,41 +83,44 @@
 \contentsline {paragraph}{}{22}{section*.88}%
 \contentsline {paragraph}{Antena ??}{22}{section*.89}%
 \contentsline {paragraph}{Resultado simulaci\'on}{22}{section*.90}%
-\contentsline {paragraph}{Resultado práctico}{22}{section*.91}%
-\contentsline {subsection}{\numberline {3.2}Parte digital}{22}{subsection.3.2}%
-\contentsline {paragraph}{Introducci\'on}{22}{section*.92}%
-\contentsline {paragraph}{Configuraci\'on del entorno de trabajo}{22}{section*.93}%
-\contentsline {subsubsection}{\numberline {3.2.1}Diseño del demodulador digital para la recepci\'on}{23}{subsubsection.3.2.1}%
-\contentsline {paragraph}{Objetivo}{23}{section*.94}%
-\contentsline {paragraph}{Contador de frecuencia}{23}{section*.95}%
-\contentsline {paragraph}{}{23}{section*.96}%
-\contentsline {paragraph}{}{23}{section*.97}%
-\contentsline {paragraph}{}{23}{section*.98}%
-\contentsline {paragraph}{}{23}{section*.99}%
-\contentsline {paragraph}{}{24}{section*.100}%
-\contentsline {subsubsection}{\numberline {3.2.2}Diseño del codificador digital para la transmisi\'on}{25}{subsubsection.3.2.2}%
-\contentsline {paragraph}{Introducción}{25}{section*.101}%
-\contentsline {paragraph}{Configuraci\'on de reloj}{26}{section*.102}%
-\contentsline {paragraph}{Codificaci\'on de los mensajes}{26}{section*.103}%
-\contentsline {subsection}{\numberline {3.3}Diseño conversor AC-DC y actuadores}{29}{subsection.3.3}%
-\contentsline {paragraph}{}{29}{section*.105}%
-\contentsline {subsubsection}{\numberline {3.3.1}Fuente de alimentación}{29}{subsubsection.3.3.1}%
-\contentsline {paragraph}{Rectificacion}{29}{section*.106}%
-\contentsline {paragraph}{Filtro}{29}{section*.107}%
-\contentsline {subsubsection}{\numberline {3.3.2}actuadores}{29}{subsubsection.3.3.2}%
-\contentsline {paragraph}{resistencia}{29}{section*.108}%
-\contentsline {paragraph}{ventilador}{29}{section*.109}%
-\contentsline {section}{\numberline {4}Cronolog\'ia del proyecto y diagrama de Grant}{29}{section.4}%
-\contentsline {paragraph}{}{29}{section*.110}%
-\contentsline {subsection}{\numberline {4.1}transmisor FM a varactor}{29}{subsection.4.1}%
-\contentsline {paragraph}{}{29}{section*.111}%
-\contentsline {subsubsection}{\numberline {4.1.1}Desarrollo técnico}{29}{subsubsection.4.1.1}%
-\contentsline {paragraph}{Transmisor 1: basado en varactor}{29}{section*.112}%
-\contentsline {paragraph}{Transmisor 2: basado en un pulsador}{29}{section*.113}%
-\contentsline {subsubsection}{\numberline {4.1.2}Motivos de reemplazo}{29}{subsubsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.2}receptor superheterodino FM}{29}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}M\'aquina de estados digital}{30}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Diagrama de Grant}{30}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Resultados y conclusiones}{30}{section.5}%
-\contentsline {section}{\numberline {6}Bibliografía}{30}{section.6}%
-\contentsline {section}{\numberline {7}Indice de figuras}{30}{section.7}%
+\contentsline {paragraph}{}{22}{section*.91}%
+\contentsline {paragraph}{}{22}{section*.92}%
+\contentsline {paragraph}{}{22}{section*.94}%
+\contentsline {paragraph}{Resultado práctico}{22}{section*.96}%
+\contentsline {subsection}{\numberline {3.2}Parte digital}{23}{subsection.3.2}%
+\contentsline {paragraph}{Introducci\'on}{23}{section*.97}%
+\contentsline {paragraph}{Configuraci\'on del entorno de trabajo}{23}{section*.98}%
+\contentsline {subsubsection}{\numberline {3.2.1}Diseño del demodulador digital para la recepci\'on}{24}{subsubsection.3.2.1}%
+\contentsline {paragraph}{Objetivo}{24}{section*.99}%
+\contentsline {paragraph}{Contador de frecuencia}{24}{section*.100}%
+\contentsline {paragraph}{}{24}{section*.101}%
+\contentsline {paragraph}{}{24}{section*.102}%
+\contentsline {paragraph}{}{25}{section*.103}%
+\contentsline {paragraph}{}{25}{section*.104}%
+\contentsline {paragraph}{}{25}{section*.105}%
+\contentsline {subsubsection}{\numberline {3.2.2}Diseño del codificador digital para la transmisi\'on}{27}{subsubsection.3.2.2}%
+\contentsline {paragraph}{Introducción}{27}{section*.106}%
+\contentsline {paragraph}{Configuraci\'on de reloj}{27}{section*.107}%
+\contentsline {paragraph}{Codificaci\'on de los mensajes}{27}{section*.108}%
+\contentsline {subsection}{\numberline {3.3}Diseño conversor AC-DC y actuadores}{30}{subsection.3.3}%
+\contentsline {paragraph}{}{30}{section*.110}%
+\contentsline {subsubsection}{\numberline {3.3.1}Fuente de alimentación}{30}{subsubsection.3.3.1}%
+\contentsline {paragraph}{Rectificacion}{30}{section*.111}%
+\contentsline {paragraph}{Filtro}{30}{section*.112}%
+\contentsline {subsubsection}{\numberline {3.3.2}actuadores}{30}{subsubsection.3.3.2}%
+\contentsline {paragraph}{resistencia}{30}{section*.113}%
+\contentsline {paragraph}{ventilador}{30}{section*.114}%
+\contentsline {section}{\numberline {4}Cronolog\'ia del proyecto y diagrama de Grant}{30}{section.4}%
+\contentsline {paragraph}{}{30}{section*.115}%
+\contentsline {subsection}{\numberline {4.1}transmisor FM a varactor}{30}{subsection.4.1}%
+\contentsline {paragraph}{}{30}{section*.116}%
+\contentsline {subsubsection}{\numberline {4.1.1}Desarrollo técnico}{30}{subsubsection.4.1.1}%
+\contentsline {paragraph}{Transmisor 1: basado en varactor}{30}{section*.117}%
+\contentsline {paragraph}{Transmisor 2: basado en un pulsador}{30}{section*.118}%
+\contentsline {subsubsection}{\numberline {4.1.2}Motivos de reemplazo}{30}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}receptor superheterodino FM}{31}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}M\'aquina de estados digital}{31}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Diagrama de Grant}{31}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Resultados y conclusiones}{31}{section.5}%
+\contentsline {section}{\numberline {6}Bibliografía}{31}{section.6}%
+\contentsline {section}{\numberline {7}Indice de figuras}{31}{section.7}%

@@ -90,7 +90,30 @@ a transformador de impedancias  y condensador para evitar al tocar con mano. Si 
 captura de oscilacion de rf, v en rc y vout
 captura con senal de entrada vout cambia de frecuencia
 
+\paragraph{}
+En el apartado de simulación trata de obtener una represaentación gráfica de lo desarrollado anteriormente sobre el receptor. Por ello, en la figura REF se observan los puntos de interés del circuito como son $V_C$, $V_{quench}$ y $V_{B}$, además de añadir la diferencia$V_B - V_{quench}$ como $V(B,quench)$. Estas cuatro medidas son suficientes para entender el ciclo de paro y marcha del transistor.
+\paragraph{}
+Como se puede observar en la figura \ref{fig:simrx_zoom}, a medida que se construye la oscilación, el valor medio de la tensión de $V_{C}$, es decir $V_{quench}$, aumenta hasta que finalmente, la diferencia $V_B - V_{quench} < \SI{.7}{\volt}$ hace desaparecer la oscilaci\'on. Este corte provoca que el valor medio de $V_C$ descienda, y por tanto $V_{quench}$, provocando finalmente que la diferencia $V_B - V_{quench} > \SI{.7}{\volt}$ reactivando al transistor y reiniciando el ciclo de oscilaci\'on.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1, width=1\textwidth]{simrx_zoom}
+    \caption{Simulación de puntos de interés en varios ciclos ampliados}
+    \label{fig:simrx_zoom}
+\end{figure}
+
+\paragraph{}
+Se añade también, en la figura \ref{fig:simrx_vout}, la forma de onda de la tensión de salida $V_{out}$, que es la señal de entrada al microcontrolador atmega328p, el cual se encargará de demodular la señal. Esta señal debe ser una señal digital entre \SI{0}{\volt} y \SI{5}{\volt}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1, width=1\textwidth]{simrx_vout}
+    \caption{Simulación de $V_{out}$ junto a $V_{quench}$}
+    \label{fig:simrx_vout}
+\end{figure}
+
 \paragraph{Resultado práctico} En este caso se muestran las medidas tomadas en el apartado de simulacion, esta vez tomadas en el circuito real. Las medidas se toman usando un osciloscopio. 
+La configuración es la misma que en el en el apartado REF del transmisor. En este caso al disponer de dos canales se muestran en la figura REF los puntos $V_{quench}$ (rojo) y $V_{C}$ (amarillo).
+
 lo mismo que en simulacion pero capturas de osciloscopio
 % situacion en el circuito (imagen bloque) y partes, enumeracion partes
 % explicacion recepcion directa amplificando senal de RF y demodulando con filtro, posteriormente etapa de smith triger que se 
