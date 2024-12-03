@@ -102,25 +102,20 @@
 \contentsline {paragraph}{Introducción}{27}{section*.106}%
 \contentsline {paragraph}{Configuraci\'on de reloj}{27}{section*.107}%
 \contentsline {paragraph}{Codificaci\'on de los mensajes}{27}{section*.108}%
-\contentsline {subsection}{\numberline {3.3}Diseño conversor AC-DC y actuadores}{30}{subsection.3.3}%
-\contentsline {paragraph}{}{30}{section*.110}%
-\contentsline {subsubsection}{\numberline {3.3.1}Fuente de alimentación}{30}{subsubsection.3.3.1}%
-\contentsline {paragraph}{Rectificacion}{30}{section*.111}%
-\contentsline {paragraph}{Filtro}{30}{section*.112}%
-\contentsline {subsubsection}{\numberline {3.3.2}actuadores}{30}{subsubsection.3.3.2}%
-\contentsline {paragraph}{resistencia}{30}{section*.113}%
-\contentsline {paragraph}{ventilador}{30}{section*.114}%
 \contentsline {section}{\numberline {4}Cronolog\'ia del proyecto y diagrama de Grant}{30}{section.4}%
-\contentsline {paragraph}{}{30}{section*.115}%
+\contentsline {paragraph}{}{30}{section*.110}%
 \contentsline {subsection}{\numberline {4.1}transmisor FM a varactor}{30}{subsection.4.1}%
-\contentsline {paragraph}{}{30}{section*.116}%
-\contentsline {subsubsection}{\numberline {4.1.1}Desarrollo técnico}{30}{subsubsection.4.1.1}%
-\contentsline {paragraph}{Transmisor 1: basado en varactor}{30}{section*.117}%
-\contentsline {paragraph}{Transmisor 2: basado en un pulsador}{30}{section*.118}%
-\contentsline {subsubsection}{\numberline {4.1.2}Motivos de reemplazo}{30}{subsubsection.4.1.2}%
+\contentsline {paragraph}{Desarrollo técnico}{30}{section*.111}%
+\contentsline {paragraph}{}{30}{section*.112}%
+\contentsline {paragraph}{Motivos de reemplazo}{30}{section*.113}%
 \contentsline {subsection}{\numberline {4.2}receptor superheterodino FM}{31}{subsection.4.2}%
+\contentsline {paragraph}{Desarrollo técnico}{31}{section*.114}%
+\contentsline {paragraph}{}{31}{section*.115}%
+\contentsline {paragraph}{Motivos de reemplazo}{31}{section*.116}%
 \contentsline {subsection}{\numberline {4.3}M\'aquina de estados digital}{31}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Diagrama de Grant}{31}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.4}Alternativa viable: conversi\'on directa}{31}{subsection.4.4}%
+\contentsline {paragraph}{}{31}{section*.117}%
+\contentsline {subsection}{\numberline {4.5}Diagrama de Grant}{31}{subsection.4.5}%
 \contentsline {section}{\numberline {5}Resultados y conclusiones}{31}{section.5}%
 \contentsline {section}{\numberline {6}Bibliografía}{31}{section.6}%
 \contentsline {section}{\numberline {7}Indice de figuras}{31}{section.7}%
