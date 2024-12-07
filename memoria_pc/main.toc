@@ -113,9 +113,12 @@
 \contentsline {paragraph}{}{31}{section*.115}%
 \contentsline {paragraph}{Motivos de reemplazo}{31}{section*.116}%
 \contentsline {subsection}{\numberline {4.3}M\'aquina de estados digital}{31}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Alternativa viable: conversi\'on directa}{31}{subsection.4.4}%
-\contentsline {paragraph}{}{31}{section*.117}%
-\contentsline {subsection}{\numberline {4.5}Diagrama de Grant}{31}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Resultados y conclusiones}{31}{section.5}%
-\contentsline {section}{\numberline {6}Bibliografía}{31}{section.6}%
-\contentsline {section}{\numberline {7}Indice de figuras}{31}{section.7}%
+\contentsline {paragraph}{Desarrollo técnico}{31}{section*.117}%
+\contentsline {paragraph}{Motivos de reemplazo}{31}{section*.118}%
+\contentsline {subsection}{\numberline {4.4}Alternativa viable: conversi\'on directa}{32}{subsection.4.4}%
+\contentsline {paragraph}{Desarrollo técnico}{32}{section*.119}%
+\contentsline {paragraph}{Motivos de reemplazo}{32}{section*.120}%
+\contentsline {subsection}{\numberline {4.5}Diagrama de Grant}{32}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Resultados y conclusiones}{32}{section.5}%
+\contentsline {section}{\numberline {6}Bibliografía}{32}{section.6}%
+\contentsline {section}{\numberline {7}Indice de figuras}{32}{section.7}%

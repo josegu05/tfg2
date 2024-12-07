@@ -1,2 +1,7 @@
-\paragraph{}
-posible diseño final funcionaba aunque poca distancia.
+\paragraph{Desarrollo técnico}
+Este diseño, más simplificado, se trataba de un sistema ASK, con un receptor de conversión directa. 
+La parte principal del circuito era la etapa de entrada, compuesta por un filtro de entrada sintonizable, y una etapa de amplificación de corriente formada por un par darlington. Parte de la salida se realimentaba positivamente al filtro de entrada, aumentando la sensibilidad del receptor. La salida del par darlington, era tratada y amplificada generando la señal de salida. 
+Se muestra un esquema del receptor en la figura REF junto con la simulación de la señal de entrada y su salida en la figura REF.
+\paragraph{Motivos de reemplazo}
+Este diseño, tenía un objetivo principal, ser sencillo y funcional.
+A pesar de conseguir una sintonización y comunicación adecuada, no estaba suficientemente contento con la distancia. Se trató de diseñar amplificadores de RF a la entrada junto a un filtro inicial. En ese momento descubrí la dificultad de diseñar amplificadores de RF y buenos filtros. Otra estrategia, fue incorporar un mezclador a la entrada. Tras varias pruebas sin obtener mejoras claras, se cambió al diseño presentado en el proyecto, un receptor super-regenerativo, el cual consigue ser funcional con muy pocos componentes.
