@@ -108,20 +108,20 @@
 \contentsline {subsection}{\numberline {4.1}transmisor FM a varactor}{31}{subsection.4.1}%
 \contentsline {paragraph}{Desarrollo técnico}{31}{section*.113}%
 \contentsline {paragraph}{}{31}{section*.114}%
-\contentsline {paragraph}{Motivos de reemplazo}{31}{section*.117}%
+\contentsline {paragraph}{Motivos de reemplazo}{31}{section*.118}%
 \contentsline {subsection}{\numberline {4.2}receptor superheterodino FM}{32}{subsection.4.2}%
-\contentsline {paragraph}{Desarrollo técnico}{32}{section*.118}%
-\contentsline {paragraph}{}{33}{section*.119}%
-\contentsline {paragraph}{Motivos de reemplazo}{33}{section*.120}%
+\contentsline {paragraph}{Desarrollo técnico}{32}{section*.119}%
+\contentsline {paragraph}{}{32}{section*.120}%
+\contentsline {paragraph}{Motivos de reemplazo}{33}{section*.121}%
 \contentsline {subsection}{\numberline {4.3}M\'aquina de estados digital}{33}{subsection.4.3}%
-\contentsline {paragraph}{Desarrollo técnico}{33}{section*.121}%
-\contentsline {paragraph}{Motivos de reemplazo}{33}{section*.124}%
-\contentsline {subsection}{\numberline {4.4}Alternativa viable: conversi\'on directa}{33}{subsection.4.4}%
-\contentsline {paragraph}{Desarrollo técnico}{33}{section*.125}%
+\contentsline {paragraph}{Desarrollo técnico}{33}{section*.122}%
 \contentsline {paragraph}{Motivos de reemplazo}{34}{section*.126}%
-\contentsline {subsection}{\numberline {4.5}Diagrama de Grant}{34}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Resultados y conclusiones}{34}{section.5}%
-\contentsline {paragraph}{}{34}{section*.130}%
-\contentsline {paragraph}{}{35}{section*.131}%
-\contentsline {section}{\numberline {6}Bibliografía}{36}{section.6}%
-\contentsline {section}{\numberline {7}Indice de figuras}{36}{section.7}%
+\contentsline {subsection}{\numberline {4.4}Alternativa viable: conversi\'on directa}{34}{subsection.4.4}%
+\contentsline {paragraph}{Desarrollo técnico}{34}{section*.127}%
+\contentsline {paragraph}{Motivos de reemplazo}{35}{section*.128}%
+\contentsline {subsection}{\numberline {4.5}Diagrama de Grant}{35}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Resultados y conclusiones}{35}{section.5}%
+\contentsline {paragraph}{}{35}{section*.132}%
+\contentsline {paragraph}{}{37}{section*.133}%
+\contentsline {section}{\numberline {6}Bibliografía}{38}{section.6}%
+\contentsline {section}{\numberline {7}Indice de figuras}{38}{section.7}%

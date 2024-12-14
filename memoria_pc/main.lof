@@ -18,10 +18,12 @@
 \contentsline {figure}{\numberline {17}{\ignorespaces A) Modelo en pequeña señal del bucle de oscilación para frecuencias de RF B) Modelo en pequeña señal del oscilador sustituyendo el condensador de realimentación $C_2$ por su equivalente en parámetros $Y$\relax }}{22}{figure.caption.85}%
 \contentsline {figure}{\numberline {18}{\ignorespaces Simulación de puntos de interés en varios ciclos ampliados\relax }}{24}{figure.caption.95}%
 \contentsline {figure}{\numberline {19}{\ignorespaces Simulación de $V_{out}$ junto a $V_{quench}$\relax }}{24}{figure.caption.97}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Simulación de puntos de interés en varios ciclos ampliados\relax }}{32}{figure.caption.115}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Simulación de puntos de interés en varios ciclos ampliados\relax }}{32}{figure.caption.116}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Simulación de puntos de interés en varios ciclos ampliados\relax }}{34}{figure.caption.122}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Simulación de puntos de interés en varios ciclos ampliados\relax }}{35}{figure.caption.123}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Simulación de puntos de interés en varios ciclos ampliados\relax }}{36}{figure.caption.127}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Simulación de puntos de interés en varios ciclos ampliados\relax }}{38}{figure.caption.128}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Diagrama de Gantt del desarrollo del proyecto\relax }}{39}{figure.caption.129}%
+\contentsline {figure}{\numberline {20}{\ignorespaces primer emisor receptor real\relax }}{32}{figure.caption.115}%
+\contentsline {figure}{\numberline {21}{\ignorespaces transmisores soldados placa\relax }}{32}{figure.caption.116}%
+\contentsline {figure}{\numberline {22}{\ignorespaces transmisores schematicos\relax }}{33}{figure.caption.117}%
+\contentsline {figure}{\numberline {23}{\ignorespaces maquina estados esquematico\relax }}{34}{figure.caption.123}%
+\contentsline {figure}{\numberline {24}{\ignorespaces receptor general schematic\relax }}{34}{figure.caption.124}%
+\contentsline {figure}{\numberline {25}{\ignorespaces receptor general real\relax }}{35}{figure.caption.125}%
+\contentsline {figure}{\numberline {26}{\ignorespaces sch radio2\relax }}{36}{figure.caption.129}%
+\contentsline {figure}{\numberline {27}{\ignorespaces radio2 real\relax }}{36}{figure.caption.130}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Diagrama de Gantt del desarrollo del proyecto\relax }}{37}{figure.caption.131}%
