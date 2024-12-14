@@ -4,6 +4,22 @@ El objetivo de este circuito estaba pensado para dar una aplicaci'on a la señal
 El esquemático del circuito digital de la máquina de estados y el smith trigger se muestran en las figuras REF y REF respectivamente.
 Además se añade, en la figura REF, la integración del receptor superheterodino FM anterior, junto al circuito digital.
 
+maquina de estados esquematico
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.3, width=.3\textwidth]{crono_tx_rx_osciloscopio}
+    \caption{Simulación de puntos de interés en varios ciclos ampliados}
+    \label{fig:simrx_zoom}
+\end{figure}
+
+general protoboard
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.4, width=.4\textwidth]{crono_general}
+    \caption{Simulación de puntos de interés en varios ciclos ampliados}
+    \label{fig:simrx_zoom}
+\end{figure}
+
 \paragraph{Motivos de reemplazo}
 El diseño del circuito digital era correcto. Sin embargo, al realizar la integración con el receptor daba muchos problemas debido a que la señal de output del receptor no era fiable. Esta señal, al no estar bien filtrada poseía componentes residuales de alta frecuencia que provocaban que el smith trigger metiera señales falsas. esto provocaba un comportamiento no deseado del circuito. 
 Para solucionar este hecho, se hizo uso de un microcontrolador. El micro abre una inmensidad de posibilidades como la recepci\'on de múltiples canales, reprogramable en función del uso específico, todo contenido en un menor espacio e incluso con un precio más económico.

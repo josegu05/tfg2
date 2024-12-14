@@ -4,4 +4,18 @@ La parte principal del circuito era la etapa de entrada, compuesta por un filtro
 Se muestra un esquema del receptor en la figura REF junto con la simulación de la señal de entrada y su salida en la figura REF.
 \paragraph{Motivos de reemplazo}
 Este diseño, tenía un objetivo principal, ser sencillo y funcional.
+esquematico
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1, width=1\textwidth]{crono_radio2}
+    \caption{Simulación de puntos de interés en varios ciclos ampliados}
+    \label{fig:simrx_zoom}
+\end{figure}
+simulacion
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1, width=1\textwidth]{crono_tx_rx_osciloscopio}
+    \caption{Simulación de puntos de interés en varios ciclos ampliados}
+    \label{fig:simrx_zoom}
+\end{figure}
 A pesar de conseguir una sintonización y comunicación adecuada, no estaba suficientemente contento con la distancia. Se trató de diseñar amplificadores de RF a la entrada junto a un filtro inicial. En ese momento descubrí la dificultad de diseñar amplificadores de RF y buenos filtros. Otra estrategia, fue incorporar un mezclador a la entrada. Tras varias pruebas sin obtener mejoras claras, se cambió al diseño presentado en el proyecto, un receptor super-regenerativo, el cual consigue ser funcional con muy pocos componentes.

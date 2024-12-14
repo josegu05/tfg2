@@ -5,15 +5,15 @@
 \contentsline {section}{\numberline {2}Marco Teórico}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Sistemas de comunicaci\'on y Transmisión ASK}{4}{subsection.2.1}%
 \contentsline {paragraph}{}{4}{section*.3}%
-\contentsline {paragraph}{}{4}{section*.4}%
-\contentsline {paragraph}{Receptor:}{4}{section*.5}%
+\contentsline {paragraph}{}{5}{section*.4}%
+\contentsline {paragraph}{Receptor:}{5}{section*.5}%
 \contentsline {paragraph}{}{5}{section*.6}%
 \contentsline {paragraph}{Transmisor:}{5}{section*.7}%
 \contentsline {paragraph}{}{5}{section*.8}%
 \contentsline {paragraph}{Modulación ASK}{5}{section*.9}%
 \contentsline {paragraph}{}{5}{section*.11}%
-\contentsline {subsection}{\numberline {2.2}Transistores y sus parámetros característicos}{5}{subsection.2.2}%
-\contentsline {paragraph}{}{5}{section*.12}%
+\contentsline {subsection}{\numberline {2.2}Transistores y sus parámetros característicos}{6}{subsection.2.2}%
+\contentsline {paragraph}{}{6}{section*.12}%
 \contentsline {paragraph}{}{6}{section*.13}%
 \contentsline {paragraph}{Polarizaci\'on:}{6}{section*.14}%
 \contentsline {paragraph}{Modelo de gran señal del transistor bipolar:}{6}{section*.15}%
@@ -21,7 +21,7 @@
 \contentsline {paragraph}{}{7}{section*.18}%
 \contentsline {paragraph}{}{7}{section*.19}%
 \contentsline {paragraph}{}{7}{section*.20}%
-\contentsline {paragraph}{}{7}{section*.21}%
+\contentsline {paragraph}{}{8}{section*.21}%
 \contentsline {subsection}{\numberline {2.3}Realimentaci\'on}{8}{subsection.2.3}%
 \contentsline {paragraph}{}{8}{section*.22}%
 \contentsline {paragraph}{}{8}{section*.23}%
@@ -41,85 +41,87 @@
 \contentsline {section}{\numberline {3}Desarrollo}{13}{section.3}%
 \contentsline {paragraph}{}{13}{section*.42}%
 \contentsline {subsection}{\numberline {3.1}Parte anal\'ogica}{13}{subsection.3.1}%
-\contentsline {paragraph}{}{13}{section*.43}%
-\contentsline {paragraph}{Transmisor}{13}{section*.44}%
-\contentsline {paragraph}{Receptor super-regenerativo}{13}{section*.45}%
-\contentsline {paragraph}{}{13}{section*.46}%
-\contentsline {subsubsection}{\numberline {3.1.1}Diseño del "front-end" del TRANSMISOR de RF anal\'ogico}{13}{subsubsection.3.1.1}%
-\contentsline {paragraph}{Introducci\'on}{14}{section*.47}%
-\contentsline {paragraph}{}{14}{section*.48}%
-\contentsline {paragraph}{Diseño del oscilador}{15}{section*.50}%
-\contentsline {paragraph}{Polarizaci\'on:}{15}{section*.51}%
-\contentsline {paragraph}{}{15}{section*.52}%
-\contentsline {paragraph}{}{15}{section*.53}%
-\contentsline {paragraph}{Modelo en pequeña señal:}{16}{section*.55}%
-\contentsline {paragraph}{}{16}{section*.56}%
-\contentsline {paragraph}{}{16}{section*.57}%
+\contentsline {paragraph}{}{13}{section*.44}%
+\contentsline {paragraph}{Transmisor}{14}{section*.45}%
+\contentsline {paragraph}{Receptor super-regenerativo}{14}{section*.46}%
+\contentsline {paragraph}{}{14}{section*.47}%
+\contentsline {subsubsection}{\numberline {3.1.1}Diseño del "front-end" del TRANSMISOR de RF anal\'ogico}{14}{subsubsection.3.1.1}%
+\contentsline {paragraph}{Introducci\'on}{14}{section*.48}%
+\contentsline {paragraph}{}{14}{section*.49}%
+\contentsline {paragraph}{Diseño del oscilador}{15}{section*.51}%
+\contentsline {paragraph}{Polarizaci\'on:}{15}{section*.52}%
+\contentsline {paragraph}{}{16}{section*.53}%
+\contentsline {paragraph}{}{16}{section*.54}%
+\contentsline {paragraph}{Modelo en pequeña señal:}{17}{section*.56}%
+\contentsline {paragraph}{}{17}{section*.57}%
 \contentsline {paragraph}{}{17}{section*.58}%
 \contentsline {paragraph}{}{17}{section*.59}%
 \contentsline {paragraph}{}{17}{section*.60}%
 \contentsline {paragraph}{}{17}{section*.61}%
-\contentsline {paragraph}{}{17}{section*.63}%
-\contentsline {paragraph}{}{17}{section*.64}%
-\contentsline {paragraph}{Antena}{17}{section*.65}%
-\contentsline {paragraph}{}{17}{section*.66}%
+\contentsline {paragraph}{}{18}{section*.62}%
+\contentsline {paragraph}{}{18}{section*.64}%
+\contentsline {paragraph}{}{18}{section*.65}%
+\contentsline {paragraph}{Antena}{18}{section*.66}%
 \contentsline {paragraph}{}{18}{section*.67}%
-\contentsline {paragraph}{}{18}{section*.68}%
-\contentsline {paragraph}{}{18}{section*.69}%
-\contentsline {paragraph}{}{18}{section*.70}%
-\contentsline {paragraph}{Resultado de la Simulaci\'on}{18}{section*.71}%
-\contentsline {paragraph}{}{18}{section*.72}%
-\contentsline {paragraph}{}{18}{section*.74}%
-\contentsline {paragraph}{Resultado de la pr\'actica}{19}{section*.77}%
-\contentsline {subsubsection}{\numberline {3.1.2}Diseño del "front-end" del RECEPTOR de RF anal\'ogico}{19}{subsubsection.3.1.2}%
-\contentsline {paragraph}{Introducci\'on}{19}{section*.78}%
-\contentsline {paragraph}{Polarización}{20}{section*.80}%
-\contentsline {paragraph}{Parte oscilador RF}{20}{section*.81}%
-\contentsline {paragraph}{Modelo en pequeña señal:}{20}{section*.82}%
-\contentsline {paragraph}{}{21}{section*.83}%
-\contentsline {paragraph}{}{21}{section*.85}%
-\contentsline {paragraph}{}{21}{section*.86}%
+\contentsline {paragraph}{}{19}{section*.68}%
+\contentsline {paragraph}{}{19}{section*.69}%
+\contentsline {paragraph}{}{19}{section*.70}%
+\contentsline {paragraph}{}{19}{section*.71}%
+\contentsline {paragraph}{Resultado de la Simulaci\'on}{19}{section*.72}%
+\contentsline {paragraph}{}{19}{section*.73}%
+\contentsline {paragraph}{}{19}{section*.75}%
+\contentsline {paragraph}{Resultado de la pr\'actica}{20}{section*.78}%
+\contentsline {subsubsection}{\numberline {3.1.2}Diseño del "front-end" del RECEPTOR de RF anal\'ogico}{20}{subsubsection.3.1.2}%
+\contentsline {paragraph}{Introducci\'on}{20}{section*.79}%
+\contentsline {paragraph}{Polarización}{21}{section*.81}%
+\contentsline {paragraph}{Parte oscilador RF}{21}{section*.82}%
+\contentsline {paragraph}{Modelo en pequeña señal:}{21}{section*.83}%
+\contentsline {paragraph}{}{22}{section*.84}%
+\contentsline {paragraph}{}{22}{section*.86}%
 \contentsline {paragraph}{}{22}{section*.87}%
-\contentsline {paragraph}{Parte quench-signal}{22}{section*.88}%
-\contentsline {paragraph}{}{22}{section*.89}%
-\contentsline {paragraph}{Antena ??}{22}{section*.90}%
-\contentsline {paragraph}{Resultado simulaci\'on}{23}{section*.91}%
-\contentsline {paragraph}{}{23}{section*.92}%
+\contentsline {paragraph}{}{23}{section*.88}%
+\contentsline {paragraph}{Parte quench-signal}{23}{section*.89}%
+\contentsline {paragraph}{}{23}{section*.90}%
+\contentsline {paragraph}{Antena ??}{23}{section*.91}%
+\contentsline {paragraph}{Resultado simulaci\'on}{23}{section*.92}%
 \contentsline {paragraph}{}{23}{section*.93}%
-\contentsline {paragraph}{}{23}{section*.95}%
-\contentsline {paragraph}{Resultado práctico}{24}{section*.97}%
+\contentsline {paragraph}{}{23}{section*.94}%
+\contentsline {paragraph}{}{23}{section*.96}%
+\contentsline {paragraph}{Resultado práctico}{24}{section*.98}%
 \contentsline {subsection}{\numberline {3.2}Parte digital}{24}{subsection.3.2}%
-\contentsline {paragraph}{Introducci\'on}{24}{section*.98}%
-\contentsline {paragraph}{Configuraci\'on del entorno de trabajo}{24}{section*.99}%
-\contentsline {subsubsection}{\numberline {3.2.1}Diseño del demodulador digital para la recepci\'on}{24}{subsubsection.3.2.1}%
-\contentsline {paragraph}{Objetivo}{24}{section*.100}%
-\contentsline {paragraph}{Contador de frecuencia}{25}{section*.101}%
-\contentsline {paragraph}{}{25}{section*.102}%
+\contentsline {paragraph}{Introducci\'on}{24}{section*.99}%
+\contentsline {paragraph}{Configuraci\'on del entorno de trabajo}{24}{section*.100}%
+\contentsline {subsubsection}{\numberline {3.2.1}Diseño del demodulador digital para la recepci\'on}{25}{subsubsection.3.2.1}%
+\contentsline {paragraph}{Objetivo}{25}{section*.101}%
+\contentsline {paragraph}{Contador de frecuencia}{25}{section*.102}%
 \contentsline {paragraph}{}{25}{section*.103}%
 \contentsline {paragraph}{}{25}{section*.104}%
-\contentsline {paragraph}{}{25}{section*.105}%
-\contentsline {paragraph}{}{25}{section*.106}%
-\contentsline {subsubsection}{\numberline {3.2.2}Diseño del codificador digital para la transmisi\'on}{27}{subsubsection.3.2.2}%
-\contentsline {paragraph}{Introducción}{27}{section*.107}%
-\contentsline {paragraph}{Configuraci\'on de reloj}{27}{section*.108}%
-\contentsline {paragraph}{Codificaci\'on de los mensajes}{27}{section*.109}%
-\contentsline {section}{\numberline {4}Cronolog\'ia del proyecto y diagrama de Grant}{30}{section.4}%
-\contentsline {paragraph}{}{30}{section*.111}%
+\contentsline {paragraph}{}{26}{section*.105}%
+\contentsline {paragraph}{}{26}{section*.106}%
+\contentsline {paragraph}{}{26}{section*.107}%
+\contentsline {subsubsection}{\numberline {3.2.2}Diseño del codificador digital para la transmisi\'on}{28}{subsubsection.3.2.2}%
+\contentsline {paragraph}{Introducción}{28}{section*.108}%
+\contentsline {paragraph}{Configuraci\'on de reloj}{28}{section*.109}%
+\contentsline {paragraph}{Codificaci\'on de los mensajes}{28}{section*.110}%
+\contentsline {section}{\numberline {4}Cronolog\'ia del proyecto y diagrama de Grant}{31}{section.4}%
+\contentsline {paragraph}{}{31}{section*.112}%
 \contentsline {subsection}{\numberline {4.1}transmisor FM a varactor}{31}{subsection.4.1}%
-\contentsline {paragraph}{Desarrollo técnico}{31}{section*.112}%
-\contentsline {paragraph}{}{31}{section*.113}%
-\contentsline {paragraph}{Motivos de reemplazo}{31}{section*.115}%
-\contentsline {subsection}{\numberline {4.2}receptor superheterodino FM}{31}{subsection.4.2}%
-\contentsline {paragraph}{Desarrollo técnico}{31}{section*.116}%
-\contentsline {paragraph}{}{32}{section*.117}%
-\contentsline {paragraph}{Motivos de reemplazo}{32}{section*.118}%
-\contentsline {subsection}{\numberline {4.3}M\'aquina de estados digital}{32}{subsection.4.3}%
-\contentsline {paragraph}{Desarrollo técnico}{32}{section*.119}%
-\contentsline {paragraph}{Motivos de reemplazo}{32}{section*.120}%
-\contentsline {subsection}{\numberline {4.4}Alternativa viable: conversi\'on directa}{32}{subsection.4.4}%
-\contentsline {paragraph}{Desarrollo técnico}{32}{section*.121}%
-\contentsline {paragraph}{Motivos de reemplazo}{33}{section*.122}%
-\contentsline {subsection}{\numberline {4.5}Diagrama de Grant}{33}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Resultados y conclusiones}{33}{section.5}%
-\contentsline {section}{\numberline {6}Bibliografía}{34}{section.6}%
-\contentsline {section}{\numberline {7}Indice de figuras}{34}{section.7}%
+\contentsline {paragraph}{Desarrollo técnico}{31}{section*.113}%
+\contentsline {paragraph}{}{31}{section*.114}%
+\contentsline {paragraph}{Motivos de reemplazo}{31}{section*.117}%
+\contentsline {subsection}{\numberline {4.2}receptor superheterodino FM}{32}{subsection.4.2}%
+\contentsline {paragraph}{Desarrollo técnico}{32}{section*.118}%
+\contentsline {paragraph}{}{33}{section*.119}%
+\contentsline {paragraph}{Motivos de reemplazo}{33}{section*.120}%
+\contentsline {subsection}{\numberline {4.3}M\'aquina de estados digital}{33}{subsection.4.3}%
+\contentsline {paragraph}{Desarrollo técnico}{33}{section*.121}%
+\contentsline {paragraph}{Motivos de reemplazo}{33}{section*.124}%
+\contentsline {subsection}{\numberline {4.4}Alternativa viable: conversi\'on directa}{33}{subsection.4.4}%
+\contentsline {paragraph}{Desarrollo técnico}{33}{section*.125}%
+\contentsline {paragraph}{Motivos de reemplazo}{34}{section*.126}%
+\contentsline {subsection}{\numberline {4.5}Diagrama de Grant}{34}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Resultados y conclusiones}{34}{section.5}%
+\contentsline {paragraph}{}{34}{section*.130}%
+\contentsline {paragraph}{}{35}{section*.131}%
+\contentsline {section}{\numberline {6}Bibliografía}{36}{section.6}%
+\contentsline {section}{\numberline {7}Indice de figuras}{36}{section.7}%
