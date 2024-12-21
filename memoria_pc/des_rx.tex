@@ -64,6 +64,7 @@ Debido a la dualidad con respecto al tx, la expresión de la función de transfe
 
 \paragraph{}
 Se obtiene la frecuencia de resonancia como $$\omega_0^2 = \frac{1}{L_1 \cdot (C_1 + C_2)}$$
+$$ f_0 = \frac{1}{2 \cdot \pi \cdot \sqrt{L_1 \cdot (C_1 + C_2)}} $$
 \paragraph{}
 Se obtiene el valor de la inductancia con la siguiente expresi\'on:
 \begin{equation}
@@ -101,12 +102,14 @@ Se pretende obtener la expresión para la función de transferencia de $H(s) = \
    \label{eq:Al_tx}
    H(s) = \frac{i_{L_2}}{v_i} = \frac{(s\cdot R_3 \cdot C_5 + 1)}{R_3 \cdot ( s\cdot r_s \cdot C_5 + s^2 \cdot L_2 \cdot C_5 + 1)}
 \end{equation}
+\paragraph{}
+Se calcula la frecuencia de resonancia como $$\omega_0^2 = \frac{1}{L_2 \cdot C_5}$$
+$$ f_0 = \frac{1}{2 \cdot \pi \cdot \sqrt{L_2 \cdot C_5}} = \SI{495}{\kilo\hertz} $$
 %pero no en este caso la frecuencia de quench no se corresponde con la frecuencia de corte del filtro, ya que, el condensador no se descarga completamente en sus ciclos pues depende del transistor. 
 \paragraph{}
 En la figura \ref{fig:quench-explain}, se muestra por un lado, a la izquierda, la respuesta en frequencia del circuito de quench, compuesto por: $L_2, R_3, y C_5$ en el esquemático del transmisor. La respuesta en frecuencia es simulada para varios valores de $L_2$, y se indica con cursores, para $L_2 = \SI{47}{\micro\henry}$ el valor de su frecuencia de corte $f_c = \SI{483}{\kilo\hertz}$. 
-Por otro lado, a la derecha, se muestra la simulación en función del tiempo del receptor. Se hace hincapié en la corriente de $L_2$, simulada en frecuencia. Esta, está cursorizada de forma aproximada al valor que debería tener si a través de la bobina pudiera conducir corriente negativa (?), siendo este valor igual que la frecuencia de corte simulada en frecuencia. 
-Por último, 
- 
+Por otro lado, a la derecha, se muestra la simulación en función del tiempo del receptor. Se hace hincapié en la corriente de $L_2$. Esta, está cursorizada de forma aproximada al valor que debería tener si a través de la bobina pudiera conducir corriente negativa, siendo este valor igual que la frecuencia de corte simulada en frecuencia.
+La corriente de la inductancia $L_2$ no puede ser negativa pues, en este sentido de circulación, la unión PN base emisor se encuentra inversamente polarizada y el condensador de realimentación tiene alta impedancia para frecuencias bajas. 
 
 \begin{figure}[h!]
     \centering
@@ -115,30 +118,56 @@ Por último,
     \label{fig:quench-explain}
 \end{figure}
 
-\paragraph{Antena ??} 
-a transformador de impedancias  y condensador para evitar al tocar con mano. Si no se hace explicar el acople magnetico con las bobinas
+\paragraph{}
+REF Tipler pag 869. descarga condensador
+En cualquier caso, la frecuencia real de quench no es la calculada en la ecuacion REF, sino que la señal de quench se genera como se muestra en la figura \ref{fig:quench-explain}. 
+En el momento que $i_{L_2} = 0$, la tensión en $V_{quench}$ se descarga a trav\'es de $R_3$, siguiendo $\tau$ de $C_3$ y $R_3$ hasta que $V_B - V_{quench} < 0.7$, reiniciando el ciclo.
+el tiempo de subida depende tanto del tiempo que tarda en reconstruirse la oscilaci\'on como de la constante de elongación del sistema de la ecuación REF. Esta constante viene dada por $r_s y C_5$ EXPRESION y define $v_{oi}$.
+Se calcula aproximadamente la frecuencia de quench siguiendo los valores de la figura \ref{fig:quench-explain}. 
+\begin{align*} 
+   &i_{C_5} + i_{R_3} = 0 \\
+   &C_5 \cdot \frac{dv_0(t)}{dt} + \frac{v_0(t)}{R_3} = 0 \\
+   &\int_{v_{0i}}^{v_0(t)} \frac{1}{v_0(t)} \, dv_0(t) = \int_{0}^{t} \frac{-1}{R_3 \cdot C_5} \, dt \\
+\end{align*}
 
-\paragraph{Resultado simulaci\'on} Se muestran las medidas simuladas de tension de mayor inter\'es con la nomenclatura de la figura FIG RF
-captura de oscilacion de rf, v en rc y vout
-captura con senal de entrada vout cambia de frecuencia
+\begin{equation}
+   \label{eq:des_rx-rc}
+   ln \left( \frac{v_0(t)}{v_{oi}} \right) = \frac{-t}{R_3 \cdot C_5}
+\end{equation}
+\begin{equation}
+%   \label{eq:Al_tx}
+   \frac{v_0(t)}{v_{oi}} = e^{\left( \frac{-t}{R_3 \cdot C_5} \right)}
+\end{equation}
 
+\paragraph{}
+Se usa \ref{eq:des_rx-rc} para calcular el tiempo de descarga con los valores de la figura \ref{fig:quench-explain}.
+$$ t_{disch} = \SI{3.62}{\micro\second} $$
+A este tiempo, se le debe sumar el tiempo de subida que viene dado por el tiempo de construcción de la oscilación junto con el tiempo de subida del sistema del circuito quench.
+Este tiempo, se aproximar\'a como $t_{rise} \approx t_{disch}$. Por lo que $$t_{quench} \approx 2 \cdot t_{disch}$$ y por tanto $$f_{quench} = \frac{1}{t_{quench}}  = \SI{138}{\kilo\hertz} $$
+\paragraph{}
+Empíricamente esta frecuencia resulta en $f_{quench} = \SI{67}{\kilo\hertz}$. Esto es debido a que los valores en la simulación difieren bastante de la realidad, pero no las formas de onda. El ajuste de la frecuencia de quench empírica se realiza probando distintos valores de $C_5$ y $L_2$, pues $R_3$ se fija al polarizar el transistor.
+
+\paragraph{Resultado simulaci\'on} 
+%Se muestran las medidas simuladas de tension de mayor inter\'es con la nomenclatura de la figura FIG RF
+%captura de oscilacion de rf, v en rc y vout
+%captura con senal de entrada vout cambia de frecuencia
 \paragraph{}
 En el apartado de simulación trata de obtener una represaentación gráfica de lo desarrollado anteriormente sobre el receptor. Por ello, en la figura REF se observan los puntos de interés del circuito como son $V_C$, $V_{quench}$ y $V_{B}$, además de añadir la diferencia$V_B - V_{quench}$ como $V(B,quench)$. Estas cuatro medidas son suficientes para entender el ciclo de paro y marcha del transistor.
 \paragraph{}
 Como se puede observar en la figura \ref{fig:simrx_zoom}, a medida que se construye la oscilación, el valor medio de la tensión de $V_{C}$, es decir $V_{quench}$, aumenta hasta que finalmente, la diferencia $V_B - V_{quench} < \SI{.7}{\volt}$ hace desaparecer la oscilaci\'on. Este corte provoca que el valor medio de $V_C$ descienda, y por tanto $V_{quench}$, provocando finalmente que la diferencia $V_B - V_{quench} > \SI{.7}{\volt}$ reactivando al transistor y reiniciando el ciclo de oscilaci\'on.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
-    \includegraphics[scale=1, width=1\textwidth]{simrx_zoom}
+    \includegraphics[scale=.8, width=.8\textwidth]{simrx_zoom}
     \caption{Simulación de puntos de interés en varios ciclos ampliados}
     \label{fig:simrx_zoom}
 \end{figure}
 
 \paragraph{}
 Se añade también, en la figura \ref{fig:simrx_vout}, la forma de onda de la tensión de salida $V_{out}$, que es la señal de entrada al microcontrolador atmega328p, el cual se encargará de demodular la señal. Esta señal debe ser una señal digital entre \SI{0}{\volt} y \SI{5}{\volt}.
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
-    \includegraphics[scale=1, width=1\textwidth]{simrx_vout}
+    \includegraphics[scale=.8, width=.8\textwidth]{simrx_vout}
     \caption{Simulación de $V_{out}$ junto a $V_{quench}$}
     \label{fig:simrx_vout}
 \end{figure}
@@ -146,21 +175,21 @@ Se añade también, en la figura \ref{fig:simrx_vout}, la forma de onda de la te
 \paragraph{Resultado práctico} En este caso se muestran las medidas tomadas en el apartado de simulacion, esta vez tomadas en el circuito real. Las medidas se toman usando un osciloscopio. 
 La configuración es la misma que en el en el apartado REF del transmisor. En este caso al disponer de dos canales se muestran en la figura REF los puntos $V_{quench}$ (rojo) y $V_{C}$ (amarillo).
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
-    \includegraphics[scale=1, width=1\textwidth]{exp_work_freq.png}
+    \includegraphics[scale=.7, width=.7\textwidth]{exp_work_freq.png}
     \caption{experimental de puntos de interés en varios ciclos ampliados}
     \label{fig:simrx_zoom}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
-    \includegraphics[scale=1, width=1\textwidth]{exp_quench+VC.PNG}
+    \includegraphics[scale=.7, width=.7\textwidth]{exp_quench+VC.PNG}
     \caption{experimental de puntos de interés en varios ciclos ampliados}
     \label{fig:simrx_zoom}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
-    \includegraphics[scale=1, width=1\textwidth]{exp_quench+vout.png}
+    \includegraphics[scale=.7, width=.7\textwidth]{exp_quench+vout.png}
     \caption{experimental de puntos de interés en varios ciclos ampliados}
     \label{fig:simrx_zoom}
 \end{figure}
