@@ -73,15 +73,47 @@ PONER DEL OCTAVE
 $$ L_1 = \SI{500}{\nano\henry} $$
 
 
-\paragraph{Parte quench-signal} AISLAR CIRCUITO, REALIZAR C\'ALCULOS, L(CHOKE) R Y C
+\paragraph{Parte quench-signal} %AISLAR CIRCUITO, REALIZAR C\'ALCULOS, L(CHOKE) R Y C
+\paragraph{}
 En este caso al contrario que en el receptor, la bobina de RFC no podrá ser arbitrariamente grande, pues debe permitir el paso de la frecuencia de quench pero no de la señal de RF.
 %El par RC provocan la oscilación de paro y marcha del circuito, pues al realizar los cálculos, se observa que sus valores fijan el coeficiente de amortiguación del sistema. 
 %i think i have now understood, the value of L2 is critical because it needs to be as large as possible to be a high impedance for rf, but an intermediate impedance to quench. This quench frequency will be always the higher possible that could be amplified in the possitive loop and at the same time can pass in the low pass filter no?
-La explicación del valor de la frecuencia de quench no es algo trivial. Para poder dar explicación al fenómeno es necesario una explicación analítica antes de realizar los cálculos.
-En la figura QUENCH-EXPLAIN se observa la simulación de la generación de un ciclo de oscilación y paro del mismo. Partiendo de una tensión $V_B - V_{quench} \approx \SI{0.7}{\volt}$, la oscilación comienza a generarse. Se toma como referencia $V_{quench}$ y no $V_E$ debido a que $V_E$ proporciona información tanto de las frecuencias de RF como las de frecuencia de quench, mientras que $V_{quench}$ proporciona la información de las frecuencias de interés por actuar como filtro paso bajo. 
-El transistor, en configuración de base común, implica que la tensión de base $V_B$ es fija, mientras que $V_E$ varía. Mientras que la frecuencia de RF evidententemente satura y corta el transistor en numerosos ciclos por segundo, quien importa es quien corta la oscilación. A medida que la oscilación, al encontrarse dentro de un bucle de realimentación positiva, va incrementando su amplitud, la tensión media $V_{quench}$, también aumenta. En el momento que $V_{quench}$ aumenta de forma que $V_B - V_{quench} < 0.7$, el transistor se corta, matando la oscilación y provocando que la tensión $V_{quench}$ descienda, volviendo de esta forma a completar el ciclo.
+En primer lugar, es necesario una explicación analítica del fenómeno para facilitar el entendimiento antes de realizar los cálculos de interés.
+El transistor trabaja en configuración de base común. Esto implica que la tensión de base $V_B$ es fija, mientras que $V_E$ varía en el tiempo cortando y activando el transistor. Para un mejor entendimiento, se habla de $V_E$ como $V_quench$ indistintamente, pues $V_quench$ es $V_E$ tras el filtro paso bajo, eliminando visualmente la componente RF. La componente de baja frecuencia es quien corta el transistor de forma general. En la figura \ref{fig:quench-explain} se observa de forma gráfica la explicación dada a continuación.
 \paragraph{}
-Para calcular la frecuencia de quench, se debe tener en cuenta el filtro paso bajo formado por $L2, Cx, R3$ REVISAR, pero no en este caso la frecuencia de quench no se corresponde con la frecuencia de corte del filtro, ya que, el condensador no se descarga completamente en sus ciclos pues depende del transistor. 
+Partiendo de una tensión $V_B - V_{quench} \approx \SI{0.7}{\volt}$, la oscilación comienza a generarse.
+%Se toma como referencia $V_{quench}$ y no $V_E$ debido a que $V_E$ proporciona información tanto de las frecuencias de RF como las de frecuencia de quench, mientras que $V_{quench}$ proporciona la información de las frecuencias de interés por actuar como filtro paso bajo. 
+%Mientras que la frecuencia de RF evidententemente satura y corta el transistor en numerosos ciclos por segundo, quien importa es quien corta la oscilación. 
+A medida que la oscilación, al encontrarse dentro de un bucle de realimentación positiva, va incrementando su amplitud, la tensión media $V_{quench}$, también aumenta. En el momento que $V_{quench}$ aumenta de forma que $V_B - V_{quench} < 0.7$, el transistor se corta, matando la oscilación y provocando que la tensión $V_{quench}$ descienda, volviendo de esta forma a completar el ciclo.
+\paragraph{}
+Para calcular la frecuencia de quench, se debe tener en cuenta el filtro paso bajo formado por $L_2, C_5 y R_3$. 
+Se calcula la función de transferencia del conjunto de estos tres elementos al cual se le llamará cicuito de quench.
+Se pretende obtener la expresión para la función de transferencia de $H(s) = \frac{i_{L_2}}{v_i}$. 
+
+\begin{align*} 
+   v_i &= i_{L_2} \cdot ( Z_1 + Z_2 ) \\
+   Z_1 &= s\cdot L_2 + r_s \\
+   Z_2 &= \frac{R_3}{s \cdot R_3 \cdot C_5} \\
+   \frac{i_{L_2}}{v_i} &= \frac{1}{( Z_1 + Z_2 )} = \frac{(s\cdot R_3 \cdot C_5 + 1)}{rs \cdot (s\cdot R_3 \cdot C_5 + 1) + s \cdot L_2 \cdot(s\cdot R_3 \cdot C_5 + 1) + R_3 } \\
+\end{align*}
+
+\begin{equation}
+   \label{eq:Al_tx}
+   H(s) = \frac{i_{L_2}}{v_i} = \frac{(s\cdot R_3 \cdot C_5 + 1)}{R_3 \cdot ( s\cdot r_s \cdot C_5 + s^2 \cdot L_2 \cdot C_5 + 1)}
+\end{equation}
+%pero no en este caso la frecuencia de quench no se corresponde con la frecuencia de corte del filtro, ya que, el condensador no se descarga completamente en sus ciclos pues depende del transistor. 
+\paragraph{}
+En la figura \ref{fig:quench-explain}, se muestra por un lado, a la izquierda, la respuesta en frequencia del circuito de quench, compuesto por: $L_2, R_3, y C_5$ en el esquemático del transmisor. La respuesta en frecuencia es simulada para varios valores de $L_2$, y se indica con cursores, para $L_2 = \SI{47}{\micro\henry}$ el valor de su frecuencia de corte $f_c = \SI{483}{\kilo\hertz}$. 
+Por otro lado, a la derecha, se muestra la simulación en función del tiempo del receptor. Se hace hincapié en la corriente de $L_2$, simulada en frecuencia. Esta, está cursorizada de forma aproximada al valor que debería tener si a través de la bobina pudiera conducir corriente negativa (?), siendo este valor igual que la frecuencia de corte simulada en frecuencia. 
+Por último, 
+ 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=1, width=1\textwidth]{quench-explain}
+    \caption{quench explain}
+    \label{fig:quench-explain}
+\end{figure}
 
 \paragraph{Antena ??} 
 a transformador de impedancias  y condensador para evitar al tocar con mano. Si no se hace explicar el acople magnetico con las bobinas
