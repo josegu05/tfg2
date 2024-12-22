@@ -152,17 +152,40 @@ Primero impedancia de salida del circuito sin bobina (usada de primario), y gene
 segundo, modelo del transformador y transformacion de impedancias a cable de 1k aprox?
 simulacion de potencia disipada por la antena?
 \paragraph{}
-Para asegurar la máxima transferencia de potencia de señal a la antena se diseña un transformador como adaptador de impedancias entre el transmisor y la antena. Se considera esta opción como la alternativa más sencilla de implementar y que no carga al circuito, ya que para producir la oscilación, el transmisor es bastante sensible.
+Para mejorar la eficiencia de radiación del transmisor, se debe garantizar la máxima transferencia de potencia de señal a la antena.
+Para poder adaptar la impedancia de salida del circuito a la impedancia de la antena, se diseña un transformador como adaptador de impedancias. 
+Se considera esta opción como la alternativa más sencilla de implementar debido a que el circuito necesita una impedancia de salida bastante alta para poder producir la oscilación.
+El método del transformador adapta las impedancias considerablemente bien, mediante un acople magnético, es decir sin cargar el circuito.
 \paragraph{}
-El objetivo del diseño es calcular la relación del número de vueltas óptimo entre el primario y el secundario. Se sigue el siguiente modelo de relación de impedancias en un transformador.
+El objetivo del diseño es calcular la relación del número de vueltas óptimo entre el primario y el secundario para mejorar la transferencia de potencia entre el transmisor y la antena. 
+Para facilitar los cálculos, pues existen demasiados parámetros reales que se deben aproximar, se seguirá un modelo ideal sencillo del transformador. Esto es debido a que solo se busca mejorar el aspecto de la transmisión de potencia que se tiene de base.
+Se sigue el siguiente modelo de relación de impedancias en un transformador.
+
 \paragraph{}
-METER FOTO MODELO TRANSFORMADOR
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=.7, width=.7\textwidth]{transformer}
+    \caption{Transformer model}
+    \label{fig:transformer}
+\end{figure}
 \paragraph{}
-Siguiendo el modelo de la figura REF, se obtienen las siguientes relaciones:
+Siguiendo el modelo de la figura \ref{fig:transformer}, se obtienen las siguientes relaciones:
+\begin{align*}
+   \frac{N_p}{N_s} = \frac{V_p}{V_s} &= \frac{V_p}{V_s} = n \\
+   Z_p &= V_p \cdot I_p \\
+   Z_s &= V_s \cdot I_s \\
+\end{align*}
+\begin{equation}
+   \label{eq:transformer}
+   \frac{Z_p}{Z_s} = n^2 
+\end{equation}
 %\equation
 %	Np/Ns = n = V2/V1 .. n^2 = zp/zs
 \paragraph{}
 En particular para el diseño propio se debe calcular tanto la impedancia de salida del transmisor como la resistencia de radiación de la entena utilizada para la frecuencia de trabajo.
+Se tiene que $Z_p = h_{ob}^{-1}$ y que la impedancia de la antena es aproximadamente $Z_s = R_{rad} = \SI{1}{\kilo\ohm}$
+Por lo que, se usa la ecuaci\'on \ref{eq:transformer} para obtener el ratio de vueltas óptimo siendo $$ n = \sqrt{\frac{Z_p}{Z_s}} = 10 $$
+Esta relación de vueltas óptima no es realizable pues, el bobinado primario se construye con ocho espiras. La relación de vueltas aproximada será de $ n = 8:1 $
 
 
 \paragraph{Resultado de la Simulaci\'on} SIMULACION LTSPICE
