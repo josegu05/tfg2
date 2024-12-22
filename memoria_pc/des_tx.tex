@@ -164,27 +164,28 @@ Se sigue el siguiente modelo de relación de impedancias en un transformador.
 \paragraph{}
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=.7, width=.7\textwidth]{transformer}
+    \includegraphics[scale=.7, width=.7\textwidth]{transformer2}
     \caption{Transformer model}
     \label{fig:transformer}
 \end{figure}
 \paragraph{}
+Referencia a transformer model 
 Siguiendo el modelo de la figura \ref{fig:transformer}, se obtienen las siguientes relaciones:
 \begin{align*}
-   \frac{N_p}{N_s} = \frac{V_p}{V_s} &= \frac{V_p}{V_s} = n \\
-   Z_p &= V_p \cdot I_p \\
-   Z_s &= V_s \cdot I_s \\
+   \frac{N_1}{N_2} = \frac{E_1}{E_2} &= \frac{V_1}{V_2} = \frac{I_2}{I_1} = n \\
+   Z_1 &= V_1 \cdot I_1 \\
+   Z_2 &= V_2 \cdot I_2 \\
 \end{align*}
 \begin{equation}
    \label{eq:transformer}
-   \frac{Z_p}{Z_s} = n^2 
+   \frac{Z_1}{Z_2} = n^2 
 \end{equation}
 %\equation
 %	Np/Ns = n = V2/V1 .. n^2 = zp/zs
 \paragraph{}
 En particular para el diseño propio se debe calcular tanto la impedancia de salida del transmisor como la resistencia de radiación de la entena utilizada para la frecuencia de trabajo.
-Se tiene que $Z_p = h_{ob}^{-1}$ y que la impedancia de la antena es aproximadamente $Z_s = R_{rad} = \SI{1}{\kilo\ohm}$
-Por lo que, se usa la ecuaci\'on \ref{eq:transformer} para obtener el ratio de vueltas óptimo siendo $$ n = \sqrt{\frac{Z_p}{Z_s}} = 10 $$
+Se tiene que $Z_1 = h_{ob}^{-1}$ y que la impedancia de la antena es aproximadamente $Z_2 = R_{rad} = \SI{1}{\kilo\ohm}$
+Por lo que, se usa la ecuaci\'on \ref{eq:transformer} para obtener el ratio de vueltas óptimo siendo $$ n = \sqrt{\frac{Z_1}{Z_2}} = 10 $$
 Esta relación de vueltas óptima no es realizable pues, el bobinado primario se construye con ocho espiras. La relación de vueltas aproximada será de $ n = 8:1 $
 
 

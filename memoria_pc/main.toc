@@ -68,17 +68,17 @@
 \contentsline {paragraph}{}{19}{figure.caption.71}%
 \contentsline {paragraph}{}{19}{section*.72}%
 \contentsline {paragraph}{}{19}{section*.73}%
-\contentsline {paragraph}{Resultado de la Simulaci\'on}{19}{section*.74}%
+\contentsline {paragraph}{Resultado de la Simulaci\'on}{20}{section*.74}%
 \contentsline {paragraph}{}{20}{section*.75}%
 \contentsline {paragraph}{}{20}{section*.77}%
-\contentsline {paragraph}{Resultado de la pr\'actica}{21}{section*.80}%
-\contentsline {paragraph}{}{21}{section*.82}%
-\contentsline {subsubsection}{\numberline {3.1.2}Diseño del "front-end" del RECEPTOR de RF anal\'ogico}{21}{subsubsection.3.1.2}%
-\contentsline {paragraph}{Introducci\'on}{21}{section*.83}%
+\contentsline {paragraph}{Resultado de la pr\'actica}{20}{section*.80}%
+\contentsline {paragraph}{}{20}{section*.82}%
+\contentsline {subsubsection}{\numberline {3.1.2}Diseño del "front-end" del RECEPTOR de RF anal\'ogico}{20}{subsubsection.3.1.2}%
+\contentsline {paragraph}{Introducci\'on}{20}{section*.83}%
 \contentsline {paragraph}{Polarización}{21}{section*.85}%
 \contentsline {paragraph}{Parte oscilador RF}{22}{section*.86}%
 \contentsline {paragraph}{Modelo en pequeña señal:}{22}{section*.87}%
-\contentsline {paragraph}{}{22}{section*.88}%
+\contentsline {paragraph}{}{23}{section*.88}%
 \contentsline {paragraph}{}{23}{section*.90}%
 \contentsline {paragraph}{}{23}{section*.91}%
 \contentsline {paragraph}{}{23}{section*.92}%
