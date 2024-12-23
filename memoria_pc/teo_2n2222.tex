@@ -1,11 +1,11 @@
 \paragraph{}
-Un transistor es un dispositivo semiconductor de tres terminales, entrada, salida y terminal común, capaz de amplificar la corriente que circula a través de él. 
-Las numerosas técnicas de fabricación de estos dispositivos, dan lugar a los distintos tipos de transistores que existen: BJT, MOSFET, JFET, entre otros.
-En este trabajo se utilizarán transistores bipolares BJT, tanto NPN como PNP, para la realización del enlace de radio frecuencia, mientras que, el microconrtolador utilizado en el apartado digital, utiliza principalmente transistores de efecto campo MOSFET.
+Un transistor es un dispositivo semiconductor de tres terminales: entrada, salida y terminal común, capaz de amplificar la corriente que circula a través de él. 
+Las numerosas técnicas de fabricación de estos dispositivos dan lugar a los distintos tipos de transistores que existen: BJT, MOSFET, JFET, entre otros.
+En este trabajo se utilizarán transistores bipolares BJT, tanto NPN como PNP, para la realización del enlace de radio frecuencia, mientras que el microconrtolador utilizado en el apartado digital utiliza principalmente transistores de efecto campo MOSFET.
 \paragraph{}
-Los transistores BJT logran la amplificación gracias a dos uniones p-n interconectadas entre sí, donde, un pequeño flujo de corriente de entrada, regula un gran flujo de corriente de salida. Por otro lado, en un transistor MOSFET la amplificación se logra por medio de la regulación del estrechamiento del canal por donde circula la corriente, aplicando una tensión inversa.
+Los transistores BJT logran la amplificación gracias a dos uniones p-n interconectadas entre sí, donde un pequeño flujo de corriente de entrada regula un gran flujo de corriente de salida. Por otro lado, en un transistor MOSFET la amplificación se logra por medio de la regulación del estrechamiento del canal por donde circula la corriente, aplicando una tensión inversa.
 \paragraph{Polarizaci\'on:}
-Para lograr que un transistor realice la función de amplificación, es necesario proporcionar al dispositivo, las tensiones de trabajo adecuadas para que funcione de forma deseada. Esta acci\'on es conocida como polarizaci\'on del transistor.
+Para lograr que un transistor realice la función de amplificación, es necesario proporcionar al dispositivo las tensiones de trabajo adecuadas para que funcione de forma deseada. Esta acci\'on es conocida como polarizaci\'on del transistor.
 En función de la polarización aplicada, el transistor puede trabajar de diferentes formas, algunas de las cuales son: activa directa, donde se trabaja en amplificación de señales; o corte y saturación, que son utilizadas principalmente en circuitos digitales.
 Existen numerosas técnicas para lograr la polarización deseada, estas serán expuestas en los apartados de desarrollo correspondientes.
 
@@ -29,7 +29,7 @@ Considerando una polarización en activa directa, donde la amplificación de se�
 Como se ha mencionado anteriormente, si se dispone de un transistor que trabaja en activa directa, se consigue la amplificación de las señales. 
 Debido a que el transitor es un dispositivo no lineal, la señal introducida debe ser suficientemente pequeña para poder aproximar al dispositivo como un elemento lineal.
 Por tanto, a la hora de trabajar con pequeña señal, se modelará al transistor como un cuadripolo lineal de dos puertos. 
-En función de las variables de entrada o salida que se elijan, el modelo circuital del cuadripolo variará. El modelo principal con el que se trabajará será el de parámetros híbridos, el cual, se caracteriza por usar como variables independientes $i_1, v_2$ y dependientes $i_2, v_1$. Cabe mencionar la existencia de otras configuraciones de parámetros característicos como son el modelo de admitancias, cuyas variables independientes son $v_1, v_2$, o el modelo de impedancias, cuyas variables independientes son $i_1, i_2$.
+En función de las variables de entrada o salida que se elijan, el modelo circuital del cuadripolo variará. El modelo principal con el que se trabajará será el de parámetros híbridos, el cual se caracteriza por usar como variables independientes $i_1, v_2$ y dependientes $i_2, v_1$. Cabe mencionar la existencia de otras configuraciones de parámetros característicos como son el modelo de admitancias, cuyas variables independientes son $v_1, v_2$, o el modelo de impedancias, cuyas variables independientes son $i_1, i_2$.
 El modelo general del cuadripolo lineal así como sus parámetros de entrada y salida se muestran en la figura \ref{fig:1} a continuaci\'on:
 \begin{figure}[h]
     \centering
@@ -136,4 +136,4 @@ Seguidamente, se establecen las relaciones de los parámetros híbridos en emiso
 %\]
    \end{equation}
 
-Por último, cabe mencionar que los transistores por su construcción física poseen elementos denominados parásitos. Estos elementos se modelan, de manera circuital principalmente como condensadores, y pueden influir en los valores de las impedancias de entrada, salida o realimentaciones. Estos efectos se incluirán cuando sean necesarios en el desarrollo del proyecto.
+Por último, cabe mencionar que los transistores, por su construcción física, poseen elementos denominados parásitos. Estos elementos se modelan, de manera circuital principalmente como condensadores, y pueden influir en los valores de las impedancias de entrada, salida o realimentaciones. Estos efectos se incluirán cuando sean necesarios en el desarrollo del proyecto\footnote{Franco Peláez, F. J., González Díaz, G., & Mártil de la Plaza, I. (n.d.). \textit{Apuntes de electrónica analógica}.}.
