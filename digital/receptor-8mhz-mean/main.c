@@ -6,15 +6,8 @@
 // definiciones de tipos estandar
 
 //#define WAIT_TIME 1000
-//#define COUNT_MAX 113
-//#define COUNT_MIN 113
-//
-//uint16_t volatile decoding = 0;
-//uint16_t volatile count = 0;
-//uint16_t volatile mean = 0;
-//uint8_t volatile times = 0;
-// ----nuevas--
 #define GATE_COUNT_LIMIT 4
+#define TIMES_STABLE_BOOT 3
 #define THRESHOLD 1.0
 uint8_t volatile decoding = 0;
 uint32_t volatile count = 0;
@@ -22,14 +15,6 @@ float mean = 0;
 float last_mean = 0;
 uint16_t volatile gate_times = 0;
 
-// AJUSTAR TIEMPOS DE LOS TIMERS CON EL OSCILOSCOPIO Y 2 SONDAS
-
-//void set_sys_clk_prescaler_1(void)
-//{
-//   // setting clk_sys prescaler to 1 sets clk_sys = 8 MHz
-//   CLKPR = (1 <<  CLKPCE);
-//   CLKPR = 0;
-//}
 void setup_timer_0_counter(void)
 {
    // set configuration registers
@@ -79,76 +64,7 @@ void setup_timer_2_gate(void)
 ISR(TIMER2_COMPA_vect)
 {
    // gate
-   //gate_times = 1;
    gate_times++;
-   /*
-   // nuevo -------
-   // el 2 y el >> 1 dependen entre si, deben ser potencias de 2 para facilitar la division
-   if(times >= 4)
-   {
-      //hacer la media de count actual
-      count = count >> 2;
-      //comparar con mean pasada
-      if(count > mean)
-      {
-	 // pinout PB0
-	 // digital_out = 0;
-	 //decoding = (decoding + 1) % sizeof(uint16_t);
-	 PORTB &= ~(1 << PORTB0);
-      }
-      else
-	 PORTB |= (1 << PORTB0);
-
-      //actualizar media
-      mean = count;
-      times = 0;
-      count = 0;
-   }
-   else
-      times++;
-   // --------------
-   */
-
-   if(count > COUNT_MAX)
-   {
-      // pinout PB0
-      // digital_out = 0;
-      decoding = (decoding + 1) % sizeof(uint16_t);
-      PORTB &= ~(1 << PORTB0);
-   }
-
-   //else
-   if(count < COUNT_MIN)
-   {
-	 PORTB |= (1 << PORTB0);
-      if(decoding > 2)
-      {
-	 // digital_out = 1;
-	       PORTD ^= (1 << PORTD5);
-
-	 switch (decoding)
-	 {
-	    case 4:
-	       // pd5 = 1;
-	       PORTD ^= (1 << PORTD5);
-	       break;
-	    case 6:
-	       // pd6 = 1;
-	       PORTD ^= (1 << PORTD6);
-	       break;
-	    case 8:
-	       // pd7 = 1;
-	       PORTD ^= (1 << PORTD7);
-	       break;
-	    default:
-	       break;
-	 }
-
-	 decoding = 0;
-      }
-   }
-
-   count = 0;
 }
 
 void setup_gpios(void)
@@ -162,11 +78,11 @@ void setup_gpios(void)
    PORTD &= ~(1 << PORTD7);
 }
 
-void wait_init(void)
-{
-      for(int i=0; i<WAIT_TIME; i++);
-}
-void startup (*uint8_t stable_boot)
+//void wait_init(void)
+//{
+//      for(int i=0; i<WAIT_TIME; i++);
+//}
+void startup (uint8_t* stable_boot)
 {      
    if (gate_times > GATE_COUNT_LIMIT)
    {
@@ -191,6 +107,12 @@ void startup (*uint8_t stable_boot)
       gate_times = 0;
       count = 0;
       // clear past interrupts
+      //TIFR2 |= (1 << OCF2B) |(1 << OCF2A) |(1 << TOV2); 
+      TIFR2 |=  (1 << OCF2A); 
+      TIFR0 |=  (1 << OCF0A); 
+      //reset timers
+      TCNT0 = 0;
+      TCNT2 = 0;
       // enable interrupts
       sei();
    }
@@ -203,15 +125,18 @@ int main(void)
    setup_timer_2_gate();
    setup_gpios();
 
-   //add startup function
-   while (stable_boot < 3)
+   //enable global interrupts
+   sei();
+
+   // while booting turn on led
+      PORTB |= (1 << PORTB0);
+   //startup function
+   while (stable_boot < TIMES_STABLE_BOOT)
    {
       startup(&stable_boot);
    }
-   // reset all interrupts and variables
-   //
-   //enable global interrupts
-   sei();
+   // turn off led
+      PORTB &= ~(1 << PORTB0);
 
    while(1)
    {
@@ -255,6 +180,13 @@ int main(void)
 	 gate_times = 0;
 	 count = 0;
 	 // clear past interrupts
+	 // clear past interrupts
+	 //TIFR2 |= (1 << OCF2B) |(1 << OCF2A) |(1 << TOV2); 
+	 TIFR2 |=  (1 << OCF2A); 
+	 TIFR0 |=  (1 << OCF0A); 
+	 //reset timers
+	 TCNT0 = 0;
+	 TCNT2 = 0;
 	 // enable interrupts
 	 sei();
       }
