@@ -1,0 +1,14 @@
+gpio 3 in 1 out
+in: pd5, pd6, pd7
+// activar pull-ups
+dddr &= ~(1 << pdx);
+portd |= (1 << pdx);
+
+interrupts PC_INT
+
+// para leer leer pinx
+
+// VARIABLE DEBOUNCING 
+out: pb7
+
+
