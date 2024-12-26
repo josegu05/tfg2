@@ -6,8 +6,8 @@
 // definiciones de tipos estandar
 
 //#define WAIT_TIME 1000
-#define GATE_COUNT_LIMIT 4
-#define TIMES_STABLE_BOOT 1000
+#define GATE_COUNT_LIMIT 8
+#define TIMES_STABLE_BOOT 500
 #define THRESHOLD 1.0
 uint8_t volatile decoding = 0;
 uint32_t volatile count = 0;
@@ -180,7 +180,7 @@ int main(void)
 	    // not detected
 	 }
 
-	 //last_mean = mean;
+	 last_mean = mean;
 	 gate_times = 0;
 	 count = 0;
 	 // clear past interrupts
