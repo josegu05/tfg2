@@ -7,7 +7,7 @@
 
 //#define WAIT_TIME 1000
 #define GATE_COUNT_LIMIT 4
-#define TIMES_STABLE_BOOT 3
+#define TIMES_STABLE_BOOT 1000
 #define THRESHOLD 1.0
 uint8_t volatile decoding = 0;
 uint32_t volatile count = 0;
@@ -82,8 +82,10 @@ void setup_gpios(void)
 //{
 //      for(int i=0; i<WAIT_TIME; i++);
 //}
-void startup (uint8_t* stable_boot)
+void startup (uint16_t* stable_boot)
 {      
+   float diff;
+
    if (gate_times > GATE_COUNT_LIMIT)
    {
       // disable global interrupts
@@ -92,8 +94,9 @@ void startup (uint8_t* stable_boot)
       // calculate mean 
       mean = (float) count / gate_times;
 
-      // evaluate if signal has been detected
-      if ( (mean - last_mean) < THRESHOLD)
+      // evaluate if signal is stable
+      diff = mean - last_mean; 
+      if ( (diff < THRESHOLD) )
       {
 	 // one time stable
 	 *stable_boot = *stable_boot + 1;
@@ -101,6 +104,7 @@ void startup (uint8_t* stable_boot)
       else
       {
 	 // continue booting
+	 *stable_boot = 0;
       }
 
       last_mean = mean;
@@ -119,7 +123,7 @@ void startup (uint8_t* stable_boot)
 }
 int main(void)
 {
-   uint8_t stable_boot = 0;
+   uint16_t stable_boot = 0;
 
    setup_timer_0_counter();
    setup_timer_2_gate();
@@ -176,7 +180,7 @@ int main(void)
 	    // not detected
 	 }
 
-	 last_mean = mean;
+	 //last_mean = mean;
 	 gate_times = 0;
 	 count = 0;
 	 // clear past interrupts
