@@ -1,12 +1,14 @@
-datasheets ne555, 2n2222, octave
-\paragraph{Introducci\'on}
-En este apartado se expondr\'a el diseño del transmisor, los c\'alculos matem\'aticos necesarios, simulacion por ordenador y los resultados practicos.
-El transmisor está diseñado para generar una modulación ASK y emitir a una frecuencia de $30Mhz$. La frecuencia de emisión se sintoniza con la del receptor por medio de un condensador de capacidad variable.
+%datasheets ne555, 2n2222, octave
 \paragraph{}
-NO REPETIR, EXPLICAR LA FOTO
+En este apartado se expondr\'a el diseño del transmisor, los c\'alculos matem\'aticos necesarios, la simulaci\'on por ordenador y los resultados pr\'acticos.
+El transmisor está diseñado para generar una modulación ASK y emitir a una frecuencia de unos \SI{30}{\mega\hertz}. La frecuencia de emisión es sintonizable con la del receptor por medio de un condensador de capacidad variable.
+\paragraph{}
 En la figura \ref{fig:tx} se puede observar el esquema eléctrico del transmisor.
-El principio de funcionamiento del transmisor es un oscilador, basado en un par resonante LC, el cual fija la frecuencia de emisión. Esto se realiza realizando un bucle de realimentación positiva, donde el transistor NPN juega el papel de elemento activo de amplificación, el circuito tanque LC es el filtro que permite que en cada iteración del bucle, se amplifique la frecuencia deseada. mientras que el condensador de realimentación, genera la realimentación positiva, sumando una fracción de la salida con la señal de entrada, que en este caso es el propio ruido generado por el circuito.
-El circuito se diseña para disipar la mayor potencia posible para que la señal alcance la mayor distancia posible. 
+El principio de funcionamiento del transmisor es un oscilador basado en un par resonante LC, el cual fija la frecuencia de emisión. 
+La oscilaci\'on se genera realizando un bucle de realimentación positiva, donde el transistor NPN juega el papel de elemento activo de amplificación. 
+El circuito tanque LC es el filtro que permite que en cada iteración del bucle se amplifique la frecuencia deseada. A su vez, el condensador de realimentación genera la realimentación positiva, sumando una fracción de la salida con la señal de entrada, que en este caso es el propio ruido generado por el circuito.
+El circuito se diseña de forma que se disipe la mayor potencia posible, con el fin de que la señal recorra la mayor distancia alcanzable. 
+\paragraph{}
 Por otra parte, el cicuito permite modular la señal portadora eléctricamente cortando y produciendo la oscilación en función de las variaciones de la señal moduladora. Esto es posible gracias al segundo transistor PNP, el cual trabaja en corte y saturaci\'on y corta el paso de corriente general del circuito.
 % Esto se realiza por medio de un oscilador Colpitts en base común sintonizado a la frecuencia de emisión y que a su vez es mezclado con una señal de onda cuadrada generada por el chip integrado NE555.
 % La señal de onda cuadrada generada por el NE555, es modulada en frecuencia, por dos pulsadores, produciendo dos diferentes canales digitales de salida.
@@ -20,14 +22,18 @@ El esquema completo del transmisor se expone en la figura \ref{fig:tx}.
 \end{figure}
 
 \paragraph{Diseño del oscilador}
-\paragraph{Polarizaci\'on:} IGUAL Y MENCIONANDO EL TRANSISTOR PNP EN CORTE APROX 0.2 V DESPRECIABLE.
-En primer lugar se debe fijar el punto de operación deseado. Se deben tener encuenta dos cosas: la zona trabajo del transistor y la potencia del circuito. La zona de trabajo debe ser activa directa, pues para producir la oscilación, el bucle de realimentación positiva debe tener la etapa de amplificación proporcionada por el transistor. La potencia del circuito, junto a la fracuencia de diseño, acotan el modelo de transistor que se ajuste al circuito.
-En primer lugar se necesita un transistor con una frecuencia de transición $f_t > \SI{30}{\mega\hertz}$. Aparte el parámetro $I_{Cmax}$ debe ser suficiente para proporcionar la potencia deseada sin deteriorarse. Se elige un transistor 2N2222, cuya $f_t > \SI{30}{\mega\hertz}$ e $I_{Cmax} = \SI{0.6}{\ampere}$ y una $V_{CC} = \SI{9}{\volt}$. Se fija $Ic = \SI{80}{\milli\ampere}$, que supondr\'a una potencia de aproximadamente $I_C \cdot V_{CC} = \SI{0.72}{\watt}$ y $V_{CE} = \frac{V_{CC}}{2} = \SI{4.5}{\volt}$ condici\'on necesaria para trabajar en activa directa. Además, de la hoja de características del 2N2222 se conoce $h_{FEmax} \approx 300$, aunque medido con un mult\'imetro, nos da el valor $h_{FE} = 280$ por lo que se utilizar\'a este \'ultimo.
-En lugar de repetir el cálculo que se hizo para seleccionar el valor de las resistencias de polarización, se optará por comprobar si los valores elegidos satisfacen las imposiciones.
+\paragraph{Polarizaci\'on:} %IGUAL Y MENCIONANDO EL TRANSISTOR PNP EN CORTE APROX 0.2 V DESPRECIABLE.
+Primeramente, se debe fijar el punto de operación deseado. Se deben tener encuenta dos cosas: la zona de trabajo del transistor y la potencia del circuito. La zona de trabajo debe ser activa directa, pues para producir la oscilación, el bucle de realimentación positiva debe tener la etapa de amplificación proporcionada por el transistor. La potencia del circuito, junto a la frecuencia de diseño, acotan el modelo de transistor que se ajuste al circuito.
+\paragraph{}
+En primer lugar, se necesita un transistor con una frecuencia de transición $f_t > \SI{30}{\mega\hertz}$. 
+A parte de esto, el parámetro $I_{Cmax}$ debe ser suficiente para proporcionar la potencia deseada sin deteriorarse. Se elige un transistor 2N2222, cuya $f_t > \SI{30}{\mega\hertz}$ e $I_{Cmax} = \SI{0.6}{\ampere}$ y una $V_{CC} = \SI{9}{\volt}$. Se fija $Ic = \SI{80}{\milli\ampere}$, que supondr\'a una potencia de aproximadamente $I_C \cdot V_{CC} = \SI{0.72}{\watt}$ y $V_{CE} = \frac{V_{CC}}{2} = \SI{4.5}{\volt}$, condici\'on necesaria para trabajar en activa directa. Además, se obtienen los par\'ametros necesarios de la hoja de características del 2N2222\footnote{ON Semiconductor. (2016). \textit{2N2222A: Small Signal Transistor Datasheet}. Recuperado de \url{https://www.onsemi.com/pdf/datasheet/2n2222a-d.pdf}.}.
+Se conoce $h_{FEmax} \approx 300$ de la hoja de datos, aunque, medido con un mult\'imetro, se obtiene el valor $h_{FE} = 280$, por lo que se utilizar\'a este \'ultimo.
+En lugar de repetir el cálculo que se hizo para seleccionar el valor de las resistencias de polarización, se opta por verificar si los valores elegidos satisfacen las imposiciones. De esta forma, se obtinene una comprobaci\'on doble.
 \paragraph{}
 Se utiliza equivalente de Thevenin para las resistencias en paralelo. En la malla que aparece se obtiene:
 $$V_{th} - 0.7 - I_c \cdot R_e = I_b \cdot R_{th}$$
 Siendo:
+\renewcommand{\arraystretch}{1.5}
 \[
 \begin{array}{rl} 
       \begin{array}{l}
@@ -45,11 +51,13 @@ Se obtienen $I_c$ y $V_{CE}$ con las siguientes dos ecuaciones sustituyendo los 
 \begin{align*}
    R_1=\SI{10}{\kilo\ohm} \quad R_2=\SI{20}{\kilo\ohm} \quad &R_E=\SI{40}{\ohm} \quad V_{CC} = \SI{9}{\volt} \\
    I_c \cdot \left( 40+ \frac{R_{th}}{h_{FE}}\right) &= V_{th} - 0.7 \\
-   V_{CC} = V_{CE} &+ I_C \cdot R_E \\
-   V_{CE}= \SI{5.68}{\volt} \quad& I_C = \SI{83}{\milli\ampere}
+   V_{CC} = V_{CE} &+ I_C \cdot R_E
 \end{align*}
+\begin{equation}
+   V_{CE}= \SI{5.68}{\volt} \quad& I_C = \SI{83}{\milli\ampere}
+\end{equation}
 \paragraph{}
-Una vez calculado el puto de operaci\'on se obtienen los par\'ametros h\'ibridos en base com\'un siguiendo la metodolog\'ia expuesta en el apartado \ref{sec:teo_transistor}. En primer lugar calcular los parámetros híbridos en emisor común a partir de los resultados obtenidos en el punto de operación, utilizando las ecuaciones \ref{eq:h_param1} y \ref{eq:h_param2}. En segundo lugar, aplicar las transformaciones indicadas en \ref{eq:h_conversion}. Adem\'as se debe calcular el dato $V_{AF}$ con ayuda de la hoja de datos del transistor, en este caso el dato se obtuvo como una media del rango de valores proporcionado. El resultado del c\'alculo de los par\'ametros es el siguiente:
+Una vez calculado el punto de operaci\'on, se obtienen los par\'ametros h\'ibridos en base com\'un siguiendo la metodolog\'ia expuesta en el apartado \ref{sec:teo_transistor}. En primer lugar, se deben calcular los parámetros híbridos en emisor común a partir de los resultados obtenidos en el punto de operación, utilizando las ecuaciones \ref{eq:h_param1} y \ref{eq:h_param2}. En segundo lugar, se deben aplicar las transformaciones indicadas en la ecuaci\'on \ref{eq:h_conversion}. Adem\'as se debe calcular el dato $V_{AF}$ con ayuda de la hoja de datos del transistor, en este caso el dato se obtuvo como una media del rango de valores proporcionado. El resultado del c\'alculo de los par\'ametros es el siguiente:
 \begin{equation}
    \label{eq:result_pol1}
 V_{AF} = \frac{I_{Cdata}}{h_{OEdata}} =\frac{\SI{1}{\milli\ampere}}{\SI{6}{\micro\siemens}} =  \SI{50}{\volt} 
@@ -78,7 +86,7 @@ V_{AF} = \frac{I_{Cdata}}{h_{OEdata}} =\frac{\SI{1}{\milli\ampere}}{\SI{6}{\micr
     \label{fig:ss_tx}
 \end{figure}
 
-\paragraph{Modelo en pequeña señal:} ANADIR LOS CALCULOS DE LA INDUCTANCIA APROX 200N SEGUN INTERESE. El objetivo de este modelo es el cálculo de la frecuencia de resonancia del oscilador. En la figura \ref{fig:ss_tx} se muestra el modelo en pequeña señal del oscilador para frecuencias intermedias, entorno a la frecuencia de oscilaci\'on. El bucle de oscilaci\'on se trata de una realimentación paralelo-paralelo, por lo que se representa el condensador de realimentación $C_1$ como su equivalente en par\'ametros $Y$. El valor de dichos par\'ametros son:
+\paragraph{Modelo en pequeña señal:} ANADIR LOS CALCULOS DE LA INDUCTANCIA APROX 200N SEGUN INTERESE. El objetivo de este modelo es el cálculo de la frecuencia de resonancia del oscilador. En la figura \ref{fig:ss_tx} se muestra el modelo en pequeña señal del oscilador para frecuencias intermedias, en torno a la frecuencia de oscilaci\'on. El bucle de oscilaci\'on se trata de una realimentación paralelo-paralelo, por lo que se representa el condensador de realimentación $C_1$ como su equivalente en par\'ametros $Y$. El valor de dichos par\'ametros son:
 \[
 \begin{array}{rl} 
       \begin{array}{l}
@@ -93,12 +101,13 @@ V_{AF} = \frac{I_{Cdata}}{h_{OEdata}} =\frac{\SI{1}{\milli\ampere}}{\SI{6}{\micr
 \end{array}
 \]
 \paragraph{}
-Se deben tener en cuenta ciertas consideraciones previas como consecuencia del an\'alisis del esquema B) en la figura \ref{fig:ss_tx}. La realimentaci\'on es positiva en el momento que $Y_{12}<0$ y $h_{fb}<0$ por lo que $V_2>0$. El modelo que se muestra corresponde a frecuencias intermedias entorno a la de oscilaci\'on. Para frecuencias bajas, la impedancia de $C_2$ tendrá un valor tan alto que corta la realimentación ,siguiendo el esquema A) figura \ref{fig:ss_tx}. para frecuencias altas, la impedancia de $C_2$ tendr\'a un valor tan bajo que supondr\'a un cortocircuito a tierra para la corriente de realimentaci\'on, por lo que $ie = 0 \unit{\ampere}$.
+Se deben tener en cuenta ciertas consideraciones previas como consecuencia del an\'alisis del esquema B) en la figura \ref{fig:ss_tx}. La realimentaci\'on es positiva en el momento que $Y_{12}<0$ y $h_{fb}<0$ por lo que $V_2>0$. El modelo que se muestra corresponde a frecuencias intermedias en torno a la de oscilaci\'on. Para frecuencias bajas, la impedancia de $C_2$ tendrá un valor tan alto que corta la realimentación, siguiendo el esquema A) figura \ref{fig:ss_tx}. 
+Para frecuencias altas, la impedancia de $C_2$ tendr\'a un valor tan bajo que supondr\'a un cortocircuito a tierra para la corriente de realimentaci\'on, por lo que $ie = 0 \unit{\ampere}$.
 \paragraph{}
-Se calcula la frecuencia de resonancia, en base al modelo B) de la figura \ref{fig:ss_tx}. Siguiendo el criterio de Barkhausen la frecuencia de resonancia se corresponde con la única con desfase $\angle A_l(f_0) = \SI{180}{\degree}$ a lo largo del bucle y una magnitud $|A_l(f_0)|\ge 0$. Se obtiene la funci\'on de transferencia de la ganancia en lazo abierto.
-Siguiendo el modelo general de la realimentaci\'on ecuaci\'on \ref{eq:feedback} aplicada al esquema B) de la figura \ref{fig:ss_tx}, se calcula: 
+Se calcula la frecuencia de resonancia, en base al modelo B) de la figura \ref{fig:ss_tx}. Siguiendo el criterio de Barkhausen, la frecuencia de resonancia se corresponde con la única con desfase $\angle A_l(f_0) = \SI{180}{\degree}$ a lo largo del bucle y una magnitud $|A_l(f_0)|\ge 0$. Se obtiene la funci\'on de transferencia de la ganancia en lazo abierto.
+Siguiendo el modelo general de la realimentaci\'on (ecuaci\'on \ref{eq:feedback} aplicada al esquema B) de la figura \ref{fig:ss_tx}), se calcula: 
 \begin{equation}
-f = Y_{12} = -s \cdot C1 
+f = Y_{12} = -s \cdot C_2
 \end{equation}
 \paragraph{}
 Se muestra el desarrollo para el c\'alculo de $A = \frac{V_2}{i_E}$:
@@ -127,10 +136,10 @@ Se calcula la ganancia en lazo abierto como $A_l = A \cdot f$ y sustituyendo los
    A_l = \frac{h_{fb} \cdot C_1 \cdot s^2}{ \left( C_2+C_1 \right) \left( s \cdot h_{ib} \cdot C_2 + 1\right) \left( s^2 + s \cdot \frac{h_{ob}}{C_1 + C_2} + \frac{1}{(C_1 + C_2)\cdot L_1}\right) }
 \end{equation}
 \paragraph{}
-Al observar la expresi\'on obtenida en la ecuaci\'on \ref{eq:Al_tx}, se sacan conclusiones para esbozar el diagrama de Bode de manera anal\'itica. En primer lugar, se analiza el desfase, el cual a bajas frecuencias es 0, debido a la suma de los \SI{180}{\degree} del cero doble junto a los \SI{180}{\degree} de $h_{fb}$. El polo cuadr\'atico introduce un desfase de \SI{-180}{\degree}, al que se llega de manera asint\'otica pero de forma r\'apida debido al bajo valor del coeficiente de amortiguaci\'on. Si a este hecho se le añaden los \SI{-90}{\degree} del polo simple, se obtiene que la frecuencia de resonancia con desfase \SI{180}{\degree} se encontrará en algún lugar entre el polo simple y el polo cuadrático.
+Al observar la expresi\'on obtenida en la ecuaci\'on \ref{eq:Al_tx}, se sacan conclusiones para esbozar el diagrama de Bode de manera anal\'itica. En primer lugar, se analiza el desfase, el cual a bajas frecuencias es 0, debido a la suma de los \SI{180}{\degree} del cero doble junto a los \SI{180}{\degree} de $h_{fb} < 0$. El polo cuadr\'atico introduce un desfase de \SI{-180}{\degree}, al que se llega de manera asint\'otica pero de forma r\'apida debido al bajo valor del coeficiente de amortiguaci\'on. Si a este hecho se le añaden los \SI{-90}{\degree} del polo simple, se obtiene que la frecuencia de resonancia con desfase \SI{180}{\degree} se encontrará en algún lugar entre el polo simple y el polo cuadrático.
 \paragraph{}
-Se esboza el diagrama de bode para los valores obtenidos en el apartado de polarizaci\'on (ecuaciones \ref{eq:result_pol1} y \ref{eq:result_pol2}) junto a los siguientes valores de los elementos 
-$$ L_1 = \SI{630}{\nano\henry} \quad C_1=\SI{47}{\pico\farad} \quad C_2=\SI{47}{\pico\farad} $$
+Se esboza el diagrama de Bode para los valores obtenidos en el apartado de polarizaci\'on (ecuaciones \ref{eq:result_pol1} y \ref{eq:result_pol2}) junto a los siguientes valores de los elementos: 
+$$ L_1 = \SI{630}{\nano\henry} \quad C_1=\SI{30}{\pico\farad} \quad C_2=\SI{30}{\pico\farad} $$
 \begin{figure}[h]
     \centering
     \includegraphics[scale=1, width=.8\textwidth]{bode_tx}
@@ -142,7 +151,7 @@ En el diagrama de Bode de la figura \ref{fig:bode_tx}, se obtiene una frecuencia
    f_0 = \frac{\omega_0}{2\cdot\pi} = \SI{28.65}{\mega\hertz}
 \end{equation}
 \paragraph{}
-La obtenci\'on del diagrama de Bode se ha conseguido por medio del programa de c\'alculo computacional Octave REFERENCIA
+La obtenci\'on del diagrama de Bode se ha conseguido por medio del programa de c\'alculo computacional Octave 
 
 \paragraph{} la señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado CITAR. El transistor PNP es utilizado como conmutador.
 
