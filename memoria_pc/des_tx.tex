@@ -54,7 +54,7 @@ Se obtienen $I_c$ y $V_{CE}$ con las siguientes dos ecuaciones sustituyendo los 
    V_{CC} = V_{CE} &+ I_C \cdot R_E
 \end{align*}
 \begin{equation}
-   V_{CE}= \SI{5.68}{\volt} \quad& I_C = \SI{83}{\milli\ampere}
+   V_{CE}= \SI{5.68}{\volt} \quad I_C = \SI{83}{\milli\ampere}
 \end{equation}
 \paragraph{}
 Una vez calculado el punto de operaci\'on, se obtienen los par\'ametros h\'ibridos en base com\'un siguiendo la metodolog\'ia expuesta en el apartado \ref{sec:teo_transistor}. En primer lugar, se deben calcular los parámetros híbridos en emisor común a partir de los resultados obtenidos en el punto de operación, utilizando las ecuaciones \ref{eq:h_param1} y \ref{eq:h_param2}. En segundo lugar, se deben aplicar las transformaciones indicadas en la ecuaci\'on \ref{eq:h_conversion}. Adem\'as se debe calcular el dato $V_{AF}$ con ayuda de la hoja de datos del transistor, en este caso el dato se obtuvo como una media del rango de valores proporcionado. El resultado del c\'alculo de los par\'ametros es el siguiente:
@@ -151,9 +151,10 @@ En el diagrama de Bode de la figura \ref{fig:bode_tx}, se obtiene una frecuencia
    f_0 = \frac{\omega_0}{2\cdot\pi} = \SI{28.65}{\mega\hertz}
 \end{equation}
 \paragraph{}
-La obtenci\'on del diagrama de Bode se ha conseguido por medio del programa de c\'alculo computacional Octave 
+La obtenci\'on del diagrama de Bode se ha conseguido por medio del programa de c\'alculo computacional Octave. 
 
-\paragraph{} la señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado CITAR. El transistor PNP es utilizado como conmutador.
+\paragraph{} 
+La señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado (apartado \ref{sec:des_digital_tx}). El transistor PNP es utilizado como conmutador.
 
 \paragraph{Antena} 
 CITAR TRANSFORMER BOOK
@@ -164,12 +165,12 @@ CITAR TRANSFORMER BOOK
 \paragraph{}
 Para mejorar la eficiencia de radiación del transmisor, se debe garantizar la máxima transferencia de potencia de señal a la antena.
 Para poder adaptar la impedancia de salida del circuito a la impedancia de la antena, se diseña un transformador como adaptador de impedancias. 
-Se considera esta opción como la alternativa más sencilla de implementar debido a que el circuito necesita una impedancia de salida bastante alta para poder producir la oscilación.
-El método del transformador adapta las impedancias considerablemente bien, mediante un acople magnético, es decir sin cargar el circuito.
+Se considera esta opción como la alternativa más sencilla de implementar, debido a que el circuito necesita una impedancia de salida bastante alta para poder producir la oscilación.
+El método del transformador adapta las impedancias considerablemente bien, mediante un acople magnético, es decir, sin cargar el circuito.
 \paragraph{}
 El objetivo del diseño es calcular la relación del número de vueltas óptimo entre el primario y el secundario para mejorar la transferencia de potencia entre el transmisor y la antena. 
 Para facilitar los cálculos, pues existen demasiados parámetros reales que se deben aproximar, se seguirá un modelo ideal sencillo del transformador. Esto es debido a que solo se busca mejorar el aspecto de la transmisión de potencia que se tiene de base.
-Se sigue el siguiente modelo de relación de impedancias en un transformador.
+Se sigue el siguiente modelo de relación de impedancias en un transformador\footnote{Kulkarni, S. V., \& Khaparde, S. A. (2004). \textit{Transformer Engineering: Design and Practice} (Capítulo 1: Transformer Fundamentals). Indian Institute of Technology, Bombay, Mumbai, India.}.
 
 \paragraph{}
 \begin{figure}[h!]
@@ -179,7 +180,6 @@ Se sigue el siguiente modelo de relación de impedancias en un transformador.
     \label{fig:transformer}
 \end{figure}
 \paragraph{}
-Referencia a transformer model 
 Siguiendo el modelo de la figura \ref{fig:transformer}, se obtienen las siguientes relaciones:
 \begin{align*}
    \frac{N_1}{N_2} = \frac{E_1}{E_2} &= \frac{V_1}{V_2} = \frac{I_2}{I_1} = n \\
@@ -194,54 +194,61 @@ Siguiendo el modelo de la figura \ref{fig:transformer}, se obtienen las siguient
 %	Np/Ns = n = V2/V1 .. n^2 = zp/zs
 \paragraph{}
 En particular para el diseño propio se debe calcular tanto la impedancia de salida del transmisor como la resistencia de radiación de la entena utilizada para la frecuencia de trabajo.
-Se tiene que $Z_1 = h_{ob}^{-1}$ y que la impedancia de la antena es aproximadamente $Z_2 = R_{rad} = \SI{1}{\kilo\ohm}$
-Por lo que, se usa la ecuaci\'on \ref{eq:transformer} para obtener el ratio de vueltas óptimo siendo $$ n = \sqrt{\frac{Z_1}{Z_2}} = 10 $$
-Esta relación de vueltas óptima no es realizable pues, el bobinado primario se construye con ocho espiras. La relación de vueltas aproximada será de $ n = 8:1 $
+Se tiene que $Z_1 = h_{ob}^{-1}$ y que la impedancia de la antena es aproximadamente $Z_2 = R_{rad} = \SI{1}{\kilo\ohm}$.
+Por lo tanto, se usa la ecuaci\'on \ref{eq:transformer} para obtener el ratio de vueltas óptimo siendo: $$ n = \sqrt{\frac{Z_1}{Z_2}} = 10 $$
+Esta relación de vueltas óptima no es realizable, pues el bobinado primario se construye con ocho espiras. La relación de vueltas aproximada será de $ n = 8:1 $
 
 
-\paragraph{Resultado de la Simulaci\'on} SIMULACION LTSPICE
-son 3 capturas una la de la oscilacion con las medidas de frecuencia.
-una general con varios ciclos de digitalin.
-otra del flanco de subida y bajada de digitalin con vout y vbe viendo como se corta el transistor.
+\paragraph{Resultado de la simulaci\'on} %SIMULACION LTSPICE
+%son 3 capturas una la de la oscilacion con las medidas de frecuencia.
+%una general con varios ciclos de digitalin.
+%otra del flanco de subida y bajada de digitalin con vout y vbe viendo como se corta el transistor.
 \paragraph{}
 En este apartado se muestra una simulación del circuito en función del tiempo de los puntos de interés del circuito. 
 En la figura \ref{fig:sim_vc_vdig} se observa el $V_C$, que es la tensión que se aplicará en el transformador de impedancias a la antena, y $V_{digital}$, la señal moduladora que produce la modulación ASK. 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=1, width=1\textwidth]{sim_vc_vdigital}
+    \includegraphics[scale=.8, width=.8\textwidth]{sim_vc_vdigital}
     \caption{Simulaci\'on de $V_C$ modulada por $V_{digital}$}
     \label{fig:sim_vc_vdig}
 \end{figure}
 \paragraph{}
-En la figura \ref{fig:sim_fft} se observa la FFT de la señal $V_C$ de forma general, con un span de frecuencias alto. Por otro lado, en la figura \ref{fig:fft_vc_zoom} se muestra ampliada la frecuencia de trabajo, para observar los detalles de la modulación AM.
-A la frecuencia de trabajo se observa la modulaci'on AM.
-En la figura general de la FFT, Al tratarse de una modulación ASK, se observa con acentuada potencia, la señal moduladora en banda base. Además, esta señal, al poseer una forma de onda cuadrada, su espectro se extiende ampliamente en el dominio de la frecuencia, aportando numerosos armónicos.
+En la figura \ref{fig:sim_fft} se observa la FFT de la señal $V_C$ de forma general, con un span de frecuencias alto. Por otro lado, en la figura \ref{fig:fft_vc_zoom} se muestra ampliada la frecuencia de trabajo, en la que se pueden observar los detalles de la modulación AM.
+\paragraph{}
+En la figura general de la FFT, al tratarse de una modulación ASK, se observa con acentuada potencia la señal moduladora en banda base. Además, esta señal posee una forma de onda cuadrada, por lo que su espectro se extiende ampliamente en el dominio de la frecuencia, aportando numerosos armónicos.
+\paragraph{}
 En la figura \ref{fig:fft_vc_zoom}, se observa el espectro de la modulación ampliado a la frecuencia de trabajo. Se sitúan cursores a la frecuencia de trabajo y los armónicos fundamentales a \SI{10}{\kilo\hertz}. Además, se pueden observar multitud de armónicos secundarios a distancias múltiplos de la frecuencia fundamental \SI{10}{\kilo\hertz}.
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
-    \includegraphics[scale=1, width=1\textwidth]{fft_vc}
+    \includegraphics[scale=.8, width=.8\textwidth]{fft_vc}
     \caption{Simulaci\'on de la FFT de $V_C$ de forma general}
     \label{fig:sim_fft}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
-    \includegraphics[scale=1, width=1\textwidth]{fft_vc_zoom}
+    \includegraphics[scale=.8, width=.8\textwidth]{fft_vc_zoom}
     \caption{Simulaci\'on de la FFT de $V_C$ ampliada a la frecuencia de trabajo}
     \label{fig:sim_fft_zoom}
 \end{figure}
 
-\paragraph{Resultado de la pr\'actica} CAPTURA DEL OSCILOSCOPIO Y MEDIDA DE CORRIENTE
-En la parte práctica se trata de comparar con los resultados de la simulación, los resultados obtenidos en el circuito real. El circuito está fabricado en placa soldada de agujeros y los resultados se miden con un osciloscopio en los mismos puntos de interés que en el apartado de simulación. Las figuras corresponden a capturas realizadas por el osciloscopio al tomarlas medidas pertinentes.
+\paragraph{Resultado de la pr\'actica} %CAPTURA DEL OSCILOSCOPIO Y MEDIDA DE CORRIENTE
+\paragraph{}
+En la parte práctica se comparan los resultados de la simulación con los resultados obtenidos en el circuito real. El circuito está fabricado en placa soldada de agujeros, la realizaci\'on de estas placas se muestra en la figura REF del apartado REF. Los resultados se miden con un osciloscopio en los mismos puntos de interés que en el apartado de simulación. Las figuras corresponden a capturas realizadas por el osciloscopio al tomar las medidas pertinentes.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
-    \includegraphics[scale=1, width=1\textwidth]{exp_tx}
+    \includegraphics[scale=.6, width=.6\textwidth]{exp_tx}
     \caption{práctica de $V_C$ modulada por $V_{digital}$}
-    \label{fig:sim_vc_vdig}
+    \label{fig:exp_vc_vdig}
 \end{figure}
 
-\paragraph{}
-Por último, se muestra, en la figura REF, el diseño del transmisor soldado en placa.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=.6, width=.6\textwidth]{exp_tx}
+    \caption{Placa de transmisor soldada}
+    \label{fig:exp_placa_tx}
+\end{figure}
+
 % \paragraph{Modulaci\'on de los canales mediante NE555}
 % \paragraph{}
 % La estrategia para la modulaci\'on reside en concepto de NE555 es un chip, el cual, configurado adecuadamente puede trabajar como un astable. Adem\'as, la frecuencia de oscilación del astable puede ser variada en función de los elementos de configuración. La idea es utilizar la señal proporcionada por el chip para cortar el oscilador según la frecuencia del NE555, realizando una mezcla de ambas señales y dando lugar a la señal modulada ASK. La mezcla se realiza por medio del transistor Q2 PNP, el cual trabaja en corte y saturación.
