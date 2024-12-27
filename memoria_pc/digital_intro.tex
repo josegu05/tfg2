@@ -4,9 +4,16 @@ para establecer un canal de comunicación de datos digital, se utilizan dos micr
 \paragraph{Configuraci\'on del entorno de trabajo}
 El microcontrolador se programa por medio de un proyecto escrito en C. Para ello, se trabaja con las herramientas que permiten la compilación de este lenguaje a un archivo ejecutable entendible para la plataforma de AVR.
 En primer lugar, se necesita compilar el programa a un archivo binario ejecutable para la plataforma objetivo, para ello se usar\'a el compilador avr-gcc. Este binario generado no puede ser grabado directamente a la flash del microcontrolador, si no que se necesita la traducción a código hexadecimal del mismo. Para ello, se utiliza el programa avr-objcopy. 
-Finalmente, el programa es grabado en la flash. Este proceso se realiza de la siguiente forma: el archivo hexadecimal debe ser grabado en el microcontrolador configurando el micro en modo programaci\'on de la flash y transfiriendo el programa por medio del protocolo ISP. Para ello se har\'a uso de un programador software, avrdude, y un programador hardware que traduzca el protocolo usb del ordenador de trabajo a ISP para ser grabado en la memoria del micro objetivo. En este proyecto se utiliza un microcontrolador Atmega2560 montado en la placa Mega2560 R3. Este micro será programado con un programa que permita el proceso de traducción anteriormente descrito. Este software se ofrece oficialmente desde la p\'agina web de Arduino.
-Para conseguir automatizar todo este proceso se hace uso de la herramienta make. A continuaci\'on se muestra el archivo Makefile utilizado para clarificar el proceso anteriormente descrito:
+Finalmente, el programa es grabado en la flash. Este proceso se realiza de la siguiente forma: el archivo hexadecimal debe ser grabado en el microcontrolador configurando el micro en modo programaci\'on de la flash y transfiriendo el programa por medio del protocolo ISP. Para ello se har\'a uso de un programador software, avrdude, y un programador hardware que traduzca el protocolo usb del ordenador de trabajo a ISP para ser grabado en la memoria del micro objetivo. En este proyecto se utiliza como programador un microcontrolador Atmega2560 en una placa Mega2560 R3. 
+La placa Mega2560 R3, se programa con un software que permita el proceso de traducción anteriormente descrito. Este software, se ofrece oficialmente desde la p\'agina web de Arduino.
+Para automatizar todo el proceso de compilaci\'on y programaci\'on del microcontrolador objetivo, se hace uso de la herramienta make. A continuaci\'on, se muestra un archivo Makefile utilizado para clarificar el proceso anteriormente descrito:
 
 \lstinputlisting[language=make]{/home/jose/Documents/tfg2/digital/gpio_signaldriven/v6_final/Makefile}
 
+\paragraph{}
+Es importante comentar que los microcontroladores AVR poseen unos registros especiales denominados fuses.
+Estos registros poseen configuraciones cr\'iticas para el microcontrolador como la fuente que se utiliza como reloj de CPU. Esta puede ser configurada como externa o interna, a diferentes frecuencias. Por defecto de fábrica, viene configurado usando el oscilador interno de \SI{8}{\mega\hertz}, con un prescaler de 8, resultando en $F_CPU = \SI{1}{\mega\hertz}$
+\paragraph{}
+Por último, cabe mencionar, que los archivos de código funte junto a todo el proyecto ha sido llevado a cabo mediante el programa de control de versiones git. 
+Los repositorios de código fuente se encuentran en REF.
 
