@@ -6,7 +6,7 @@
 %Ib = ;
 vt = .7;
 
-% para el 2n3904
+% para el 2n2222
 Ic_datasheet = 1e-3;
 hoe_datasheet = 20e-6;
 vaf = Ic_datasheet / hoe_datasheet

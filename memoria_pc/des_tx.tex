@@ -26,9 +26,9 @@ El esquema completo del transmisor se expone en la figura \ref{fig:tx}.
 Primeramente, se debe fijar el punto de operación deseado. Se deben tener encuenta dos cosas: la zona de trabajo del transistor y la potencia del circuito. La zona de trabajo debe ser activa directa, pues para producir la oscilación, el bucle de realimentación positiva debe tener la etapa de amplificación proporcionada por el transistor. La potencia del circuito, junto a la frecuencia de diseño, acotan el modelo de transistor que se ajuste al circuito.
 \paragraph{}
 En primer lugar, se necesita un transistor con una frecuencia de transición $f_t > \SI{30}{\mega\hertz}$. 
-A parte de esto, el parámetro $I_{Cmax}$ debe ser suficiente para proporcionar la potencia deseada sin deteriorarse. Se elige un transistor 2N2222, cuya $f_t > \SI{30}{\mega\hertz}$ e $I_{Cmax} = \SI{0.6}{\ampere}$ y una $V_{CC} = \SI{9}{\volt}$. Se fija $Ic = \SI{80}{\milli\ampere}$, que supondr\'a una potencia de aproximadamente $I_C \cdot V_{CC} = \SI{0.72}{\watt}$ y $V_{CE} = \frac{V_{CC}}{2} = \SI{4.5}{\volt}$, condici\'on necesaria para trabajar en activa directa. Además, se obtienen los par\'ametros necesarios de la hoja de características del 2N2222\footnote{ON Semiconductor. (2016). \textit{2N2222A: Small Signal Transistor Datasheet}. Recuperado de \url{https://www.onsemi.com/pdf/datasheet/2n2222a-d.pdf}.}.
+A parte de esto, el parámetro $I_{Cmax}$ debe ser suficiente para proporcionar la potencia deseada sin deteriorarse. Se elige un transistor 2N2222, cuya $f_t > \SI{30}{\mega\hertz}$ e $I_{Cmax} = \SI{0.6}{\ampere}$. Adem\'as, se fija una $V_{CC} = \SI{9}{\volt}$ el cual ser\'a el mayor valor que pueda tener, pero esto no implica que el transmisor pueda funcionar con tensiones de alimentaci\'on inferiores. Se opta por limitar a $Ic = \SI{100}{\milli\ampere}$, que supondr\'a una potencia de aproximadamente $I_C \cdot V_{CC} = \SI{0.72}{\watt}$ y $V_{CE} = \frac{V_{CC}}{2} = \SI{4.5}{\volt}$, condici\'on necesaria para trabajar en activa directa con el mayor rango de margen de distorsi\'on. Adicionalmente, se obtienen los par\'ametros necesarios de la hoja de características del 2N2222\footnote{ON Semiconductor. (2016). \textit{2N2222A: Small Signal Transistor Datasheet}. Recuperado de \url{https://www.onsemi.com/pdf/datasheet/2n2222a-d.pdf}.}.
 Se conoce $h_{FEmax} \approx 300$ de la hoja de datos, aunque, medido con un mult\'imetro, se obtiene el valor $h_{FE} = 280$, por lo que se utilizar\'a este \'ultimo.
-En lugar de repetir el cálculo que se hizo para seleccionar el valor de las resistencias de polarización, se opta por verificar si los valores elegidos satisfacen las imposiciones. De esta forma, se obtinene una comprobaci\'on doble.
+En lugar de repetir el cálculo que se hizo para seleccionar el valor de las resistencias de polarización, se opta por verificar si los valores elegidos satisfacen las imposiciones. Esto es debido a que, una vez se realizaron los c\'alculos, los valores de las resistencias de polarizaci\'on fueron aproximados a valores comerciales para la construcci\'on del dispositivo. De esta forma, se obtinene una comprobaci\'on doble. Adem\'as, en todo el proceso se considera despreciable la ca\'ida de tensi\'on en el transistor PNP, la cual es de unos \SI{.2}{\volt} en condici\'on de saturaci\'on.
 \paragraph{}
 Se utiliza equivalente de Thevenin para las resistencias en paralelo. En la malla que aparece se obtiene:
 $$V_{th} - 0.7 - I_c \cdot R_e = I_b \cdot R_{th}$$
@@ -49,12 +49,12 @@ Siendo:
 \]
 Se obtienen $I_c$ y $V_{CE}$ con las siguientes dos ecuaciones sustituyendo los valores correspondientes:
 \begin{align*}
-   R_1=\SI{10}{\kilo\ohm} \quad R_2=\SI{20}{\kilo\ohm} \quad &R_E=\SI{40}{\ohm} \quad V_{CC} = \SI{9}{\volt} \\
-   I_c \cdot \left( 40+ \frac{R_{th}}{h_{FE}}\right) &= V_{th} - 0.7 \\
+   R_1=\SI{6.8}{\kilo\ohm} \quad R_2=\SI{22}{\kilo\ohm} \quad &R_E=\SI{47}{\ohm} \quad V_{CC} = \SI{9}{\volt} \\
+   I_c \cdot \left( R_E+ \frac{R_{th}}{h_{FE}}\right) &= V_{th} - 0.7 \\
    V_{CC} = V_{CE} &+ I_C \cdot R_E
 \end{align*}
 \begin{equation}
-   V_{CE}= \SI{5.68}{\volt} \quad I_C = \SI{83}{\milli\ampere}
+   V_{CE}= \SI{4.57}{\volt} \quad I_C = \SI{94.2}{\milli\ampere}
 \end{equation}
 \paragraph{}
 Una vez calculado el punto de operaci\'on, se obtienen los par\'ametros h\'ibridos en base com\'un siguiendo la metodolog\'ia expuesta en el apartado \ref{sec:teo_transistor}. En primer lugar, se deben calcular los parámetros híbridos en emisor común a partir de los resultados obtenidos en el punto de operación, utilizando las ecuaciones \ref{eq:h_param1} y \ref{eq:h_param2}. En segundo lugar, se deben aplicar las transformaciones indicadas en la ecuaci\'on \ref{eq:h_conversion}. Adem\'as se debe calcular el dato $V_{AF}$ con ayuda de la hoja de datos del transistor, en este caso el dato se obtuvo como una media del rango de valores proporcionado. El resultado del c\'alculo de los par\'ametros es el siguiente:
@@ -67,13 +67,13 @@ V_{AF} = \frac{I_{Cdata}}{h_{OEdata}} =\frac{\SI{1}{\milli\ampere}}{\SI{6}{\micr
 %\[
 \begin{array}{rl} 
       \begin{array}{l}
-	 h_{ib} =  \SI{8.4}{\ohm} \\
-	 h_{fb} =  -0.99
+	 h_{ib} =  \SI{7.4}{\ohm} \\
+	 h_{fb} =  -0.996
       \end{array}
       &
       \begin{array}{l}
 	 h_{rb} =  0.014 \\
-	 h_{ob} =  \SI{6}{\micro\siemens}
+	 h_{ob} =  \SI{6.7}{\micro\siemens}
       \end{array}
 \end{array}
 %\]
@@ -137,7 +137,14 @@ Se calcula la ganancia en lazo abierto como $A_l = A \cdot f$ y sustituyendo los
    A_l = \frac{h_{fb} \cdot C_1 \cdot s^2}{ \left( C_2+C_1 \right) \left( s \cdot h_{ib} \cdot C_2 + 1\right) \left( s^2 + s \cdot \frac{h_{ob}}{C_1 + C_2} + \frac{1}{(C_1 + C_2)\cdot L_1}\right) }
 \end{equation}
 \paragraph{}
-Al observar la expresi\'on obtenida en la ecuaci\'on \ref{eq:Al_tx}, se sacan conclusiones para esbozar el diagrama de Bode de manera anal\'itica. En primer lugar, se analiza el desfase, el cual a bajas frecuencias es 0, debido a la suma de los \SI{180}{\degree} del cero doble junto a los \SI{180}{\degree} de $h_{fb} < 0$. El polo cuadr\'atico introduce un desfase de \SI{-180}{\degree}, al que se llega de manera asint\'otica pero de forma r\'apida debido al bajo valor del coeficiente de amortiguaci\'on. Si a este hecho se le añaden los \SI{-90}{\degree} del polo simple, se obtiene que la frecuencia de resonancia con desfase \SI{180}{\degree} se encontrará en algún lugar entre el polo simple y el polo cuadrático.
+De la expresi\'on obtenida en la ecuaci\'on \ref{eq:Al_tx}, se deduce el siguiente an\'alisis. 
+En primer lugar, se analiza el desfase, el cual a bajas frecuencias es 0, debido a la suma de los \SI{180}{\degree} del cero doble junto a los \SI{180}{\degree} de $h_{fb} < 0$. El polo cuadr\'atico introduce un desfase de \SI{-180}{\degree}, al que se de forma r\'apida debido al bajo valor del coeficiente de amortiguaci\'on que se obtiene como:. 
+Adem\'as, se añaden los \SI{-90}{\degree} del polo simple, 
+Por lo que, se obtiene que la frecuencia de resonancia con desfase \SI{180}{\degree} es aproximadamente la misma que la frecuencia de resonancia del polo cuadrático, es decir:
+En el diagrama de Bode de la figura \ref{fig:bode_tx}, se obtiene una frecuencia angular $\omega_0 = \SI{1.925e8}{\radian\per\second}$, por lo que se obtiene una frecuencia de resonancia de:
+\begin{equation}
+   f_0 = \frac{\omega_0}{2\cdot\pi} = \SI{30.63}{\mega\hertz}
+\end{equation}
 \paragraph{Fabricaci\'on de la inductancia del circuito tanque}
 \paragraph{}
 La inductancia del circuito tanque $LC$, es construida a mano para facilitar la radiación al medio. Esta inductancia será el elemento principal de radiación.
@@ -166,24 +173,21 @@ Combinando las ecuaciones \ref{eq:def_ampere} y \ref{eq:def_inductance}, se obti
 \paragraph{}
 En este caso, los par\'ametros medidos en la inductancia fabricada son: $N = 8$, $\mu = \mu_0$, $d = \SI{8}{\milli\metre}$ y $l = \SI{9}{\milli\metre}$. El resultado de la aplicaci\'on de la ecuaci\'on \ref{eq:def_inductance2} con los par\'ametros medidos resulta en: $$L_1 = \SI{450}{\nano\henry}$$
 
+\paragraph{Diagrama de Bode}
 \paragraph{}
-Se esboza el diagrama de Bode para los valores obtenidos en el apartado de polarizaci\'on (ecuaciones \ref{eq:result_pol1} y \ref{eq:result_pol2}) junto a los siguientes valores de los elementos: 
-$$ L_1 = \SI{630}{\nano\henry} \quad C_1=\SI{30}{\pico\farad} \quad C_2=\SI{30}{\pico\farad} $$
+A continuación, se esboza el diagrama de Bode de la expresi\'on de la ganancia de lazo abierto (ecuaci\'on \ref{eq:Al_tx}) para los valores obtenidos en el apartado de polarizaci\'on (ecuaciones \ref{eq:result_pol1} y \ref{eq:result_pol2}) junto con los siguientes valores de los elementos: 
+$$ L_1 = \SI{450}{\nano\henry} \quad C_1=\SI{30}{\pico\farad} \quad C_2=\SI{30}{\pico\farad} $$
 \begin{figure}[h]
     \centering
     \includegraphics[scale=1, width=.8\textwidth]{bode_tx}
     \caption{Diagrama de Bode de la ganancia en lazo abierto del oscilador $A_l$ para frecuencias intermedias}
     \label{fig:bode_tx}
 \end{figure}
-En el diagrama de Bode de la figura \ref{fig:bode_tx}, se obtiene una frecuencia angular $\omega_0 = \SI{1.8e8}{\radian\per\second}$, por lo que se obtiene una frecuencia de resonancia de:
-\begin{equation}
-   f_0 = \frac{\omega_0}{2\cdot\pi} = \SI{28.65}{\mega\hertz}
-\end{equation}
 \paragraph{}
-La obtenci\'on del diagrama de Bode se ha conseguido por medio del programa de c\'alculo computacional Octave. 
+La obtenci\'on del diagrama de Bode se ha realizado con ayuda del programa de c\'alculo computacional Octave. Los \textit{scripts} utilizados se encuentran el el directorio octave del proyecto de GitHub\footnote{\textit{https://github.com/josegu05/tfg2}}.
 
 \paragraph{} 
-La señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado (apartado \ref{sec:des_digital_tx}). El transistor PNP es utilizado como conmutador.
+Por último, se hace referencia al transistor PNP en el esquema del transmisor (figura \ref{fig:tx}). Este transistor es utilizado como conmutador, de tal forma que, una señal digital activa o corta el paso de corriente por el circuito principal. La señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado (apartado \ref{sec:des_digital_tx}).
 
 \paragraph{Antena} 
 %CITAR TRANSFORMER BOOK
