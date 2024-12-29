@@ -1,11 +1,12 @@
 \paragraph{}
 %explicar separacion de partes entre oscilador y quench signal
 El diseño del receptor se ha de separar en tres partes diferenciadas.
-En primer lugar, la parte correspondiente al punto de operación del transistor, donde se trabaja con la componente DC.
+En primer lugar, la parte correspondiente al punto de operación de los transistores, tanto del oscilador de RF como del amplificador de la señal de \textit{quench}. En este apartado se trabaja con la componente DC.
 En segundo lugar, se desarrolla la parte de RF correspondiente al oscilador, el cual define la frecuencia de trabajo. 
 Por último, la parte correspondiente a la \textit{quench-signal}, encargada de gestionar el paro y arranque de la oscilación. Esta parte trabaja a una frecuencia intermedia que puede diferenciarse de la parte de RF y de la componente DC.
 
-El esquema completo del receptor se expone en la figura \ref{fig:rx}.
+\paragraph{}
+El esquema completo del receptor se expone en la figura \ref{fig:rx}. general de la imagen
 \begin{figure}[h]
     \centering
     \includegraphics[scale=1, width=1\textwidth]{receptor}
@@ -14,18 +15,41 @@ El esquema completo del receptor se expone en la figura \ref{fig:rx}.
 \end{figure}
 
 \paragraph{Polarización} %EXPLICAR PORQUE ESE PUNTO DE OPERACION (MENOR RUIDO POSIBLE, MENOR CONSUMO DE POTENCIA)
-En este caso, la estrategia para fijar el punto de operación es ligeramente distinta a como se diseña en el transmisor. 
-El transistor debe trabajar en zona activa directa, por lo que se fijará $V_{CE} = \frac{V_{CC}}{2}$ para garantizar el mayor rango de linealidad posible.
-También se elige una $I_C = \SI{1}{\milli\ampere}$, en este caso para que el transistor trabaje introduciendo el mínimo ruido posible.
-Este hecho es importante, pues cuando el receptor se encuentran en la etapa de inicio de oscilación, un bajo nivel de ruido ayuda a aumentar la sensibilidad del receptor. Esto es debido a que la suma mínima de todos los ruidos generados por un transistor se encuentra en este rango de corriente de colector\footnote{Horowitz, P., \& Hill, W. (2015). \textit{The Art of Electronics} (Capítulo 8: Low Noise Techniques). Cambridge University Press.}.
-Cabe recalcar que la estructura del circuito de polarización posee una estructura de realimentación de colector. Esta estructura, provoca una realimentación negativa que fija el punto de operación de manera más independiente a los parámetros característicos del transistor. Esta realimentación negativa debe eliminarse en corriente alterna para provocar la oscilación. La estrategia para eliminarla se verá en el apartado de pequeña señal.
 \paragraph{}
-Se realizan los cálculos para estimar los valores de las resistencias de polarización en función de los valores anteriormente fijados.
-HACER LOS CALCULOS
+En este caso, la estrategia para fijar el punto de operación es ligeramente distinta a como se diseña en el transmisor, pues se utiliza una estructura conocida como realimentaci\'on de colector. 
+\paragraph{}
+El transistor debe trabajar en zona activa directa, por lo que se debe cumplir $V_{CE} > V_{sat} \approx \SI{.2}{\volt}$ %se fijará $V_{CE} = \frac{V_{CC}}{2}$, para garantizar el mayor rango de linealidad posible.
+Se fija tanto $V_{CC} = \SI{5}{\volt}$, como una corriente de colector aproximada de $I_C = \SI{600}{\micro\ampere}$, en este caso para que el transistor trabaje introduciendo el mínimo ruido posible.
+Este hecho es importante, pues cuando el receptor se encuentra en la etapa de inicio de oscilación, un bajo nivel de ruido ayuda a aumentar la sensibilidad del receptor. Esto es debido a que la suma mínima de todos los ruidos generados por un transistor se encuentra en este rango de corriente de colector\footnote{Horowitz, P., \& Hill, W. (2015). \textit{The Art of Electronics} (Capítulo 8: Low Noise Techniques). Cambridge University Press.}.
+Cabe recalcar, que la estructura de realimentación de colector provoca una realimentación negativa que fija el punto de operación de manera más independiente a los parámetros característicos del transistor. Esta realimentación negativa debe eliminarse en corriente alterna para provocar la oscilación. La estrategia para eliminarla se verá en el apartado de pequeña señal.
+\paragraph{}
+Se realizan los cálculos para estimar los valores de las resistencias de polarización en función de los valores anteriormente fijados. Las expresiones son v\'alidas para ambos transistores, pues poseen la misma configuraci\'on con diferentes valores.
+\begin{align*} 
+   I_i &= I_C + I_B = I_E \\
+   I_i = I_E &= I_B \cdot (h_{FE} + 1) \\
+   I_B \cdot (h_{FE} + 1) = I_E &= (h_{FE} + 1) \cdot \frac{V_{CE} - 0.7}{R_B} \\
+   V_{CC} - V_{CE} - I_E \cdot R_E - I_E \cdot R_C &= 0 \\
+   V_{CE} \cdot \left( 1 + \frac{(h_{FE} + 1) \cdot (R_E+R_C)}{R_B} \right) &= V_{CC} - \frac{0.7 \cdot (R_E+R_C) \cdot (h_{FE} + 1)}{R_B}
+\end{align*}
+\paragraph{}
+De las anteriores expresiones se obtiene, para el transistor oscilador:
+\begin{equation}
+%   \label{eq:Al_tx}
+   V_{CE} = \SI{1.74}{\volt} \quad \quad I_C = \SI{518}{\micro\ampere}
+\end{equation}
+\paragraph{}
+Y para el transistor amplificador de la señal de \textit{quench}:
+\begin{equation}
+%   \label{eq:Al_tx}
+   V_{CE} = \SI{1.76}{\volt} \quad \quad I_C = \SI{633}{\micro\ampere}
+\end{equation}
 
-\paragraph{Parte oscilador RF} IGUAL QUE EN TRANSMISOR. SMALL-SIGNAL ETC 
-La estructura del oscilador en el receptor es idéntica al transmisor. Para evitar la realimentación negativa provocada por la parte de polarización se coloca el condensador $C_3 = \SI{470}{\nano\farad}$, este valor es suficiente para que su impedancia para la frecuencia de RF suponga un cortocircuito a tierra. La inclusión de este condensador es imprescindible para que el circuito funcione. 
-\paragraph{Modelo en pequeña señal:} Debido a que el diseño es estructuralmente igual que en el transmisor, los cálculos serán idénticos sustituyendo los valores correspondientes.
+\paragraph{Modelo en pequeña señal}
+\paragraph{}
+La estructura del oscilador en el receptor es idéntica al transmisor. 
+En primer lugar, para evitar la realimentación negativa provocada por la parte de polarización, se coloca el condensador $C_3 = \SI{470}{\nano\farad}$. Este valor es suficiente para que su impedancia para la frecuencia de RF suponga un cortocircuito a tierra. La inclusión de este condensador es imprescindible para que el circuito funcione. 
+\paragraph{} 
+Debido a que el diseño es estructuralmente igual que en el transmisor, los cálculos serán idénticos sustituyendo los valores correspondientes.
 Se incluyen los valores característicos junto a las ecuaciones de interés.
 En función de los valores del punto de operación obtenido, se calculan los parámetros híbridos para el receptor.
 
@@ -38,13 +62,13 @@ V_{AF} = \frac{I_{Cdata}}{h_{OEdata}} =\frac{\SI{1}{\milli\ampere}}{\SI{6}{\micr
 %\[
 \begin{array}{rl} 
       \begin{array}{l}
-	 h_{ib} =  \SI{8.4}{\ohm} \\
-	 h_{fb} =  -0.99
+	 h_{ib} =  \SI{1.35}{\kilo\ohm} \\
+	 h_{fb} =  -0.996
       \end{array}
       &
       \begin{array}{l}
 	 h_{rb} =  0.014 \\
-	 h_{ob} =  \SI{6}{\micro\siemens}
+	 h_{ob} =  \SI{36.9}{\nano\siemens}
       \end{array}
 \end{array}
 %\]
@@ -71,14 +95,10 @@ Debido a la dualidad con respecto al tx, la expresión de la función de transfe
 
 \paragraph{}
 Se obtiene la frecuencia de resonancia como: $$\omega_0^2 = \frac{1}{L_1 \cdot (C_1 + C_2)}$$
-$$ f_0 = \frac{1}{2 \cdot \pi \cdot \sqrt{L_1 \cdot (C_1 + C_2)}} $$
+$$ f_0 = \frac{1}{2 \cdot \pi \cdot \sqrt{L_1 \cdot (C_1 + C_2)}} = \SI{30.63}{\mega\hertz} $$
 \paragraph{}
-Se obtiene el valor de la inductancia con la siguiente expresi\'on explicada en el apartado \ref{sec:des_tx}:
-\begin{equation}
-	\label{eq:inductance}
-PONER DEL OCTAVE
-\end{equation}
-$$ L_1 = \SI{500}{\nano\henry} $$
+El valor de la inductancia $L_1$ es el mismo que el calculado en el apartado \ref{sec:des_tx}, pues esta se construye con las mismas caracter\'isticas. El valor resultante es calculado mediante la ecuaci\'on \ref{eq:def_inductance2}:
+$$ L_1 = \SI{450}{\nano\henry} $$
 
 
 \paragraph{\textit{Quench-signal}} %AISLAR CIRCUITO, REALIZAR C\'ALCULOS, L(CHOKE) R Y C

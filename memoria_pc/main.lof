@@ -1,35 +1,35 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Esquema de una posible modulaci\'on ASK\relax }}{5}{figure.caption.15}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Representación de un transistor como cuadripolo lineal.\relax }}{7}{figure.caption.22}%
-\contentsline {figure}{\numberline {3}{\ignorespaces a) Amplificador sin realimentaci\'on, b) Sistema realimentado\relax }}{8}{figure.caption.29}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Amplificador de tensión con realimentaci\'on serie paralelo ideal.\relax }}{9}{figure.caption.34}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Amplificador de transresistencia con realimentación paralelo paralelo real.\relax }}{10}{figure.caption.35}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Esquema general de un SOC.\relax }}{10}{figure.caption.37}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Diagrama de bloques del Atmega328p, en detalle la CPU\relax }}{12}{figure.caption.42}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Mapa de memoria de datos direccionada por bytes\relax }}{12}{figure.caption.46}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Diagrama de bloques general del proyecto\relax }}{13}{figure.caption.51}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Esquema el\'ectrico del transmisor\relax }}{15}{figure.caption.58}%
-\contentsline {figure}{\numberline {11}{\ignorespaces A) Modelo en pequeña señal del bucle de oscilación para frecuencias medias B) Modelo en pequeña señal del oscilador sustituyendo el condensador de realimentación $C_1$ por su equivalente en parámetros $Y$\relax }}{17}{figure.caption.64}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Transformer model\relax }}{19}{figure.caption.83}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Simulaci\'on de $V_C$ modulada por $V_{digital}$\relax }}{20}{figure.caption.88}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Simulaci\'on de la FFT de $V_C$ de forma general\relax }}{21}{figure.caption.92}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Simulaci\'on de la FFT de $V_C$ ampliada a la frecuencia de trabajo\relax }}{21}{figure.caption.93}%
-\contentsline {figure}{\numberline {16}{\ignorespaces práctica de $V_C$ modulada por $V_{digital}$\relax }}{22}{figure.caption.96}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Placa de transmisor soldada\relax }}{22}{figure.caption.97}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Esquema el\'ectrico del receptor\relax }}{23}{figure.caption.99}%
-\contentsline {figure}{\numberline {19}{\ignorespaces A) Modelo en pequeña señal del bucle de oscilación para frecuencias de RF B) Modelo en pequeña señal del oscilador sustituyendo el condensador de realimentación $C_2$ por su equivalente en parámetros $Y$\relax }}{24}{figure.caption.105}%
-\contentsline {figure}{\numberline {20}{\ignorespaces quench explain\relax }}{26}{figure.caption.117}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Simulación de puntos de interés en varios ciclos ampliados\relax }}{27}{figure.caption.124}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Simulación de $V_{out}$ junto a $V_{quench}$\relax }}{28}{figure.caption.126}%
-\contentsline {figure}{\numberline {23}{\ignorespaces experimental de puntos de interés en varios ciclos ampliados\relax }}{28}{figure.caption.129}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Experimental $V_C$ (negro) y $V_{quench}$ rojo\relax }}{28}{figure.caption.130}%
-\contentsline {figure}{\numberline {25}{\ignorespaces experimental de puntos de interés en varios ciclos ampliados\relax }}{29}{figure.caption.131}%
-\contentsline {figure}{\numberline {26}{\ignorespaces primer emisor receptor real\relax }}{39}{figure.caption.154}%
-\contentsline {figure}{\numberline {27}{\ignorespaces transmisores soldados placa\relax }}{39}{figure.caption.155}%
-\contentsline {figure}{\numberline {28}{\ignorespaces transmisores schematicos\relax }}{40}{figure.caption.156}%
-\contentsline {figure}{\numberline {29}{\ignorespaces maquina estados esquematico\relax }}{41}{figure.caption.162}%
-\contentsline {figure}{\numberline {30}{\ignorespaces receptor general schematic\relax }}{41}{figure.caption.163}%
-\contentsline {figure}{\numberline {31}{\ignorespaces receptor general real\relax }}{42}{figure.caption.164}%
-\contentsline {figure}{\numberline {32}{\ignorespaces sch radio2\relax }}{43}{figure.caption.168}%
-\contentsline {figure}{\numberline {33}{\ignorespaces radio2 real\relax }}{43}{figure.caption.169}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Diagrama de Gantt del desarrollo del proyecto\relax }}{44}{figure.caption.170}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Esquema de una posible modulaci\'on ASK}}{5}{figure.caption.15}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Representación de un transistor como cuadripolo lineal.}}{7}{figure.caption.22}%
+\contentsline {figure}{\numberline {3}{\ignorespaces a) Amplificador sin realimentaci\'on, b) Sistema realimentado}}{8}{figure.caption.29}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Amplificador de tensión con realimentaci\'on serie paralelo ideal.}}{9}{figure.caption.34}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Amplificador de transresistencia con realimentación paralelo paralelo real.}}{10}{figure.caption.35}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Esquema general de un SOC.}}{10}{figure.caption.37}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Diagrama de bloques del Atmega328p, en detalle la CPU}}{12}{figure.caption.42}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Mapa de memoria de datos direccionada por bytes}}{12}{figure.caption.46}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Diagrama de bloques general del proyecto}}{13}{figure.caption.51}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Esquema el\'ectrico del transmisor}}{15}{figure.caption.58}%
+\contentsline {figure}{\numberline {11}{\ignorespaces A) Modelo en pequeña señal del bucle de oscilación para frecuencias medias B) Modelo en pequeña señal del oscilador sustituyendo el condensador de realimentación $C_1$ por su equivalente en parámetros $Y$}}{17}{figure.caption.64}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Transformer model}}{19}{figure.caption.83}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Simulaci\'on de $V_C$ modulada por $V_{digital}$}}{20}{figure.caption.88}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Simulaci\'on de la FFT de $V_C$ de forma general}}{21}{figure.caption.92}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Simulaci\'on de la FFT de $V_C$ ampliada a la frecuencia de trabajo}}{21}{figure.caption.93}%
+\contentsline {figure}{\numberline {16}{\ignorespaces práctica de $V_C$ modulada por $V_{digital}$}}{22}{figure.caption.96}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Placa de transmisor soldada}}{22}{figure.caption.97}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Esquema el\'ectrico del receptor}}{23}{figure.caption.100}%
+\contentsline {figure}{\numberline {19}{\ignorespaces A) Modelo en pequeña señal del bucle de oscilación para frecuencias de RF B) Modelo en pequeña señal del oscilador sustituyendo el condensador de realimentación $C_2$ por su equivalente en parámetros $Y$}}{24}{figure.caption.111}%
+\contentsline {figure}{\numberline {20}{\ignorespaces quench explain}}{27}{figure.caption.123}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Simulación de puntos de interés en varios ciclos ampliados}}{28}{figure.caption.130}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Simulación de $V_{out}$ junto a $V_{quench}$}}{28}{figure.caption.132}%
+\contentsline {figure}{\numberline {23}{\ignorespaces experimental de puntos de interés en varios ciclos ampliados}}{29}{figure.caption.135}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Experimental $V_C$ (negro) y $V_{quench}$ rojo}}{29}{figure.caption.136}%
+\contentsline {figure}{\numberline {25}{\ignorespaces experimental de puntos de interés en varios ciclos ampliados}}{30}{figure.caption.137}%
+\contentsline {figure}{\numberline {26}{\ignorespaces primer emisor receptor real}}{40}{figure.caption.160}%
+\contentsline {figure}{\numberline {27}{\ignorespaces transmisores soldados placa}}{40}{figure.caption.161}%
+\contentsline {figure}{\numberline {28}{\ignorespaces transmisores schematicos}}{41}{figure.caption.162}%
+\contentsline {figure}{\numberline {29}{\ignorespaces maquina estados esquematico}}{42}{figure.caption.168}%
+\contentsline {figure}{\numberline {30}{\ignorespaces receptor general schematic}}{42}{figure.caption.169}%
+\contentsline {figure}{\numberline {31}{\ignorespaces receptor general real}}{43}{figure.caption.170}%
+\contentsline {figure}{\numberline {32}{\ignorespaces sch radio2}}{43}{figure.caption.174}%
+\contentsline {figure}{\numberline {33}{\ignorespaces radio2 real}}{44}{figure.caption.175}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Diagrama de Gantt del desarrollo del proyecto}}{45}{figure.caption.176}%
