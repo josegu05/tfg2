@@ -137,6 +137,12 @@ Se calcula la ganancia en lazo abierto como $A_l = A \cdot f$ y sustituyendo los
 \end{equation}
 \paragraph{}
 Al observar la expresi\'on obtenida en la ecuaci\'on \ref{eq:Al_tx}, se sacan conclusiones para esbozar el diagrama de Bode de manera anal\'itica. En primer lugar, se analiza el desfase, el cual a bajas frecuencias es 0, debido a la suma de los \SI{180}{\degree} del cero doble junto a los \SI{180}{\degree} de $h_{fb} < 0$. El polo cuadr\'atico introduce un desfase de \SI{-180}{\degree}, al que se llega de manera asint\'otica pero de forma r\'apida debido al bajo valor del coeficiente de amortiguaci\'on. Si a este hecho se le añaden los \SI{-90}{\degree} del polo simple, se obtiene que la frecuencia de resonancia con desfase \SI{180}{\degree} se encontrará en algún lugar entre el polo simple y el polo cuadrático.
+\paragraph{Fabricaci\'on de la inductancia del circuito tanque}
+\paragraph{}
+La inductancia del circuito tanque $LC$, es construida a mano para facilitar la radiación al medio. Esta inductancia será el elemento principal de radiación.
+En contraparte, las inductancias comerciales en su fabricación se centran en tener un reducido tamaño y evitar radiación al medio, produciendo bajas interferencias. Este hecho es contrario al objetivo que se busca.
+\paragraph{}
+La expresión de inductancia $L$ de la bobina en función de sus parámetros físicos se desarrolla de la siguiente forma:
 \paragraph{}
 Se esboza el diagrama de Bode para los valores obtenidos en el apartado de polarizaci\'on (ecuaciones \ref{eq:result_pol1} y \ref{eq:result_pol2}) junto a los siguientes valores de los elementos: 
 $$ L_1 = \SI{630}{\nano\henry} \quad C_1=\SI{30}{\pico\farad} \quad C_2=\SI{30}{\pico\farad} $$

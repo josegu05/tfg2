@@ -111,44 +111,45 @@
 \contentsline {paragraph}{Resultado práctico}{27}{section*.123}%
 \contentsline {paragraph}{}{27}{section*.124}%
 \contentsline {subsection}{\numberline {3.2}Parte digital}{28}{subsection.3.2}%
-\contentsline {paragraph}{Introducci\'on}{28}{section*.128}%
+\contentsline {paragraph}{}{28}{section*.128}%
 \contentsline {paragraph}{Configuraci\'on del entorno de trabajo}{29}{section*.129}%
-\contentsline {paragraph}{}{30}{section*.130}%
+\contentsline {paragraph}{}{29}{section*.130}%
 \contentsline {paragraph}{}{30}{section*.131}%
+\contentsline {paragraph}{}{30}{section*.132}%
 \contentsline {subsubsection}{\numberline {3.2.1}Diseño del demodulador digital para la recepci\'on}{30}{subsubsection.3.2.1}%
-\contentsline {paragraph}{Objetivo}{30}{section*.132}%
-\contentsline {paragraph}{Contador de frecuencia}{30}{section*.133}%
-\contentsline {paragraph}{}{30}{section*.134}%
+\contentsline {paragraph}{Objetivo}{30}{section*.133}%
+\contentsline {paragraph}{Contador de frecuencia}{30}{section*.134}%
 \contentsline {paragraph}{}{30}{section*.135}%
 \contentsline {paragraph}{}{30}{section*.136}%
 \contentsline {paragraph}{}{30}{section*.137}%
 \contentsline {paragraph}{}{31}{section*.138}%
-\contentsline {paragraph}{Limitaciones}{31}{section*.139}%
-\contentsline {paragraph}{}{31}{section*.140}%
+\contentsline {paragraph}{}{31}{section*.139}%
+\contentsline {paragraph}{Limitaciones}{31}{section*.140}%
 \contentsline {paragraph}{}{31}{section*.141}%
+\contentsline {paragraph}{}{31}{section*.142}%
 \contentsline {subsubsection}{\numberline {3.2.2}Diseño del codificador digital para la transmisi\'on}{35}{subsubsection.3.2.2}%
-\contentsline {paragraph}{Introducción}{35}{section*.142}%
-\contentsline {paragraph}{Configuraci\'on de reloj}{35}{section*.143}%
-\contentsline {paragraph}{Codificaci\'on de los mensajes}{35}{section*.144}%
+\contentsline {paragraph}{Introducción}{35}{section*.143}%
+\contentsline {paragraph}{Configuraci\'on de reloj}{35}{section*.144}%
+\contentsline {paragraph}{Codificaci\'on de los mensajes}{35}{section*.145}%
 \contentsline {section}{\numberline {4}Cronolog\'ia del proyecto y diagrama de Grant}{38}{section.4}%
-\contentsline {paragraph}{}{38}{section*.146}%
+\contentsline {paragraph}{}{38}{section*.147}%
 \contentsline {subsection}{\numberline {4.1}transmisor FM a varactor}{38}{subsection.4.1}%
-\contentsline {paragraph}{Desarrollo técnico}{38}{section*.147}%
-\contentsline {paragraph}{}{38}{section*.148}%
-\contentsline {paragraph}{Motivos de reemplazo}{38}{section*.152}%
+\contentsline {paragraph}{Desarrollo técnico}{38}{section*.148}%
+\contentsline {paragraph}{}{38}{section*.149}%
+\contentsline {paragraph}{Motivos de reemplazo}{39}{section*.153}%
 \contentsline {subsection}{\numberline {4.2}receptor superheterodino FM}{39}{subsection.4.2}%
-\contentsline {paragraph}{Desarrollo técnico}{39}{section*.153}%
-\contentsline {paragraph}{}{39}{section*.154}%
-\contentsline {paragraph}{Motivos de reemplazo}{40}{section*.155}%
+\contentsline {paragraph}{Desarrollo técnico}{39}{section*.154}%
+\contentsline {paragraph}{}{40}{section*.155}%
+\contentsline {paragraph}{Motivos de reemplazo}{40}{section*.156}%
 \contentsline {subsection}{\numberline {4.3}M\'aquina de estados digital}{40}{subsection.4.3}%
-\contentsline {paragraph}{Desarrollo técnico}{40}{section*.156}%
-\contentsline {paragraph}{Motivos de reemplazo}{41}{section*.160}%
-\contentsline {subsection}{\numberline {4.4}Alternativa viable: conversi\'on directa}{41}{subsection.4.4}%
-\contentsline {paragraph}{Desarrollo técnico}{41}{section*.161}%
-\contentsline {paragraph}{Motivos de reemplazo}{42}{section*.162}%
+\contentsline {paragraph}{Desarrollo técnico}{40}{section*.157}%
+\contentsline {paragraph}{Motivos de reemplazo}{41}{section*.161}%
+\contentsline {subsection}{\numberline {4.4}Alternativa viable: conversi\'on directa}{42}{subsection.4.4}%
+\contentsline {paragraph}{Desarrollo técnico}{42}{section*.162}%
+\contentsline {paragraph}{Motivos de reemplazo}{42}{section*.163}%
 \contentsline {subsection}{\numberline {4.5}Diagrama de Grant}{42}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Resultados y conclusiones}{42}{section.5}%
-\contentsline {paragraph}{}{42}{section*.166}%
-\contentsline {paragraph}{}{44}{section*.167}%
+\contentsline {section}{\numberline {5}Resultados y conclusiones}{43}{section.5}%
+\contentsline {paragraph}{}{43}{section*.167}%
+\contentsline {paragraph}{}{44}{section*.168}%
 \contentsline {section}{\numberline {6}Bibliografía}{45}{section.6}%
 \contentsline {section}{\numberline {7}Indice de figuras}{45}{section.7}%
