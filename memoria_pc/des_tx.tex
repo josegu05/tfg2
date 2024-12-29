@@ -86,7 +86,8 @@ V_{AF} = \frac{I_{Cdata}}{h_{OEdata}} =\frac{\SI{1}{\milli\ampere}}{\SI{6}{\micr
     \label{fig:ss_tx}
 \end{figure}
 
-\paragraph{Modelo en pequeña señal:} ANADIR LOS CALCULOS DE LA INDUCTANCIA APROX 200N SEGUN INTERESE. El objetivo de este modelo es el cálculo de la frecuencia de resonancia del oscilador. En la figura \ref{fig:ss_tx} se muestra el modelo en pequeña señal del oscilador para frecuencias intermedias, en torno a la frecuencia de oscilaci\'on. El bucle de oscilaci\'on se trata de una realimentación paralelo-paralelo, por lo que se representa el condensador de realimentación $C_1$ como su equivalente en par\'ametros $Y$. El valor de dichos par\'ametros son:
+\paragraph{Modelo en pequeña señal:} %ANADIR LOS CALCULOS DE LA INDUCTANCIA APROX 200N SEGUN INTERESE. 
+El objetivo de este modelo es el cálculo de la frecuencia de resonancia del oscilador. En la figura \ref{fig:ss_tx} se muestra el modelo en pequeña señal del oscilador para frecuencias intermedias, en torno a la frecuencia de oscilaci\'on. El bucle de oscilaci\'on se trata de una realimentación paralelo-paralelo, por lo que se representa el condensador de realimentación $C_1$ como su equivalente en par\'ametros $Y$. El valor de dichos par\'ametros son:
 \[
 \begin{array}{rl} 
       \begin{array}{l}
@@ -142,7 +143,29 @@ Al observar la expresi\'on obtenida en la ecuaci\'on \ref{eq:Al_tx}, se sacan co
 La inductancia del circuito tanque $LC$, es construida a mano para facilitar la radiación al medio. Esta inductancia será el elemento principal de radiación.
 En contraparte, las inductancias comerciales en su fabricación se centran en tener un reducido tamaño y evitar radiación al medio, produciendo bajas interferencias. Este hecho es contrario al objetivo que se busca.
 \paragraph{}
-La expresión de inductancia $L$ de la bobina en función de sus parámetros físicos se desarrolla de la siguiente forma:
+La expresión de inductancia $L$ de la bobina en función de sus parámetros físicos se desarrolla de la siguiente forma\footnote{Kulkarni, S. V., \& Khaparde, S. A. (2004). \textit{Transformer Engineering: Design and Practice} (Capítulo 1: Transformer Fundamentals). Indian Institute of Technology, Bombay, Mumbai, India.}:
+\paragraph{}
+Por un lado se tiene la definici\'on de inductancia ($L$), es decir, la variación del flujo con respecto a la variación de corriente por un bobinado: 
+\begin{equation}
+   \label{eq:def_inductance}
+   L = N \cdot \frac{d\theta}{di}
+\end{equation}
+\paragraph{}
+Por otro lado, se aplica la ley de Amp\`ere para un único bobinado:
+\begin{equation}
+   \label{eq:def_ampere}
+   \mathcal{R} = N \cdot \frac{di}{d\theta} \quad \quad
+   \mathcal{R} = \frac{l}{\mu \cdot A_c}
+\end{equation}
+\paragraph{}
+Combinando las ecuaciones \ref{eq:def_ampere} y \ref{eq:def_inductance}, se obtiene la expresi\'on para el c\'alculo de la inductancia:
+\begin{equation}
+   \label{eq:def_inductance2}
+   L = \frac{N^2 \cdot \mu_0 \cdot \left(\frac{d}{2} \right)^2 \cdot \pi}{l}
+\end{equation}
+\paragraph{}
+En este caso, los par\'ametros medidos en la inductancia fabricada son: $N = 8$, $\mu = \mu_0$, $d = \SI{8}{\milli\metre}$ y $l = \SI{9}{\milli\metre}$. El resultado de la aplicaci\'on de la ecuaci\'on \ref{eq:def_inductance2} con los par\'ametros medidos resulta en: $$L_1 = \SI{450}{\nano\henry}$$
+
 \paragraph{}
 Se esboza el diagrama de Bode para los valores obtenidos en el apartado de polarizaci\'on (ecuaciones \ref{eq:result_pol1} y \ref{eq:result_pol2}) junto a los siguientes valores de los elementos: 
 $$ L_1 = \SI{630}{\nano\henry} \quad C_1=\SI{30}{\pico\farad} \quad C_2=\SI{30}{\pico\farad} $$
@@ -163,7 +186,7 @@ La obtenci\'on del diagrama de Bode se ha conseguido por medio del programa de c
 La señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado (apartado \ref{sec:des_digital_tx}). El transistor PNP es utilizado como conmutador.
 
 \paragraph{Antena} 
-CITAR TRANSFORMER BOOK
+%CITAR TRANSFORMER BOOK
 %CALCULOS: 
 %Primero impedancia de salida del circuito sin bobina (usada de primario), y generador a la frecuencia de resonancia. 
 %segundo, modelo del transformador y transformacion de impedancias a cable de 1k aprox?

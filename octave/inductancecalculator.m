@@ -1,9 +1,9 @@
 %% calcular L dado N
 uo = 4*pi*1e-7;
 ur = 1;
-N = 12;
-d = .5e-2;
-l = .8e-2;
+N = 8;
+d = .8e-2;
+l = .9e-2;
 
 disp('dado N')
 N
