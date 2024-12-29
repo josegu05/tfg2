@@ -138,10 +138,11 @@ Se calcula la ganancia en lazo abierto como $A_l = A \cdot f$ y sustituyendo los
 \end{equation}
 \paragraph{}
 De la expresi\'on obtenida en la ecuaci\'on \ref{eq:Al_tx}, se deduce el siguiente an\'alisis. 
-En primer lugar, se analiza el desfase, el cual a bajas frecuencias es 0, debido a la suma de los \SI{180}{\degree} del cero doble junto a los \SI{180}{\degree} de $h_{fb} < 0$. El polo cuadr\'atico introduce un desfase de \SI{-180}{\degree}, al que se de forma r\'apida debido al bajo valor del coeficiente de amortiguaci\'on que se obtiene como:. 
-Adem\'as, se añaden los \SI{-90}{\degree} del polo simple, 
-Por lo que, se obtiene que la frecuencia de resonancia con desfase \SI{180}{\degree} es aproximadamente la misma que la frecuencia de resonancia del polo cuadrático, es decir:
-En el diagrama de Bode de la figura \ref{fig:bode_tx}, se obtiene una frecuencia angular $\omega_0 = \SI{1.925e8}{\radian\per\second}$, por lo que se obtiene una frecuencia de resonancia de:
+En primer lugar, se analiza el desfase, el cual a bajas frecuencias es \SI{0}{\degree}, debido a la suma de los \SI{180}{\degree} del cero doble junto a los \SI{180}{\degree} de $h_{fb} < 0$. A su vez, el polo cuadr\'atico introduce un desfase de \SI{-180}{\degree}, al que se llega de forma r\'apida debido al bajo valor del coeficiente de amortiguaci\'on, el cual se obtiene como:$$\zeta = \frac{h_{ob} \cdot \sqrt{(C_1+C_2) \cdot L_1}}{(C_1+C_2) \cdot 2} = \num{2.9e-4}$$
+Adem\'as, se añaden los \SI{-90}{\degree} del polo simple, el cual, se considera no dominante por su alto valor: $s = \frac{-1}{h_{ib} \cdot C_2} = \SI{4.5e9}{\radian\per\second}$. 
+Consecuentemente, se obtiene que la frecuencia de resonancia con desfase \SI{180}{\degree} es aproximadamente igual que la frecuencia de resonancia del polo cuadrático, es decir:
+$$\omega_0 = \SI{1.925e8}{\radian\per\second}$$ 
+Por lo que:
 \begin{equation}
    f_0 = \frac{\omega_0}{2\cdot\pi} = \SI{30.63}{\mega\hertz}
 \end{equation}
@@ -173,18 +174,18 @@ Combinando las ecuaciones \ref{eq:def_ampere} y \ref{eq:def_inductance}, se obti
 \paragraph{}
 En este caso, los par\'ametros medidos en la inductancia fabricada son: $N = 8$, $\mu = \mu_0$, $d = \SI{8}{\milli\metre}$ y $l = \SI{9}{\milli\metre}$. El resultado de la aplicaci\'on de la ecuaci\'on \ref{eq:def_inductance2} con los par\'ametros medidos resulta en: $$L_1 = \SI{450}{\nano\henry}$$
 
-\paragraph{Diagrama de Bode}
-\paragraph{}
-A continuación, se esboza el diagrama de Bode de la expresi\'on de la ganancia de lazo abierto (ecuaci\'on \ref{eq:Al_tx}) para los valores obtenidos en el apartado de polarizaci\'on (ecuaciones \ref{eq:result_pol1} y \ref{eq:result_pol2}) junto con los siguientes valores de los elementos: 
-$$ L_1 = \SI{450}{\nano\henry} \quad C_1=\SI{30}{\pico\farad} \quad C_2=\SI{30}{\pico\farad} $$
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=1, width=.8\textwidth]{bode_tx}
-    \caption{Diagrama de Bode de la ganancia en lazo abierto del oscilador $A_l$ para frecuencias intermedias}
-    \label{fig:bode_tx}
-\end{figure}
-\paragraph{}
-La obtenci\'on del diagrama de Bode se ha realizado con ayuda del programa de c\'alculo computacional Octave. Los \textit{scripts} utilizados se encuentran el el directorio octave del proyecto de GitHub\footnote{\textit{https://github.com/josegu05/tfg2}}.
+% \paragraph{Diagrama de Bode}
+% \paragraph{}
+% A continuación, se esboza el diagrama de Bode de la expresi\'on de la ganancia de lazo abierto (ecuaci\'on \ref{eq:Al_tx}) para los valores obtenidos en el apartado de polarizaci\'on (ecuaciones \ref{eq:result_pol1} y \ref{eq:result_pol2}) junto con los siguientes valores de los elementos: 
+% $$ L_1 = \SI{450}{\nano\henry} \quad C_1=\SI{30}{\pico\farad} \quad C_2=\SI{30}{\pico\farad} $$
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[scale=1, width=.8\textwidth]{bode_tx}
+%     \caption{Diagrama de Bode de la ganancia en lazo abierto del oscilador $A_l$ para frecuencias intermedias}
+%     \label{fig:bode_tx}
+% \end{figure}
+% \paragraph{}
+% La obtenci\'on del diagrama de Bode se ha realizado con ayuda del programa de c\'alculo computacional Octave. Los \textit{scripts} utilizados se encuentran el el directorio octave del proyecto de GitHub\footnote{\textit{https://github.com/josegu05/tfg2}}.
 
 \paragraph{} 
 Por último, se hace referencia al transistor PNP en el esquema del transmisor (figura \ref{fig:tx}). Este transistor es utilizado como conmutador, de tal forma que, una señal digital activa o corta el paso de corriente por el circuito principal. La señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado (apartado \ref{sec:des_digital_tx}).
