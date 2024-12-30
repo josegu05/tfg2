@@ -22,14 +22,15 @@
 \contentsline {figure}{\numberline {21}{\ignorespaces Simulación de los puntos de interés en varios ciclos ampliados\relax }}{29}{figure.caption.143}%
 \contentsline {figure}{\numberline {22}{\ignorespaces Simulación de $V_{out}$ junto a $V_{quench}$\relax }}{30}{figure.caption.145}%
 \contentsline {figure}{\numberline {23}{\ignorespaces Experimental: captura de osciloscopio de la frecuencia de trabajo\relax }}{30}{figure.caption.148}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Experimental: captura de osciloscopio de $V_C$ (negro) y $V_{quench}$ (rojo)\relax }}{30}{figure.caption.149}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Experimental: captura de osciloscopio de $V_C$ (negro) y $V_{quench}$ (rojo)\relax }}{31}{figure.caption.149}%
 \contentsline {figure}{\numberline {25}{\ignorespaces Experimental: captura de osciloscopio de $V_{out}$ (negro) y $V_{quench}$ (rojo)\relax }}{31}{figure.caption.150}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Primer emisor y receptor montados en placa de entrenamiento\relax }}{40}{figure.caption.187}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Modelos de transmisores soldados placa\relax }}{41}{figure.caption.188}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Modelos esquemáticos de transmisores\relax }}{41}{figure.caption.189}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Modelo esquem\'atico del receptor superheterodino de FM\relax }}{42}{figure.caption.195}%
-\contentsline {figure}{\numberline {30}{\ignorespaces Esquemático de la m\'aquina estados\relax }}{43}{figure.caption.204}%
-\contentsline {figure}{\numberline {31}{\ignorespaces Implementaci\'on del receptor superheterodino de FM completo\relax }}{44}{figure.caption.205}%
-\contentsline {figure}{\numberline {32}{\ignorespaces sch radio2\relax }}{44}{figure.caption.211}%
-\contentsline {figure}{\numberline {33}{\ignorespaces radio2 real\relax }}{45}{figure.caption.212}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Diagrama de Gantt del desarrollo del proyecto\relax }}{46}{figure.caption.216}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Placa de receptor soldada\relax }}{32}{figure.caption.151}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Primer emisor y receptor montados en placa de entrenamiento\relax }}{41}{figure.caption.187}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Modelos de transmisores soldados placa\relax }}{42}{figure.caption.188}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Modelos esquemáticos de transmisores\relax }}{42}{figure.caption.189}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Modelo esquem\'atico del receptor superheterodino de FM\relax }}{43}{figure.caption.193}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Esquemático de la m\'aquina estados\relax }}{44}{figure.caption.200}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Implementaci\'on del receptor superheterodino de FM completo\relax }}{44}{figure.caption.201}%
+\contentsline {figure}{\numberline {33}{\ignorespaces sch radio2\relax }}{45}{figure.caption.206}%
+\contentsline {figure}{\numberline {34}{\ignorespaces radio2 real\relax }}{45}{figure.caption.207}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Diagrama de Gantt del desarrollo del proyecto\relax }}{46}{figure.caption.210}%
