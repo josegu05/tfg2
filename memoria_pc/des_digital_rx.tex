@@ -1,13 +1,14 @@
-\paragraph{Objetivo} El objetivo del microcontrolador en la parte de recepción tiene dos funciones. Implementar un contador de frecuencia que identifique las variaciones recibidas por el m\'odulo de RF correspondientes a los diferentes s\'imbolos digitales, de tal forma que sirva como demodulador. y además decodificar la señal digital recibida, identificando la orden concreta transmitida por el transmisor.
+\paragraph{} El objetivo del microcontrolador en la parte de recepción tiene dos funciones. Implementar un contador de frecuencia que identifique las variaciones recibidas por el m\'odulo de RF correspondientes a los diferentes s\'imbolos digitales, de tal forma que sirva como demodulador. y además decodificar la señal digital recibida, identificando la orden concreta transmitida por el transmisor.
 
-\paragraph{Contador de frecuencia} Esta parte se implementa por medio de dos timers/counters incorporados en el SOC del Atmega328p. La configuraci\'on y uso de estos dispositivos se encuentra en la hoja de datos del microcontrolador (REF). La estrategia de implementación es la siguiente: mientras uno de los timers genera interrupciones periódicas en un intervalo de tiempo conocido. Durante el mismo espacio de tiempo, el segundo timer/counter, se encarga de detectar el número de flancos de subida o bajada producidos por la señal de salida codificada en FM del módulo de RF. Este proceso provoca un número de interrupciones variable en función de la frecuencia de la señal de entrada en un intervalo de tiempo conocido.
+\paragraph{Contador de frecuencia} 
+\paragraph{}
+Esta parte se implementa por medio de dos timers/counters incorporados en el SOC del Atmega328p. La configuraci\'on y uso de estos dispositivos se encuentra en la hoja de datos del microcontrolador (REF). La estrategia de implementación es la siguiente: mientras uno de los timers genera interrupciones periódicas en un intervalo de tiempo conocido. Durante el mismo espacio de tiempo, el segundo timer/counter, se encarga de detectar el número de flancos de subida o bajada producidos por la señal de salida codificada en FM del módulo de RF. Este proceso provoca un número de interrupciones variable en función de la frecuencia de la señal de entrada en un intervalo de tiempo conocido.
 
 \paragraph{} Cada vez que el timer produzca su interrupción periódica, la rutina de tratamiento de interrupción (IRQ) se encargará de examinar el número de interrupciones producidas por el counter en ese lapso de tiempo y decidir si se ha recibido señal, en función del número de interrupciones del counter.
 
-REF datasheet TIMER0 y TIMER2
 \paragraph{} Se hacen uso tanto del TIMER0 como del TIMER2, esto es debido a que poseen las mismas caracter\'isticas necesarias las cuales se encuentran expuestas en la hoja de datos. Existen a su vez, más timers/counters con características más complejas, pero no serán necesarias en este proyecto.
 \paragraph{}
-Se configura TIMER0 como temporizador, generando la interrupci\'on periódica necesaria conocida como gate. mediante el registro de configuración propio del timer, se configura la frecuencia a la cual se genera esta interrupción peri\'odica. La rutina de tratamiento de interrupción ISR(TIMER0), incrementa una variable que permite conocer el n\'umero de veces que se genera la interrupci\'on.
+Se configura TIMER0 como temporizador, generando la interrupci\'on periódica necesaria conocida como \textit{gate}. mediante el registro de configuración propio del timer, se configura la frecuencia a la cual se genera esta interrupción peri\'odica. La rutina de tratamiento de interrupción ISR(TIMER0), incrementa una variable que permite conocer el n\'umero de veces que se genera la interrupci\'on.
 % se encarga de comparar el número de interrupciones producidas por el counter, almacenadas en una variable global, y un número fijo umbral. Si el número de cuentas supera el umbral, la señal fue recibida, produciendo la demodulación digital. 
 % PROBLEMAS ajuste tedioso muy dependiente de la frecuencia.
 \paragraph{}
@@ -16,12 +17,13 @@ Por otro lado, TIMER2, se configura como contador, identificando los flancos de 
 \paragraph{}
 Finalmente, el objetivo del programa main(), es identificar la recepci\'on de señal y actuar en consecuencia.
 Para ello, el programa actúa de la siguiente forma. 
-En primer lugar, espera a que la interrupci\'on del temporizador gate se haya activado el número de veces necesaria. Ambos contadores durante el periodo de espera se encuentran continuamente acturalizando.
-Después se realiza una media aritmética dividiendo el número de flancos detectados por el contador entre el número de veces que gate se activó.
+En primer lugar, espera a que la interrupci\'on del temporizador \textit{gate} se haya activado el número de veces necesaria. Ambos contadores durante el periodo de espera se encuentran continuamente acturalizando.
+Después se realiza una media aritmética dividiendo el número de flancos detectados por el contador entre el número de veces que \textit{gate} se activó.
 En caso de que la media calculada supere la media calculada anteriormente, quiere decir que se ha detectado señal, por lo que el programa procede a actuar en consecuencia.
 El programa implementa una máquina de estados en función del número de señales recibida.
 
 \paragraph{Limitaciones}
+\paragraph{}
 Algunos problemas que surgieron a la hora de llevar a cabo esta realización fueron.
 La velocidad de procesamiento de instrucciones debe ser decenas de veces más rápida que la frecuencia de entrada, \textit{quench-signal}. Siendo la rutina IRQ(TIMER2), del contador la función crítica.
 En las primeras versiones del código recargaban mucho las rutinas de tratamiento de interrupción, escalando muy rápido este problema.
@@ -31,7 +33,10 @@ También, ha sido necesario introducir una función de startup(), ya que, en el 
 %\paragraph{} Lo óptimo para que la identificación de las variaciones de frecuencia fuera lo más sensible posible sería que se provocara una interrupción con cada flanco de la señal de entrada y que la interrupción periódica del timer fuera lo más extensa posible, pero nos encontramos con varios limitantes: la frecuencia de reloj de CPU y su procesamiento de instrucciones y la velocidad de transmisión de datos (bps).
 %\paragraph{} Para encontrar el límite se realiza un cálculo aproximado y posteriormete se ajustan los valores del programa con ayuda de un osciloscopio. El cálculo realizado es el siguiente: CALCULO.
 
-\paragraph{} A continuación, se muestra el código del receptor (archivo main.c) con comentarios que describen las diferentes líneas escritas
+\paragraph{Presentaci\'on del c\'odigo}
+\paragraph{}
+Todas las versiones de los c\'odigos, tanto del emisor como del receptor, se encuentran en el repositorio de GitHub\footnote{\textit{https://github.com/josegu05/tfg2}}. La versi\'on final del c\'odigo del transmisor se muestra a continuaci\'on. El c\'odigo se presenta en dos columnas por hoja, el orden de lectura es el siguiente: primera columna, segunda columna, hoja siguiente.
 
-%basicstyle=\small,
+\begin{multicols}{2}
 \lstinputlisting[language=C]{/home/jose/Documents/tfg2/digital/receptor-8mhz-mean/main.c}
+\end{multicols}

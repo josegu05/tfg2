@@ -1,12 +1,17 @@
 \paragraph{}
 %explicar separacion de partes entre oscilador y quench signal
 El diseño del receptor se ha de separar en tres partes diferenciadas.
+\paragraph{}
 En primer lugar, la parte correspondiente al punto de operación de los transistores, tanto del oscilador de RF como del amplificador de la señal de \textit{quench}. En este apartado se trabaja con la componente DC.
+\paragraph{}
 En segundo lugar, se desarrolla la parte de RF correspondiente al oscilador, el cual define la frecuencia de trabajo. 
+%\paragraph{}
+%En tercer lugar, se desarrolla la parte correspondiente al regulador de tensi\'on de +\SI{5}{\volt}.
+\paragraph{}
 Por último, la parte correspondiente a la \textit{quench-signal}, encargada de gestionar el paro y arranque de la oscilación. Esta parte trabaja a una frecuencia intermedia que puede diferenciarse de la parte de RF y de la componente DC.
 
 \paragraph{}
-El esquema completo del receptor se expone en la figura \ref{fig:rx}. general de la imagen
+El esquema completo del receptor se expone en la figura \ref{fig:rx}.
 \begin{figure}[h]
     \centering
     \includegraphics[scale=1, width=1\textwidth]{receptor}
@@ -143,7 +148,7 @@ La corriente de la inductancia $L_2$ no puede ser negativa, pues en este sentido
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=1, width=1\textwidth]{quench-explain}
-    \caption{quench explain}
+    \caption{Explicación del comportamiento de la señal de quench}
     \label{fig:quench-explain}
 \end{figure}
 
@@ -154,9 +159,9 @@ En el momento que $i_{L_2} = 0$, la tensión en $V_{quench}$ se descarga a trav\
 El tiempo de subida depende tanto del tiempo que tarda en reconstruirse la oscilaci\'on como de la constante de elongación del sistema de la ecuación REF. Esta constante viene dada por $r_s$ y $C_5$ EXPRESION y define $v_{oi}$.
 Se calcula aproximadamente la frecuencia de \textit{quench} siguiendo los valores de la figura \ref{fig:quench-explain}. 
 \begin{align*} 
-   &i_{C_5} + i_{R_3} = 0 \\
-   &C_5 \cdot \frac{dv_0(t)}{dt} + \frac{v_0(t)}{R_3} = 0 \\
-   &\int_{v_{0i}}^{v_0(t)} \frac{1}{v_0(t)} \, dv_0(t) = \int_{0}^{t} \frac{-1}{R_3 \cdot C_5} \, dt \\
+   i_{C_5} + i_{R_3} &= 0 \\
+   C_5 \cdot \frac{dv_0(t)}{dt} + \frac{v_0(t)}{R_3} &= 0 \\
+   \int_{v_{0i}}^{v_0(t)} \frac{1}{v_0(t)} \, dv_0(t) &= \int_{0}^{t} \frac{-1}{R_3 \cdot C_5} \, dt \\
 \end{align*}
 
 \begin{equation}
@@ -188,7 +193,7 @@ Como se puede observar en la figura \ref{fig:simrx_zoom}, a medida que se constr
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.8, width=.8\textwidth]{simrx_zoom}
-    \caption{Simulación de puntos de interés en varios ciclos ampliados}
+    \caption{Simulación de los puntos de interés en varios ciclos ampliados}
     \label{fig:simrx_zoom}
 \end{figure}
 
@@ -203,26 +208,26 @@ Se añade también, en la figura \ref{fig:simrx_vout}, la forma de onda de la te
 
 \paragraph{Resultado práctico} 
 \paragraph{}
-En este caso se muestran las medidas tomadas en el apartado de simulaci\'on, esta vez tomadas en el circuito real. Las medidas se toman usando un osciloscopio. 
-La configuración es la misma que en el en el apartado \ref{sec:des_tx} del transmisor. En este caso, al disponer de dos canales, se muestran en la figura \ref{fig:exp_vc_vquench} los puntos $V_{quench}$ (rojo) y $V_{C}$ (negro).
+En este caso se muestran las medidas tomadas en el apartado de simulaci\'on, esta vez tomadas en el circuito real. Las medidas se toman usando un osciloscopio digital. 
+La configuración es la misma que en el en el apartado \ref{sec:des_tx} del transmisor. En este caso, al disponer de dos canales, se muestran en la figura \ref{fig:exp_vc_vquench} los puntos $V_{quench}$ (rojo) y $V_{C}$ (negro) y en la figura \ref{fig:exp_vout_vquench} los puntos $V_{out}$ (negro) y $V_{quench}$ (rojo).
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.7, width=.7\textwidth]{exp_work_freq.png}
-    \caption{experimental de puntos de interés en varios ciclos ampliados}
-    \label{fig:simrx_zoom}
+    \caption{Experimental: captura de osciloscopio de la frecuencia de trabajo}
+    \label{fig:work_freq}
 \end{figure}
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.7, width=.7\textwidth]{exp_quench+VC.PNG}
-    \caption{Experimental $V_C$ (negro) y $V_{quench}$ rojo}
+    \caption{Experimental: captura de osciloscopio de $V_C$ (negro) y $V_{quench}$ (rojo)}
     \label{fig:exp_vc_vquench}
 \end{figure}
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=.7, width=.7\textwidth]{exp_quench+vout.png}
-    \caption{experimental de puntos de interés en varios ciclos ampliados}
-    \label{fig:simrx_zoom}
+    \includegraphics[scale=.5, width=.5\textwidth]{exp_quench+vout.png}
+    \caption{Experimental: captura de osciloscopio de $V_{out}$ (negro) y $V_{quench}$ (rojo)}
+    \label{fig:exp_vout_vquench}
 \end{figure}
 
 % situacion en el circuito (imagen bloque) y partes, enumeracion partes

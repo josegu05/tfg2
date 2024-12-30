@@ -11,31 +11,14 @@
 #define WAIT_TIME 100000UL
 #define DELAY 10000UL
 
-//uint8_t volatile count = 0;
-//uint8_t volatile lock_button = 0;
-//uint8_t volatile code = 0;
-/* code legend binary:
- * XX00 0000 = Not_valid
- * 1111 0000 = pd5
- * 1111 1100 = pd6
- * 1111 1111 = pd4
-*/
-
-//---- nuevas vars --
-//enum code_t {
-//   CODE0 = 0,
-//   CODE1 = 1,
-//   CODE2 = 2,
-//   CODE3 = 3
-//}
 uint8_t volatile lock_button = 0;
 uint8_t volatile timer_complete = 0;
 uint16_t volatile code = 0;
 #define TEST 1
 #define CODE0 TEST
-#define CODE1 2
-#define CODE2 3
-#define CODE3 4
+#define CODE1 4
+#define CODE2 8
+#define CODE3 12
 
 //#define DEBUG
 void delay(void)
@@ -83,15 +66,6 @@ void transmit_sync(void)
 	 PORTB &= ~(1 << PIN_OUT);
 	 wait_time();
 	 PORTB |= (1 << PIN_OUT);
-
-	 ////clear possible timer2 interrupt to sync timer2
-	 //// TIMER2 interrupt COMP_A interrupt clear by writing a logic 1 if a 1 is written
-	 //TIFR2 |= (TIFR2 & (1 << OCIE2A));
-	 ////restart the count
-	 //TCNT2 = 0;
-
-	 ////enable timer2 interrupt mask
-	 //TIMSK2 = (1 << OCIE2A);
 }
 
 void setup_timer_2_gate(void)
@@ -115,47 +89,23 @@ void setup_timer_2_gate(void)
 
 }
 
+// IRQ of gate timer
 ISR(TIMER2_COMPA_vect)
 {
+   //gate
    timer_complete = 1;
-   /*
-   // gate
-   uint8_t current_code = 0;
-
-   // check if LSB of variable code is 0 or 1
-   current_code = (0b1 & code);
-   // LSR variable code to load next LSB
-   code = (code >> 1);
-   
-   // detectado 0 -> desbloquear boton y desactivar mask
-   if(!current_code)
-   {
-      // unlock button press
-      lock_button = 0;
-      // write 1 in output pin
-      PORTB |= (1 << PIN_OUT);
-      // disable timer2 interrupts
-      TIMSK2 &= ~(1 << OCIE2A);
-   }
-   else
-   {
-      // continue with lock button until a 0 is processed
-      lock_button = 1;
-      // write 0 in output pin
-      PORTB &= ~(1 << PIN_OUT);
-   }
-*/
 }
 
+// IRQ if any button is pressed
 ISR(PCINT2_vect)
 {
+   // wait for button oscillations
    delay();
    // auto clear the interrupt
    // read which pin invoked the interrupt line
    uint8_t irq = 0;
    irq = PIND;
 
-   //------nueva implement ----
    if (lock_button == 0)
    {
       lock_button = 1;
@@ -172,46 +122,6 @@ ISR(PCINT2_vect)
       //debug_toggle_led();
    }
 
-   /*
-   if (!lock_button)
-   {
-      if ( !(irq & (1 << PIND5)) )
-      {
-	 //lock button
-	 lock_button = 1;
-	 // set appropiate code variable
-	 code = 0b1111;
-
-	 //transmit sync and set timer interrupts
-	 transmit_sync();
-
-	 // with interrupts enabled, code will be transmitted
-      }
-
-      // check if pd6 set interrupt flag and if lock button is in progress
-      if ( !(irq & (1 << PIND6)) )
-      {
-	 //lock button
-	 lock_button = 1;
-	 // set appropiate code variable
-	 code = 0b111111;
-
-	 //transmit sync and set timer interrupts
-	 transmit_sync();
-      }
-
-      if ( !(irq & (1 << PIND7)) )
-      {
-	 //lock button
-	 lock_button = 1;
-	 // set appropiate code variable
-	 code = 0b11111111;
-
-	 //transmit sync and set timer interrupts
-	 transmit_sync();
-      }
-   }
-   */
 }
 void setup_gpio_pins(void)
 {
@@ -296,10 +206,10 @@ int main(void)
 	 PCICR |= (1 << PCIE2);
       }
 
+      // TEST mode
       if (code == TEST && lock_button == 1)
       {
-	 //wait for realised 
-	 //while (button-pressed)
+	 //wait for button released
 	 irq = PIND;
 	 while ( (irq & (1 << PIN_TEST)) == 0 )
 	    irq = PIND;

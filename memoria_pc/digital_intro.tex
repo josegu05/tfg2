@@ -2,6 +2,7 @@
 Para establecer un canal de comunicación de datos digital, se utilizan dos microcontroladores para la codificación y la demodulación de los mismos. En este caso, el modelo de microcontrolador utlizado es el mismo en ambos dispositivos, el Atmega328p, pero con distintos programas dependiendo de si se utiliza en el transmisor o receptor.
 
 \paragraph{Configuraci\'on del entorno de trabajo}
+\paragraph{}
 El microcontrolador se programa por medio de un proyecto escrito en C. Para ello, se trabaja con las herramientas que permiten la compilación de este lenguaje a un archivo ejecutable entendible para la plataforma de AVR.
 \paragraph{}
 En primer lugar, es necesario compilar el programa en c\'odigo fuente a un archivo binario para la plataforma objetivo, para ello se usar\'a el compilador \textit{avr-gcc}. Este archivo binario generado no puede ser grabado directamente a la flash del microcontrolador, sino que se necesita la traducción a código hexadecimal del mismo. Para ello, se utiliza el programa \textit{avr-objcopy}. 
@@ -14,6 +15,11 @@ Para automatizar todo el proceso de compilaci\'on y programaci\'on del microcont
 \paragraph{}
 Es importante destacar que los microcontroladores AVR poseen unos registros especiales denominados \textit{fuses}.
 Estos registros poseen configuraciones cr\'iticas para el microcontrolador como la fuente que se utiliza como reloj de CPU. Esta puede ser configurada como externa o interna, a diferentes frecuencias. Por defecto de fábrica, viene configurado usando el oscilador interno de \SI{8}{\mega\hertz}, con un prescaler de 8, resultando en $F_{CPU} = \SI{1}{\mega\hertz}$.
+\paragraph{}
+En la pr\'actica se tuvo que modificar uno de los \textit{fuses}, el \textit{lfuse} en concreto. El prop\'osito final era modificar la frecuencia de reloj de la CPU modificando el bit de prescaler.
+Para lidiar con los aspectos referentes a los \textit{fuses}, se crearon dos guiones \textit{bash}: \textit{fuses.sh} y \textit{write\_fuses.sh}, para leer y escribir respectivamente. A continuaci\'on se muestra \textit{fuses.sh}:
+\lstinputlisting[language=make]{/home/jose/Documents/tfg2/digital/fuses.sh}
+
 \paragraph{}
 Por último, cabe mencionar, que los archivos de código fuente junto a todo el proyecto han sido desarrollados mediante el programa de control de versiones \textit{git}. 
 Los repositorios tanto del proyecto como del código fuente se encuentran en GitHub\footnote{\textit{https://github.com/josegu05/tfg2}}.

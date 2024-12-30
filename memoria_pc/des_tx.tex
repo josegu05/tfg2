@@ -4,9 +4,9 @@ En este apartado se expondr\'a el diseño del transmisor, los c\'alculos matem\'
 El transmisor está diseñado para generar una modulación ASK y emitir a una frecuencia de unos \SI{30}{\mega\hertz}. La frecuencia de emisión es sintonizable con la del receptor por medio de un condensador de capacidad variable.
 \paragraph{}
 En la figura \ref{fig:tx} se puede observar el esquema eléctrico del transmisor.
-El principio de funcionamiento del transmisor es un oscilador basado en un par resonante LC, el cual fija la frecuencia de emisión. 
+El principio de funcionamiento del transmisor es un oscilador basado en un par resonante $LC$, el cual fija la frecuencia de emisión. 
 La oscilaci\'on se genera realizando un bucle de realimentación positiva, donde el transistor NPN juega el papel de elemento activo de amplificación. 
-El circuito tanque LC es el filtro que permite que en cada iteración del bucle se amplifique la frecuencia deseada. A su vez, el condensador de realimentación genera la realimentación positiva, sumando una fracción de la salida con la señal de entrada, que en este caso es el propio ruido generado por el circuito.
+El circuito tanque $LC$ es el filtro que permite que en cada iteración del bucle se amplifique la frecuencia deseada. A su vez, el condensador de realimentación genera la realimentación positiva, sumando una fracción de la salida con la señal de entrada, que en este caso es el propio ruido generado por el circuito.
 El circuito se diseña de forma que se disipe la mayor potencia posible, con el fin de que la señal recorra la mayor distancia alcanzable. 
 \paragraph{}
 Por otra parte, el cicuito permite modular la señal portadora eléctricamente cortando y produciendo la oscilación en función de las variaciones de la señal moduladora. Esto es posible gracias al segundo transistor PNP, el cual trabaja en corte y saturaci\'on y corta el paso de corriente general del circuito.
@@ -22,11 +22,14 @@ El esquema completo del transmisor se expone en la figura \ref{fig:tx}.
 \end{figure}
 
 \paragraph{Diseño del oscilador}
-\paragraph{Polarizaci\'on:} %IGUAL Y MENCIONANDO EL TRANSISTOR PNP EN CORTE APROX 0.2 V DESPRECIABLE.
-Primeramente, se debe fijar el punto de operación deseado. Se deben tener encuenta dos cosas: la zona de trabajo del transistor y la potencia del circuito. La zona de trabajo debe ser activa directa, pues para producir la oscilación, el bucle de realimentación positiva debe tener la etapa de amplificación proporcionada por el transistor. La potencia del circuito, junto a la frecuencia de diseño, acotan el modelo de transistor que se ajuste al circuito.
+\paragraph{Polarizaci\'on} %IGUAL Y MENCIONANDO EL TRANSISTOR PNP EN CORTE APROX 0.2 V DESPRECIABLE.
+\paragraph{}
+Primeramente, se debe fijar el punto de operación deseado. Se deben tener encuenta dos cosas: la zona de trabajo del transistor y la potencia del circuito. La zona de trabajo debe ser activa directa, pues para producir la oscilación, el bucle de realimentación positiva debe tener la etapa de amplificación proporcionada por el transistor. La potencia del circuito, junto a la frecuencia de diseño, acotan el modelo de transistor que se ajusta a las necesidades del circuito.
 \paragraph{}
 En primer lugar, se necesita un transistor con una frecuencia de transición $f_t > \SI{30}{\mega\hertz}$. 
-A parte de esto, el parámetro $I_{Cmax}$ debe ser suficiente para proporcionar la potencia deseada sin deteriorarse. Se elige un transistor 2N2222, cuya $f_t > \SI{30}{\mega\hertz}$ e $I_{Cmax} = \SI{0.6}{\ampere}$. Adem\'as, se fija una $V_{CC} = \SI{9}{\volt}$ el cual ser\'a el mayor valor que pueda tener, pero esto no implica que el transmisor pueda funcionar con tensiones de alimentaci\'on inferiores. Se opta por limitar a $Ic = \SI{100}{\milli\ampere}$, que supondr\'a una potencia de aproximadamente $I_C \cdot V_{CC} = \SI{0.72}{\watt}$ y $V_{CE} = \frac{V_{CC}}{2} = \SI{4.5}{\volt}$, condici\'on necesaria para trabajar en activa directa con el mayor rango de margen de distorsi\'on. Adicionalmente, se obtienen los par\'ametros necesarios de la hoja de características del 2N2222\footnote{ON Semiconductor. (2016). \textit{2N2222A: Small Signal Transistor Datasheet}. Recuperado de \url{https://www.onsemi.com/pdf/datasheet/2n2222a-d.pdf}.}.
+A parte de esto, el parámetro $I_{Cmax}$ debe ser suficiente para proporcionar la potencia deseada sin deteriorarse. Se elige un transistor 2N2222, cuya $f_t > \SI{30}{\mega\hertz}$ e $I_{Cmax} = \SI{0.6}{\ampere}$. Adem\'as, se fija una $V_{CC} = \SI{9}{\volt}$ el cual ser\'a el mayor valor que pueda tener, pero esto no implica que el transmisor pueda funcionar con tensiones de alimentaci\'on inferiores. Se opta por limitar a $Ic = \SI{100}{\milli\ampere}$, que supondr\'a una potencia de aproximadamente $I_C \cdot V_{CC} = \SI{0.72}{\watt}$ y $V_{CE} = \frac{V_{CC}}{2} = \SI{4.5}{\volt}$, condici\'on necesaria para trabajar en activa directa con el mayor rango de margen de distorsi\'on. 
+\paragraph{}
+Adicionalmente, se obtienen los par\'ametros necesarios de la hoja de características del 2N2222\footnote{ON Semiconductor. (2016). \textit{2N2222A: Small Signal Transistor Datasheet}. Recuperado de \url{https://www.onsemi.com/pdf/datasheet/2n2222a-d.pdf}.}.
 Se conoce $h_{FEmax} \approx 300$ de la hoja de datos, aunque, medido con un mult\'imetro, se obtiene el valor $h_{FE} = 280$, por lo que se utilizar\'a este \'ultimo.
 En lugar de repetir el cálculo que se hizo para seleccionar el valor de las resistencias de polarización, se opta por verificar si los valores elegidos satisfacen las imposiciones. Esto es debido a que, una vez se realizaron los c\'alculos, los valores de las resistencias de polarizaci\'on fueron aproximados a valores comerciales para la construcci\'on del dispositivo. De esta forma, se obtinene una comprobaci\'on doble. Adem\'as, en todo el proceso se considera despreciable la ca\'ida de tensi\'on en el transistor PNP, la cual es de unos \SI{.2}{\volt} en condici\'on de saturaci\'on.
 \paragraph{}
@@ -86,7 +89,8 @@ V_{AF} = \frac{I_{Cdata}}{h_{OEdata}} =\frac{\SI{1}{\milli\ampere}}{\SI{6}{\micr
     \label{fig:ss_tx}
 \end{figure}
 
-\paragraph{Modelo en pequeña señal:} %ANADIR LOS CALCULOS DE LA INDUCTANCIA APROX 200N SEGUN INTERESE. 
+\paragraph{Modelo en pequeña señal} %ANADIR LOS CALCULOS DE LA INDUCTANCIA APROX 200N SEGUN INTERESE. 
+\paragraph{}
 El objetivo de este modelo es el cálculo de la frecuencia de resonancia del oscilador. En la figura \ref{fig:ss_tx} se muestra el modelo en pequeña señal del oscilador para frecuencias intermedias, en torno a la frecuencia de oscilaci\'on. El bucle de oscilaci\'on se trata de una realimentación paralelo-paralelo, por lo que se representa el condensador de realimentación $C_1$ como su equivalente en par\'ametros $Y$. El valor de dichos par\'ametros son:
 \[
 \begin{array}{rl} 
@@ -187,9 +191,34 @@ En este caso, los par\'ametros medidos en la inductancia fabricada son: $N = 8$,
 % \paragraph{}
 % La obtenci\'on del diagrama de Bode se ha realizado con ayuda del programa de c\'alculo computacional Octave. Los \textit{scripts} utilizados se encuentran el el directorio octave del proyecto de GitHub\footnote{\textit{https://github.com/josegu05/tfg2}}.
 
+\paragraph{}
+\paragraph{Carril de +\SI{5}{\volt}}
+\paragraph{}
+Para conseguir independencia de la fuente de alimentaci\'on general con respecto de la alimentaci\'on del microcontrolador de la parte digital, se añade un pequeño regulador de tensión formado por una resistencia, un diodo \textit{zener} y un condensador. 
+Este método también actúa a modo de protección contra posibles picos de tensión de la fuente principal, protegiendo el microcontrolador, además de proporcionar estabilidad, mejorando su rendimiento.
+En contraparte, el regulador, al tener un diseño simple, sufre de un excesivo consumo estático, siendo este, el mayor calculado independientemente del consumo de su carga.
+El cálculo del valor de la resistencia de protección se realiza según las necesidades de potencia. Se tiene:
+\begin{align*}
+   P_{zener_{max}} &= \SI{.5}{\watt} \\
+   V_{CC_{max}} &= \SI{9}{\volt} \\
+   I_{AVR_{max}} &\approx \SI{50}{\milli\ampere} \\
+   P_{load_{max}} &= V_{zener} \cdot I_{AVR_{max}} < P_{zener_{max}}\\
+   P_{R_{Lim}} &= (V_{CC_{max}} - V_{zener}) \cdot I_{AVR_{max}}
+\end{align*}
+\begin{equation}
+   R_{Lim} = \SI{78}{\ohm}
+\end{equation}
+\paragraph{}
+El valor de $R_{Lim}$ obtenido, se trata del m\'inimo para satisfacer los requisitos impuestos, pues $I_{AVR_{max}}$ se encuentra sobredimensionado. 
+\paragraph{}
+Empíricamente, en la figura \ref{fig:tx}, se usa $R_{Lim} = R_6 = \SI{100}{\ohm}$, aunque este valor puede ser aún mayor.
+En cuanto a $C_5$, se usa un valor de $C_5 = \SI{4.7}{\micro\farad}$. Este valor se considera suficientemente alto como para estabilizar la tensi\'on y adem\'as suficientemente bajo como para que, al arranque del cicuito, cuando $C_5$ se encuentre descargado, no suponga un pico de corriente muy alto y prolongado para la fuente de alimentaci\'on.
+La resistencia $R_5 = \SI{50}{\ohm}$ act\'ua de separador entre la parte de RF y digital. Además, se comporta como un filtro paso bajo, evitando que señales de RF se filtren hacia el microcontrolador.
 \paragraph{} 
-Por último, se hace referencia al transistor PNP en el esquema del transmisor (figura \ref{fig:tx}). Este transistor es utilizado como conmutador, de tal forma que, una señal digital activa o corta el paso de corriente por el circuito principal. La señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado (apartado \ref{sec:des_digital_tx}).
+Por último, se hace referencia al transistor PNP. %en el esquema del transmisor (figura \ref{fig:tx}). 
+Este transistor es utilizado como conmutador, de tal forma que, una señal digital activa o corta el paso de corriente por el circuito principal. La señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado (apartado \ref{sec:des_digital_tx}).
 
+\paragraph{}
 \paragraph{Antena} 
 %CITAR TRANSFORMER BOOK
 %CALCULOS: 
@@ -210,7 +239,7 @@ Se sigue el siguiente modelo de relación de impedancias en un transformador\foo
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.7, width=.7\textwidth]{transformer2}
-    \caption{Transformer model}
+    \caption{Modelo de transformador ideal}
     \label{fig:transformer}
 \end{figure}
 \paragraph{}
@@ -267,12 +296,14 @@ En la figura \ref{fig:fft_vc_zoom}, se observa el espectro de la modulación amp
 
 \paragraph{Resultado de la pr\'actica} %CAPTURA DEL OSCILOSCOPIO Y MEDIDA DE CORRIENTE
 \paragraph{}
-En la parte práctica se comparan los resultados de la simulación con los resultados obtenidos en el circuito real. El circuito está fabricado en placa soldada de agujeros, la realizaci\'on de estas placas se muestra en la figura REF del apartado REF. Los resultados se miden con un osciloscopio en los mismos puntos de interés que en el apartado de simulación. Las figuras corresponden a capturas realizadas por el osciloscopio al tomar las medidas pertinentes.
+En la parte práctica se comparan los resultados de la simulación con los resultados obtenidos en el circuito real. 
+\paragraph{}
+El circuito está fabricado en placa soldada de agujeros, la realizaci\'on de estas placas se muestra en la figura \ref{fig:exp_placa_tx}. Los resultados se miden con un osciloscopio en los mismos puntos de interés que en el apartado de simulación. Las figuras corresponden a capturas realizadas por el osciloscopio al tomar las medidas pertinentes.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.6, width=.6\textwidth]{exp_tx}
-    \caption{práctica de $V_C$ modulada por $V_{digital}$}
+    \caption{Experimental: captura de osciloscopio de $V_C$ modulada por $V_{digital}$}
     \label{fig:exp_vc_vdig}
 \end{figure}
 

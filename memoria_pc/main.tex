@@ -2,6 +2,7 @@
 
 \usepackage{graphicx} 
 \usepackage{listings} 
+\usepackage{multicol}
 \usepackage{siunitx} 
 \usepackage{caption} 
 \usepackage{hyperref} 
@@ -127,15 +128,18 @@ This is a test to prove the abstract's layout.This is a test to prove the abstra
    \input{teo_osc.tex}
    \subsection{Sistemas integrados: Atmega328p}
    \input{teo_micro.tex}
+\newpage
 \section{Desarrollo}
    \input{des.tex}
    \subsection{Parte anal\'ogica}
    \input{anal_intro.tex}
-   \subsubsection{Diseño del "front-end" del TRANSMISOR de RF anal\'ogico}
+   \subsubsection{Diseño de la parte anal\'ogica de RF del transmisor}
    \label{sec:des_tx}
    \input{des_tx.tex}
-   \subsubsection{Diseño del "front-end" del RECEPTOR de RF anal\'ogico}
+\newpage
+   \subsubsection{Diseño de la parte anal\'ogica de RF del receptor}
    \input{des_rx.tex}
+\newpage
    \subsection{Parte digital}
    \input{digital_intro.tex}
    \subsubsection{Diseño del demodulador digital para la recepci\'on}
@@ -146,6 +150,7 @@ This is a test to prove the abstract's layout.This is a test to prove the abstra
 %   \subsection{Diseño conversor AC-DC y actuadores}
 %   \input{des_acdc.tex}
 
+\newpage
 \section{Cronolog\'ia del proyecto y diagrama de Grant}
    \input{crono.tex}
    \subsection{transmisor FM a varactor}
@@ -153,17 +158,19 @@ This is a test to prove the abstract's layout.This is a test to prove the abstra
    \subsection{receptor superheterodino FM}
    \input{crono_rxfm.tex}
    \subsection{M\'aquina de estados digital}
+   \label{sec:crono_digital}
    \input{crono_digital.tex}
    \subsection{Alternativa viable: conversi\'on directa}
    \input{crono_directa.tex}
    \subsection{Diagrama de Grant}
    \input{grant.tex}
+\newpage
 
 \section{Resultados y conclusiones}
    \input{result.tex}
 
-\newpage
 \section{Bibliografía}
+   \input{biblio.tex}
 
 \section{Indice de figuras}
 \listoffigures
