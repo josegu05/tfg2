@@ -80,7 +80,7 @@ V_{AF} = \frac{I_{Cdata}}{h_{OEdata}} =\frac{\SI{1}{\milli\ampere}}{\SI{6}{\micr
 \end{equation}
 
 \paragraph{}
-El modelo en pequeña señal para las frecuencias de RF es sustancialmente igual a la parte del transmisor (apartado \ref{des_tx.tex}). En la figura \ref{fig:ss_rx}, se muestra el modelo del receptor en pequeña señal para las frecuencias de RF. $L_2$ tiene una impedancia suficientemente grande como para considerarla circuito abierto. El objetivo del modelo es la obtención de una expresión para la frecuencia de resonancia.
+El modelo en pequeña señal para las frecuencias de RF es sustancialmente igual a la parte del transmisor (apartado \ref{sec:des_tx}). En la figura \ref{fig:ss_rx}, se muestra el modelo del receptor en pequeña señal para las frecuencias de RF. $L_2$ tiene una impedancia suficientemente grande como para considerarla circuito abierto. El objetivo del modelo es la obtención de una expresión para la frecuencia de resonancia.
 
 \begin{figure}[h]
     \centering
@@ -154,9 +154,9 @@ La corriente de la inductancia $L_2$ no puede ser negativa, pues en este sentido
 
 \paragraph{}
 %REF Tipler pag 869. descarga condensador
-En cualquier caso, la frecuencia real de \textit{quench} no es la calculada en la ecuacion \ref{eq:Al_tx}, sino que la señal de \textit{quench} se genera como se muestra en la figura \ref{fig:quench-explain}. 
+En cualquier caso, la frecuencia real de \textit{quench} no es la calculada en la ecuaci\'on \ref{eq:Al_tx}, sino que la señal de \textit{quench} se genera como se muestra en la figura \ref{fig:quench-explain}. 
 En el momento que $i_{L_2} = 0$, la tensión en $V_{quench}$ se descarga a trav\'es de $R_3$, siguiendo $\tau$ de $C_3$ y $R_3$ hasta que $V_B - V_{quench} < 0.7$, reiniciando el ciclo.
-El tiempo de subida depende tanto del tiempo que tarda en reconstruirse la oscilaci\'on como de la constante de elongación del sistema de la ecuación REF. Esta constante viene dada por $r_s$ y $C_5$ EXPRESION y define $v_{oi}$.
+El tiempo de subida depende tanto del tiempo que tarda en reconstruirse la oscilaci\'on como de la constante de elongación del sistema de la ecuación \ref{eq:Al_tx}. Esta constante viene dada por $r_s$, $C_5$ y $\omega_n$ como $\left(\zeta = \frac{r_s \cdot C_5}{\omega_n \cdot 2}\right)$ y define $v_{oi}$.
 Se calcula aproximadamente la frecuencia de \textit{quench} siguiendo los valores de la figura \ref{fig:quench-explain}. 
 \begin{align*} 
    i_{C_5} + i_{R_3} &= 0 \\

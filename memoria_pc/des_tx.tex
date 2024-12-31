@@ -31,7 +31,9 @@ A parte de esto, el parámetro $I_{Cmax}$ debe ser suficiente para proporcionar 
 \paragraph{}
 Adicionalmente, se obtienen los par\'ametros necesarios de la hoja de características del 2N2222\footnote{ON Semiconductor. (2016). \textit{2N2222A: Small Signal Transistor Datasheet}. Recuperado de \url{https://www.onsemi.com/pdf/datasheet/2n2222a-d.pdf}.}.
 Se conoce $h_{FEmax} \approx 300$ de la hoja de datos, aunque, medido con un mult\'imetro, se obtiene el valor $h_{FE} = 280$, por lo que se utilizar\'a este \'ultimo.
-En lugar de repetir el cálculo que se hizo para seleccionar el valor de las resistencias de polarización, se opta por verificar si los valores elegidos satisfacen las imposiciones. Esto es debido a que, una vez se realizaron los c\'alculos, los valores de las resistencias de polarizaci\'on fueron aproximados a valores comerciales para la construcci\'on del dispositivo. De esta forma, se obtinene una comprobaci\'on doble. Adem\'as, en todo el proceso se considera despreciable la ca\'ida de tensi\'on en el transistor PNP, la cual es de unos \SI{.2}{\volt} en condici\'on de saturaci\'on.
+\paragraph{}
+En lugar de repetir el cálculo que se hizo para seleccionar el valor de las resistencias de polarización, se opta por verificar si los valores elegidos satisfacen las imposiciones. 
+Esto es debido a que, una vez se realizaron los c\'alculos, los valores de las resistencias de polarizaci\'on fueron aproximados a valores comerciales para la construcci\'on del dispositivo. De esta forma, se obtinene una comprobaci\'on doble. Adem\'as, en todo el proceso se considera despreciable la ca\'ida de tensi\'on en el transistor PNP, la cual es de unos \SI{.2}{\volt} en condici\'on de saturaci\'on.
 \paragraph{}
 Se utiliza equivalente de Thevenin para las resistencias en paralelo. En la malla que aparece se obtiene:
 $$V_{th} - 0.7 - I_c \cdot R_e = I_b \cdot R_{th}$$
@@ -192,7 +194,7 @@ En este caso, los par\'ametros medidos en la inductancia fabricada son: $N = 8$,
 % La obtenci\'on del diagrama de Bode se ha realizado con ayuda del programa de c\'alculo computacional Octave. Los \textit{scripts} utilizados se encuentran el el directorio octave del proyecto de GitHub\footnote{\textit{https://github.com/josegu05/tfg2}}.
 
 \paragraph{}
-\paragraph{Carril de +\SI{5}{\volt}}
+\paragraph{Regulador de tensi\'on: carril de +\SI{5}{\volt}}
 \paragraph{}
 Para conseguir independencia de la fuente de alimentaci\'on general con respecto de la alimentaci\'on del microcontrolador de la parte digital, se añade un pequeño regulador de tensión formado por una resistencia, un diodo \textit{zener} y un condensador. 
 Este método también actúa a modo de protección contra posibles picos de tensión de la fuente principal, protegiendo el microcontrolador, además de proporcionar estabilidad, mejorando su rendimiento.
@@ -219,7 +221,7 @@ Por último, se hace referencia al transistor PNP. %en el esquema del transmisor
 Este transistor es utilizado como conmutador, de tal forma que, una señal digital activa o corta el paso de corriente por el circuito principal. La señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado (apartado \ref{sec:des_digital_tx}).
 
 \paragraph{}
-\paragraph{Antena} 
+\paragraph{Antena y transformador de impedancias} 
 %CITAR TRANSFORMER BOOK
 %CALCULOS: 
 %Primero impedancia de salida del circuito sin bobina (usada de primario), y generador a la frecuencia de resonancia. 

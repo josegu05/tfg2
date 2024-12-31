@@ -1,26 +1,27 @@
 \paragraph{Introducción} 
 \paragraph{}
-El objetivo del microcontrolador en la parte de transmisión, codifica mensajes según los botones pulsados.
+El objetivo del microcontrolador en la parte de transmisión es codificar mensajes según los botones pulsados.
 Cada pulsador codifica un símbolo diferente para que el receptor actúe de manera distinta según el botón pulsado. El algoritmo de comunicación entre transmisor y receptor se realiza de manera asíncrona. Para diferenciar los símbolos digitales se ha de tener en cuenta el tipo de modulación ASK, donde el '1' implica recibir señal y el '0' no haberla recibido. 
-/paragraph{}
-Los relojes o timers encargados de la codificación y decodificación tanto en transmisión como en recepción, deben trabajar a la misma tasa de baudios para identificar correctamente los mensajes.
+\paragraph{}
+Los relojes o timers encargados de la codificación y decodificación tanto en transmisión como en recepción, deben trabajar a la misma frecuencia para identificar correctamente los mensajes.
 
+\paragraph{}
 \paragraph{Codificaci\'on de los mensajes} 
 \paragraph{}
-La codificación de los diferentes símbolos se desarrolla de forma que, los algoritmos de codificación y decodificación se realicen de la forma más sencilla y robusta posible, teniendo en cuenta el tipo de modulación ASK.
+La codificación de los diferentes símbolos se desarrolla de forma que los algoritmos de codificación y decodificación se realicen de la forma más sencilla y robusta posible, teniendo en cuenta el tipo de modulación ASK.
 \paragraph{}
-Cada s\'imbolo se diferencia en funci\'on del n\'umero de ciclos de TIMER2, \textit{gate}, que mantengan activos la señal de RF.
-Tanto emisor como receptor poseen un \textit{gate timer} configurado a la misma frecuencia. El receptor decodifica los s\'imbolos en función del número de ciclos de timers detectados. 
+Cada s\'imbolo se diferencia en funci\'on del n\'umero de ciclos de TIMER2 (\textit{gate}) que mantengan activos la señal de RF.
+Tanto emisor como receptor poseen un \textit{gate} configurado a la misma frecuencia. El receptor decodifica los s\'imbolos en función del número de ciclos de \textit{gate} detectados. 
 \paragraph{}
 Previamente al envío del símbolo, se envía el \textit{header}, el cual es utilizado para estabilizar al transmisor y sincronizar al receptor. Este \textit{header} concluye con un '0', transmitiendo, seguidamente el s\'imbolo correspondiente.
 \paragraph{}
-Un ejemplo real del algoritmo se puede observar en la figura \ref{fig:exp_vc_vdig}, donde se aprecia el final del header y posteriormente el env\'io del c\'odigo correspondiente.
+Un ejemplo real del algoritmo se puede observar en la figura \ref{fig:exp_vc_vdig}, donde se aprecia el final del \textit{header} y posteriormente el env\'io del c\'odigo correspondiente.
 
 \paragraph{Limitaciones}
 \paragraph{}
-En anteriores versiones del c\'odigo, la l\'ogica de transmisi\'on pretendía ser esencialmente la misma, pero fue implementada de una forma más limitada. Esta limitación fue provocada por errores de programación. Los errores vinieron dados principalmente porque las rutinas de tratamiento de interrupción (IRQ), pretendían hacer funciones que no les correspondían.
+En anteriores versiones del c\'odigo, la l\'ogica de transmisi\'on pretendía ser esencialmente la misma, pero fue implementada de una forma más limitada. Esta limitación fue provocada por errores de programación, los cuales vinieron dados principalmente porque las rutinas de tratamiento de interrupción (IRQ) pretendían hacer funciones que no les correspondían.
 \paragraph{}
-En la versión final, anteriormente mostrada, las funciones principales son implementadas en main(), mejorando esta flexibilidad de implementación. Cabe recalcar, que el código de la versión anterior, también cumplía su función.
+En la versión final, que se muestra a continuaci\'on, las funciones principales son implementadas en \textit{main()}, mejorando esta flexibilidad de implementación. Cabe recalcar que el código de la versión anterior también cumplía su función.
 \paragraph{Presentaci\'on del c\'odigo}
 \paragraph{}
 Todas las versiones de los c\'odigos, tanto del emisor como del receptor, se encuentran en el repositorio de GitHub\footnote{\textit{https://github.com/josegu05/tfg2}}. La versi\'on final del c\'odigo del transmisor se muestra a continuaci\'on. El c\'odigo se presenta en dos columnas por hoja, el orden de lectura es el siguiente: primera columna, segunda columna, hoja siguiente.

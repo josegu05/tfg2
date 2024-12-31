@@ -75,21 +75,34 @@ keywordstyle=\color{red}, % Color for keywords
 
 {\bfseries \large [Título extendido del TFG (si procede)] }\vspace{10mm} 
 
-{\bfseries \large Resumen:} \vspace{5mm}
+{\bfseries \large Resumen} %\vspace{5mm}
+\paragraph{}
+Este proyecto presenta un sistema de comunicaciones digital mediante un enlace de radiofrecuencia.
+El diseño de los dispositivos, emisor y receptor es construído íntegramente con componentes discretos.
+El objetivo principal es dar una solución a problemas de control digital de dispositivos de forma general a cierta distancia. 
+Como objetivo personal, enfrentar el proceso de lograr, a partir de un diseño electrónico propio de radiofrecuencia, la realización práctica del mismo.
+\paragraph{}
+El proyecto trabaja con varias de las \'areas estudiadas en el grado, las cuales se combinan para dar lugar al objetivo final. 
+Entre los campos aplicados al proyecto se encuentran: una parte de electr\'onica anal\'ogica y radiofrecuencia y otra parte digital de sistemas y programaci\'on de microcontroladores. Ambas partes se integran de forma conjunta. Todos los c\'alculos est\'an basados en la teoría del control, electromagnetismo y teoría de circuitos.
 
-Esto es una prueba para probar el formato del Resumen. Esto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del Resumen.
 \vspace{1cm}
 
-{\bfseries \large Abstract: }\vspace{5mm} 
-
-This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.
+{\bfseries \large Abstract} %\vspace{5mm} 
+\paragraph{}
+This project presents a digital communications system using a radio frequency link.
+The design of the devices, transmitter and receiver is built entirely with discrete components.
+The main objective is to provide a solution to problems of digital control of devices in a general way at certain distance. 
+As a personal objective, to face the process of achieving, from an own electronic design of radio frequency, the practical realization of the same.
+\paragraph{}
+The project works with several of the areas studied in the degree, which are combined to give rise to the final objective. 
+Among the fields applied to the project are: a part of analog electronics and radio frequency and another part of digital systems and microcontroller programming. Both parts are integrated together. All calculations are based on control theory, electromagnetism and circuit theory.
 \vspace{1cm}
 
 %%Comentar estas notas para que no salgan en la memoria
-{\Large\textbf{Nota: el título extendido (si procede), el resumen y el abstract deben estar en una misma página y su extensión no debe superar una página. Tamaño mínimo 11pto.}}
-\vspace{1cm}
-
-{\Large\textbf{Extensión máxima 50 páginas sin contar portada, contraportada y declaración responsable (sí se incluye índice, introducción, conclusiones y bibliografía}}
+%{\Large\textbf{Nota: el título extendido (si procede), el resumen y el abstract deben estar en una misma página y su extensión no debe superar una página. Tamaño mínimo 11pto.}}
+%\vspace{1cm}
+%
+%{\Large\textbf{Extensión máxima 50 páginas sin contar portada, contraportada y declaración responsable (sí se incluye índice, introducción, conclusiones y bibliografía}}
 \newpage
 
 %%Incluir aquí la declaración responsable de autoría y uso de las herramientas de IA.
@@ -114,6 +127,7 @@ This is a test to prove the abstract's layout.This is a test to prove the abstra
    \label{sec:intro}
    \input{intro.tex}
    \subsection{Objetivos y motivaci\'on}
+   \label{sec:obj}
    \input{intro_obj.tex}
 \section{Marco Teórico}
    %\input{teo.tex}
@@ -150,7 +164,7 @@ This is a test to prove the abstract's layout.This is a test to prove the abstra
 %   \input{des_acdc.tex}
 
 \newpage
-\section{Cronolog\'ia del proyecto y diagrama de Grant}
+\section{Cronolog\'ia del proyecto y diagrama de Gantt}
    \input{crono.tex}
    \subsection{transmisor FM a varactor}
    \input{crono_txfm.tex}
@@ -161,13 +175,14 @@ This is a test to prove the abstract's layout.This is a test to prove the abstra
    \input{crono_digital.tex}
    \subsection{Alternativa viable: conversi\'on directa}
    \input{crono_directa.tex}
-   \subsection{Diagrama de Grant}
+   \subsection{Diagrama de Gantt}
    \input{grant.tex}
 \newpage
 
 \section{Resultados y conclusiones}
    \input{result.tex}
 
+\newpage
 \section{Bibliografía}
    \input{biblio.tex}
 
