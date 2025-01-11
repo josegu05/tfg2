@@ -6,8 +6,9 @@ El transmisor está diseñado para generar una modulación ASK y emitir a una fr
 En la figura \ref{fig:tx} se puede observar el esquema eléctrico del transmisor.
 El principio de funcionamiento del transmisor es un oscilador basado en un par resonante $LC$, el cual fija la frecuencia de emisión. 
 La oscilaci\'on se genera realizando un bucle de realimentación positiva, donde el transistor NPN juega el papel de elemento activo de amplificación. 
-El circuito tanque $LC$ es el filtro que permite que en cada iteración del bucle se amplifique la frecuencia deseada. A su vez, el condensador de realimentación genera la realimentación positiva, sumando una fracción de la salida con la señal de entrada, que en este caso es el propio ruido generado por el circuito.
-El circuito se diseña de forma que se disipe la mayor potencia posible, con el fin de que la señal recorra la mayor distancia alcanzable. 
+El circuito tanque $LC$, conformado por $L_1$ y $C_1$, es el filtro que permite que en cada iteración del bucle se amplifique la frecuencia deseada. A su vez, el condensador de realimentación, $C_2$, genera la realimentación positiva, sumando en fase una fracción de la salida con la señal de entrada, que en este caso es el propio ruido generado por el circuito.
+La inductancia $L_2$ supone una alta impedancia para la frecuencia de oscilaci\'on y es comunmente conocida como RFC (\textit{Radio Frequency Choke}). Esta inductancia evita que la frecuencia de resonancia del circuito se derive a tierra, matando la oscilación.
+El circuito se diseña de forma que se disipe la mayor potencia posible ($P_{in}$), siguiendo la relaci\'on del apartado \ref{sec:teo_fmfsk}, con el fin de que la señal recorra la mayor distancia alcanzable con una eficiencia determinada.
 \paragraph{}
 Por otra parte, el cicuito permite modular la señal portadora eléctricamente cortando y produciendo la oscilación en función de las variaciones de la señal moduladora. Esto es posible gracias al segundo transistor PNP, el cual trabaja en corte y saturaci\'on y corta el paso de corriente general del circuito.
 % Esto se realiza por medio de un oscilador Colpitts en base común sintonizado a la frecuencia de emisión y que a su vez es mezclado con una señal de onda cuadrada generada por el chip integrado NE555.
@@ -16,7 +17,7 @@ El esquema completo del transmisor se expone en la figura \ref{fig:tx}.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=1, width=1\textwidth]{transmisor}
+    \includegraphics[scale=1, width=1\textwidth]{transmisor2}
     \caption{Esquema el\'ectrico del transmisor}
     \label{fig:tx}
 \end{figure}
@@ -26,8 +27,10 @@ El esquema completo del transmisor se expone en la figura \ref{fig:tx}.
 \paragraph{}
 Primeramente, se debe fijar el punto de operación deseado. Se deben tener encuenta dos cosas: la zona de trabajo del transistor y la potencia del circuito. La zona de trabajo debe ser activa directa, pues para producir la oscilación, el bucle de realimentación positiva debe tener la etapa de amplificación proporcionada por el transistor. La potencia del circuito, junto a la frecuencia de diseño, acotan el modelo de transistor que se ajusta a las necesidades del circuito.
 \paragraph{}
+El transistor NPN se configura en base com\'un. En esta configuraci\'on se mantiene una tensión fija en la base y se establece como variable la tensi\'on en el emisor. Para fijar la tensión de base, $V_B$, se incorpora el condensador $C_3$, el cual, tiene un valor suficientemente alto para ello.
+\paragraph{}
 En primer lugar, se necesita un transistor con una frecuencia de transición $f_t > \SI{30}{\mega\hertz}$. 
-A parte de esto, el parámetro $I_{Cmax}$ debe ser suficiente para proporcionar la potencia deseada sin deteriorarse. Se elige un transistor 2N2222, cuya $f_t > \SI{30}{\mega\hertz}$ e $I_{Cmax} = \SI{0.6}{\ampere}$. Adem\'as, se fija una $V_{CC} = \SI{9}{\volt}$ el cual ser\'a el mayor valor que pueda tener, pero esto no implica que el transmisor pueda funcionar con tensiones de alimentaci\'on inferiores. Se opta por limitar a $Ic = \SI{100}{\milli\ampere}$, que supondr\'a una potencia de aproximadamente $I_C \cdot V_{CC} = \SI{0.72}{\watt}$ y $V_{CE} = \frac{V_{CC}}{2} = \SI{4.5}{\volt}$, condici\'on necesaria para trabajar en activa directa con el mayor rango de margen de distorsi\'on. 
+A parte de esto, el parámetro $I_{Cmax}$ debe ser suficiente para proporcionar la potencia deseada sin deteriorarse. Se elige un transistor 2N2222, cuya $f_t > \SI{30}{\mega\hertz}$ e $I_{Cmax} = \SI{0.6}{\ampere}$. Adem\'as, se fija una $V_{CC} = \SI{9}{\volt}$ el cual ser\'a el mayor valor que pueda tener, pero esto no implica que el transmisor pueda funcionar con tensiones de alimentaci\'on inferiores. Se opta por limitar a $Ic = \SI{100}{\milli\ampere}$, en funci\'on de las especificaciones del transistor. Esto supondr\'a una potencia $P_{in}$ de aproximadamente $I_C \cdot V_{CC} = \SI{0.9}{\watt}$ y $V_{CE} = \frac{V_{CC}}{2} = \SI{4.5}{\volt}$, condici\'on necesaria para trabajar en activa directa con el mayor rango de margen de distorsi\'on. 
 \paragraph{}
 Adicionalmente, se obtienen los par\'ametros necesarios de la hoja de características del 2N2222\footnote{ON Semiconductor. (2016). \textit{2N2222A: Small Signal Transistor Datasheet}. Recuperado de \url{https://www.onsemi.com/pdf/datasheet/2n2222a-d.pdf}.}.
 Se conoce $h_{FEmax} \approx 300$ de la hoja de datos, aunque, medido con un mult\'imetro, se obtiene el valor $h_{FE} = 280$, por lo que se utilizar\'a este \'ultimo.
@@ -35,8 +38,9 @@ Se conoce $h_{FEmax} \approx 300$ de la hoja de datos, aunque, medido con un mul
 En lugar de repetir el cálculo que se hizo para seleccionar el valor de las resistencias de polarización, se opta por verificar si los valores elegidos satisfacen las imposiciones. 
 Esto es debido a que, una vez se realizaron los c\'alculos, los valores de las resistencias de polarizaci\'on fueron aproximados a valores comerciales para la construcci\'on del dispositivo. De esta forma, se obtinene una comprobaci\'on doble. Adem\'as, en todo el proceso se considera despreciable la ca\'ida de tensi\'on en el transistor PNP, la cual es de unos \SI{.2}{\volt} en condici\'on de saturaci\'on.
 \paragraph{}
-Se utiliza equivalente de Thevenin para las resistencias en paralelo. En la malla que aparece se obtiene:
+Se utiliza equivalente de Thevenin para las resistencias en paralelo. En la malla formada por el equivalente thevenin de $V_{CC}$, $R_1$ y $R_2$, $V_{BE}$ y $V_{RE}$ se obtiene:
 $$V_{th} - 0.7 - I_c \cdot R_e = I_b \cdot R_{th}$$
+$$ I_E \approx I_C $$
 Siendo:
 \renewcommand{\arraystretch}{1.5}
 \[
@@ -93,7 +97,7 @@ V_{AF} = \frac{I_{Cdata}}{h_{OEdata}} =\frac{\SI{1}{\milli\ampere}}{\SI{6}{\micr
 
 \paragraph{Modelo en pequeña señal} %ANADIR LOS CALCULOS DE LA INDUCTANCIA APROX 200N SEGUN INTERESE. 
 \paragraph{}
-El objetivo de este modelo es el cálculo de la frecuencia de resonancia del oscilador. En la figura \ref{fig:ss_tx} se muestra el modelo en pequeña señal del oscilador para frecuencias intermedias, en torno a la frecuencia de oscilaci\'on. El bucle de oscilaci\'on se trata de una realimentación paralelo-paralelo, por lo que se representa el condensador de realimentación $C_1$ como su equivalente en par\'ametros $Y$. El valor de dichos par\'ametros son:
+El objetivo de este modelo es el cálculo de la frecuencia de resonancia del oscilador de acuerdo con los valores del esquemático (figura \ref{fig:tx}). En la figura \ref{fig:ss_tx} se muestra el modelo en pequeña señal del oscilador para frecuencias intermedias, en torno a la frecuencia de oscilaci\'on. El bucle de oscilaci\'on se trata de una realimentación paralelo-paralelo, por lo que se representa el condensador de realimentación $C_1$ como su equivalente en par\'ametros $Y$. El valor de dichos par\'ametros son:
 \[
 \begin{array}{rl} 
       \begin{array}{l}
@@ -145,9 +149,11 @@ Se calcula la ganancia en lazo abierto como $A_l = A \cdot f$ y sustituyendo los
 \paragraph{}
 De la expresi\'on obtenida en la ecuaci\'on \ref{eq:Al_tx}, se deduce el siguiente an\'alisis. 
 En primer lugar, se analiza el desfase, el cual a bajas frecuencias es \SI{0}{\degree}, debido a la suma de los \SI{180}{\degree} del cero doble junto a los \SI{180}{\degree} de $h_{fb} < 0$. A su vez, el polo cuadr\'atico introduce un desfase de \SI{-180}{\degree}, al que se llega de forma r\'apida debido al bajo valor del coeficiente de amortiguaci\'on, el cual se obtiene como:$$\zeta = \frac{h_{ob} \cdot \sqrt{(C_1+C_2) \cdot L_1}}{(C_1+C_2) \cdot 2} = \num{2.9e-4}$$
+Siendo:
+$$C_1 = \SI{30}{\pico\farad} \quad \quad C_2 = \SI{30}{\pico\farad} \quad \quad L_1 = \SI{450}{\nano\henry}$$
 Adem\'as, se añaden los \SI{-90}{\degree} del polo simple, el cual, se considera no dominante por su alto valor: $s = \frac{-1}{h_{ib} \cdot C_2} = \SI{4.5e9}{\radian\per\second}$. 
 Consecuentemente, se obtiene que la frecuencia de resonancia con desfase \SI{180}{\degree} es aproximadamente igual que la frecuencia de resonancia del polo cuadrático, es decir:
-$$\omega_0 = \SI{1.925e8}{\radian\per\second}$$ 
+$$\omega_0 = \sqrt{\frac{1}{L_1 \cdot (C_1 + C_2)}} = \SI{1.925e8}{\radian\per\second}$$ 
 Por lo que:
 \begin{equation}
    f_0 = \frac{\omega_0}{2\cdot\pi} = \SI{30.63}{\mega\hertz}
