@@ -1,19 +1,23 @@
-modelo pequena senal: especificar mas el paso al modelo transistor npn la bobina rfc etc
+CHECK modelo pequena senal: especificar mas el paso al modelo transistor npn la bobina rfc etc
 No entiendo el desarrollo de las páginas 17 y 18. ¿En qué referencia te has basado? Parece que vas a deducir el valor de C2 para una frecuencia de resonancia de 30 MHz, pero directamente calculas la frecuencia. ¿Qué valor de C2 usas? ¿Y de C1?
 
+CHECK
 ¿Llegas a medir el valor de la inductancia L1? ¿Sale lo esperado?
 se justifica por la captura de osciloscopio oscilacion
 
 Antena: primero dices que la antena va a ser la inductancia del circuito tanque (o así lo entendí), pero luego dices que pones un transformador. No lo entiendo. Además, en la página 21 dices que la resistencia de radiación de la antena es de 1 Kohm. ¿Qué antena? ¿cómo lo has medido?
 
+CHECK
 Página 22: ¿Por qué los armónicos se encuentran a 10 KHz?
-Figura 16: ¿Cuál es cada señal?
+CHECK
 Página 23: ¿Por qué no has medido el espectro de radiación?
 pq no tiene moduladora de frecuencia fija
 
+CHECK
 Echo en falta más referencias. Por ejemplo, cuando explicas el receptor superregenerativo, dices que está diseñado (o inventado) en 1920. ¿Cuál es la referencia? Revisa la memoria completa y intenta meter más referencias. En general usas técnicas o ideas de diseño que no sé si están incluidas en las asignaturas de la carrera, por lo que estaría bien que las referenciaras. Si no, parece que las has inventado tu.
 
-Página 25: a mi no me parece que ambos transistores tengan la misma configuración...
+CHECK
 Página 25: tienes muchas incógnitas para obtener Vce y Ic. ¿Cómo has diseñado los valores de las resistencias?
 
+CHECK
 Página 29: apartado "Resultado de la simulación". Falta una referencia a una figura.

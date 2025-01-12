@@ -95,9 +95,18 @@ V_{AF} = \frac{I_{Cdata}}{h_{OEdata}} =\frac{\SI{1}{\milli\ampere}}{\SI{6}{\micr
     \label{fig:ss_tx}
 \end{figure}
 
-\paragraph{Modelo en pequeña señal} %ANADIR LOS CALCULOS DE LA INDUCTANCIA APROX 200N SEGUN INTERESE. 
 \paragraph{}
-El objetivo de este modelo es el cálculo de la frecuencia de resonancia del oscilador de acuerdo con los valores del esquemático (figura \ref{fig:tx}). En la figura \ref{fig:ss_tx} se muestra el modelo en pequeña señal del oscilador para frecuencias intermedias, en torno a la frecuencia de oscilaci\'on. El bucle de oscilaci\'on se trata de una realimentación paralelo-paralelo, por lo que se representa el condensador de realimentación $C_1$ como su equivalente en par\'ametros $Y$. El valor de dichos par\'ametros son:
+\paragraph{Modelo en pequeña señal} 
+\paragraph{}
+El objetivo de este modelo es el cálculo de la frecuencia de resonancia del oscilador de acuerdo con los valores del esquemático (figura \ref{fig:tx}). En la figura \ref{fig:ss_tx} se muestra el modelo en pequeña señal del oscilador para frecuencias intermedias, en torno a la frecuencia de oscilaci\'on.
+\paragraph{}
+El modelo se obtiene sustituyendo al transistor por el modelo de parámetros híbridos estudiado en el apartado \ref{sec:teo_transistor}, ecuaci\'on \ref{eq:hybred params}. A su vez, se añaden los componentes influyentes a la frecuencia de trabajo, siguiendo el esquema general (figura \ref{fig:tx}) y figura \ref{fig:ss_tx}.
+\paragraph{}
+En primer lugar, debido a la baja impedancia de $C_4$ a la frecuencia de trabajo, se considera un \textit{bypass} a tierra. $L_1$ y $C_1$, se conectan a la salida del transistor ($V_C$). $C_2$ se configura como el circuito de realimentaci\'on, conectado entre la salida ($V_C$) y la entrada ($V_E$). Durante el desarrollo, el circuito de feedback se sustituye por su modelo de cuadripolo lineal equivalente (apartado \ref{sec:teo_osc}, figuras \ref{fig:sp} y \ref{fig:pp}).
+Por último, la inductancia de RFC, $L_2$, posee una impedancia muy alta a la frecuencia de trabajo, por lo que se considera como circuito abierto. 
+Los efectos parásitos de los elementos como las capacidades parásitas del transistor, no serán consideradas para facilitar los cálculos. El modelo presentado supone una aproximación suficientemente buena. El esquema final del modelo de trabajo se encuentra en la figura \ref{fig:ss_tx}.
+\paragraph{}
+Al analizar el bucle de oscilaci\'on del circuito se observa que se trata de una realimentación paralelo-paralelo, por lo que se representa el condensador de realimentación $C_1$ como su equivalente en par\'ametros $Y$. El valor de dichos par\'ametros son:
 \[
 \begin{array}{rl} 
       \begin{array}{l}
@@ -112,8 +121,8 @@ El objetivo de este modelo es el cálculo de la frecuencia de resonancia del osc
 \end{array}
 \]
 \paragraph{}
-Se deben tener en cuenta ciertas consideraciones previas como consecuencia del an\'alisis del esquema B) en la figura \ref{fig:ss_tx}. La realimentaci\'on es positiva en el momento que $Y_{12}<0$ y $h_{fb}<0$ por lo que $V_2>0$. El modelo que se muestra corresponde a frecuencias intermedias en torno a la de oscilaci\'on. Para frecuencias bajas, la impedancia de $C_2$ tendrá un valor tan alto que corta la realimentación, siguiendo el esquema A) figura \ref{fig:ss_tx}. 
-Para frecuencias altas, la impedancia de $C_2$ tendr\'a un valor tan bajo que supondr\'a un cortocircuito a tierra para la corriente de realimentaci\'on, por lo que $ie = 0 \unit{\ampere}$.
+Se deben tener en cuenta ciertas consideraciones previas como consecuencia del an\'alisis del esquema B) en la figura \ref{fig:ss_tx}. La realimentaci\'on es positiva en el momento que $Y_{12}<0$ y $h_{fb}<0$ por lo que $V_2>0$. El modelo que se muestra corresponde a frecuencias intermedias en torno a la de oscilaci\'on. Para frecuencias bajas, la impedancia de $C_2$ tendrá un valor tan alto que supondrá un circuito abierto para estas.
+Por otro lado, para frecuencias altas, la impedancia de $C_1$ del circuito tanque tendr\'a un valor tan bajo que supondr\'a un cortocircuito a tierra a la salida del amplificador.
 \paragraph{}
 Se calcula la frecuencia de resonancia, en base al modelo B) de la figura \ref{fig:ss_tx}. Siguiendo el criterio de Barkhausen, la frecuencia de resonancia se corresponde con la única con desfase $\angle A_l(f_0) = \SI{180}{\degree}$ a lo largo del bucle y una magnitud $|A_l(f_0)|\ge 0$. Se obtiene la funci\'on de transferencia de la ganancia en lazo abierto.
 Siguiendo el modelo general de la realimentaci\'on (ecuaci\'on \ref{eq:feedback} aplicada al esquema B) de la figura \ref{fig:ss_tx}), se calcula: 
@@ -186,6 +195,7 @@ Combinando las ecuaciones \ref{eq:def_ampere} y \ref{eq:def_inductance}, se obti
 \paragraph{}
 En este caso, los par\'ametros medidos en la inductancia fabricada son: $N = 8$, $\mu = \mu_0$, $d = \SI{8}{\milli\metre}$ y $l = \SI{9}{\milli\metre}$. El resultado de la aplicaci\'on de la ecuaci\'on \ref{eq:def_inductance2} con los par\'ametros medidos resulta en: $$L_1 = \SI{450}{\nano\henry}$$
 
+El valor obtenido se utiliza en los c\'alculos del documento tanto en el emisor como en el receptor para la obtenci\'on de la frecuencia de resonancia. A su vez, en el apartado de Resultado de la pr\'actica, en la figura \ref{fig:work_freq}, se mide con el osciloscopio una frecuencia de trabajo aproximadamente igual, justificando la concordancia entre el valor calculado y el valor real.
 % \paragraph{Diagrama de Bode}
 % \paragraph{}
 % A continuación, se esboza el diagrama de Bode de la expresi\'on de la ganancia de lazo abierto (ecuaci\'on \ref{eq:Al_tx}) para los valores obtenidos en el apartado de polarizaci\'on (ecuaciones \ref{eq:result_pol1} y \ref{eq:result_pol2}) junto con los siguientes valores de los elementos: 
@@ -276,7 +286,7 @@ Esta relación de vueltas óptima no es realizable, pues el bobinado primario se
 %otra del flanco de subida y bajada de digitalin con vout y vbe viendo como se corta el transistor.
 \paragraph{}
 En este apartado se muestra una simulación del circuito en función del tiempo de los puntos de interés del circuito. 
-En la figura \ref{fig:sim_vc_vdig} se observa el $V_C$, que es la tensión que se aplicará en el transformador de impedancias a la antena, y $V_{digital}$, la señal moduladora que produce la modulación ASK. 
+En la figura \ref{fig:sim_vc_vdig} se observa el $V_C$, que es la tensión que se aplicará en el transformador de impedancias a la antena, y $V_{digital}$, la señal moduladora que produce la modulación ASK a una frecuencia de \SI{10}{\kilo\hertz}. Se establece esta frecuencia de señal moduladora para poder identificarla fácilmente en el espectro en frecuencia de la señal modulada ($V_C$).
 \begin{figure}[h]
     \centering
     \includegraphics[scale=.8, width=.8\textwidth]{sim_vc_vdigital}
@@ -305,13 +315,15 @@ En la figura \ref{fig:sim_fft_zoom}, se observa el espectro de la modulación am
 \paragraph{Resultado de la pr\'actica} %CAPTURA DEL OSCILOSCOPIO Y MEDIDA DE CORRIENTE
 \paragraph{}
 En la parte práctica se comparan los resultados de la simulación con los resultados obtenidos en el circuito real. 
+Se trata de obtener en la figura \ref{fig:exp_vc_vdig} una captura an\'aloga a la obtenida en la figura \ref{fig:sim_vc_vdig}.
+Por otra parte, la FFT no tendr\'a interés práctico, pues la señal digital práctica no posee una periodicidad concreta, por lo que se mezclarán demasiados armónicos.
 \paragraph{}
 El circuito está fabricado en placa soldada de agujeros, la realizaci\'on de estas placas se muestra en la figura \ref{fig:exp_placa_tx}. Los resultados se miden con un osciloscopio en los mismos puntos de interés que en el apartado de simulación. Las figuras corresponden a capturas realizadas por el osciloscopio al tomar las medidas pertinentes.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.6, width=.6\textwidth]{exp_tx}
-    \caption{Experimental: captura de osciloscopio de $V_C$ modulada por $V_{digital}$}
+    \caption{Experimental: captura de osciloscopio de $V_C$ (negro) modulada por $V_{digital}$ (rojo)}
     \label{fig:exp_vc_vdig}
 \end{figure}
 

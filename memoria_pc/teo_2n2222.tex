@@ -46,10 +46,13 @@ En general, las ecuaciones que describen el conjunto de los modelos son:
 Donde $X_1$ y $X_2$ corresponden a las variables independientes y $Y_1$ e $Y_2$ a las variables dependientes
 \paragraph{}
 Las ecuaciones que definen al modelo de par\'ametros híbridos en concreto son por tanto:
-\begin{align*} 
+\begin{equation}
+   \label{eq:hybred params}
+\begin{aligned} 
    v_1 &= h_{11} \cdot i_1 + h_{12} \cdot v_2 \\
    i_2 &= h_{21} \cdot i_1 + h_{22} \cdot v_2
-\end{align*}
+\end{aligned}
+\end{equation}
 El valor de los parámetros $h_{nm}$ se deriva de las ecuaciones del modelo de gran señal, simplificadas para una polarización activa directa.
 Al derivar dichas ecuaciones se obtiene un modelo de parámetros en admitancias, fácilmente transformable al modelo de parámetros híbridos.
 Además, en función de la configuración del terminal común del transistor, el valor de los parámetros característicos cambiará, en este caso, se supondrá una configuración en emisor común. Los valores de los parámetros para las distintas configuraciones pueden ser deducidos utilizando relaciones matemáticas sencillas.

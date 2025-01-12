@@ -34,7 +34,8 @@ Se realizan los cálculos para estimar los valores de las resistencias de polari
    I_i = I_E &= I_B \cdot (h_{FE} + 1) \\
    I_B \cdot (h_{FE} + 1) = I_E &= (h_{FE} + 1) \cdot \frac{V_{CE} - 0.7}{R_B} \\
    V_{CC} - V_{CE} - I_E \cdot R_E - I_E \cdot R_C &= 0 \\
-   V_{CE} \cdot \left( 1 + \frac{(h_{FE} + 1) \cdot (R_E+R_C)}{R_B} \right) &= V_{CC} - \frac{0.7 \cdot (R_E+R_C) \cdot (h_{FE} + 1)}{R_B}
+   V_{CE} \cdot \left( 1 + \frac{(h_{FE} + 1) \cdot (R_E+R_C)}{R_B} \right) &= V_{CC} - \frac{0.7 \cdot (R_E+R_C) \cdot (h_{FE} + 1)}{R_B} \\
+   I_C = I_B \cdot h_{FE} &= h_{FE} \cdot \frac{V_{CE} - 0.7}{R_B}
 \end{align*}
 \paragraph{}
 De las anteriores expresiones se obtiene, para el transistor oscilador:
@@ -42,12 +43,16 @@ De las anteriores expresiones se obtiene, para el transistor oscilador:
 %   \label{eq:Al_tx}
    V_{CE} = \SI{1.74}{\volt} \quad \quad I_C = \SI{518}{\micro\ampere}
 \end{equation}
+Siendo:
+$$ R_1 = R_C = \SI{470}{\ohm} \quad \quad R_2 = R_B = \SI{560}{\kilo\ohm} \quad \quad R_3 = R_E = \SI{2.2}{\kilo\ohm} $$
 \paragraph{}
 Y para el transistor amplificador de la señal de \textit{quench}:
 \begin{equation}
 %   \label{eq:Al_tx}
    V_{CE} = \SI{1.76}{\volt} \quad \quad I_C = \SI{633}{\micro\ampere}
 \end{equation}
+Siendo:
+$$ R_5 = R_C = \SI{2.2}{\kilo\ohm} \quad \quad R_6 = R_B = \SI{470}{\kilo\ohm} \quad \quad  R_E = \SI{0}{\ohm} $$
 
 \paragraph{Modelo en pequeña señal}
 \paragraph{}
@@ -128,7 +133,7 @@ Se pretende obtener la expresión para la función de transferencia de $H(s) = \
    v_i &= i_{L_2} \cdot ( Z_1 + Z_2 ) \\
    Z_1 &= s\cdot L_2 + r_s \\
    Z_2 &= \frac{R_3}{s \cdot R_3 \cdot C_5} \\
-   \frac{i_{L_2}}{v_i} &= \frac{1}{( Z_1 + Z_2 )} = \frac{(s\cdot R_3 \cdot C_5 + 1)}{rs \cdot (s\cdot R_3 \cdot C_5 + 1) + s \cdot L_2 \cdot(s\cdot R_3 \cdot C_5 + 1) + R_3 } \\
+   \frac{i_{L_2}}{v_i} = \frac{1}{( Z_1 + Z_2 )} &= \frac{(s\cdot R_3 \cdot C_5 + 1)}{rs \cdot (s\cdot R_3 \cdot C_5 + 1) + s \cdot L_2 \cdot(s\cdot R_3 \cdot C_5 + 1) + R_3 } \\
 \end{align*}
 
 \begin{equation}
@@ -186,7 +191,7 @@ Empíricamente, esta frecuencia resulta en $f_{quench} = \SI{67}{\kilo\hertz}$. 
 %captura de oscilacion de rf, v en rc y vout
 %captura con senal de entrada vout cambia de frecuencia
 \paragraph{}
-En el apartado de simulación, se trata de obtener una representación gráfica de lo desarrollado anteriormente sobre el receptor. Por ello, en la figura REF se observan los puntos de interés del circuito como son $V_C$, $V_{quench}$ y $V_{B}$, además de añadir la diferencia$V_B - V_{quench}$ como $V(B,quench)$. Estas cuatro medidas son suficientes para entender el ciclo de paro y marcha del transistor.
+En el apartado de simulación, se trata de obtener una representación gráfica de lo desarrollado anteriormente sobre el receptor. Por ello, en la figura \ref{fig:simrx_zoom} se observan los puntos de interés del circuito como son $V_C$, $V_{quench}$ y $V_{B}$, además de añadir la diferencia$V_B - V_{quench}$ como $V(B,quench)$. Estas cuatro medidas son suficientes para entender el ciclo de paro y marcha del transistor.
 \paragraph{}
 Como se puede observar en la figura \ref{fig:simrx_zoom}, a medida que se construye la oscilación, el valor medio de la tensión de $V_{C}$ (es decir $V_{quench}$) aumenta hasta que, finalmente, la diferencia $V_B - V_{quench} < \SI{.7}{\volt}$ hace desaparecer la oscilaci\'on. Este corte provoca que el valor medio de $V_C$ descienda, y por tanto $V_{quench}$, provocando finalmente que la diferencia $V_B - V_{quench} > \SI{.7}{\volt}$, reactivando al transistor y reiniciando el ciclo de oscilaci\'on.
 
