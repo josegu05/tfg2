@@ -236,8 +236,24 @@ La resistencia $R_5 = \SI{50}{\ohm}$ act\'ua de separador entre la parte de RF y
 Por último, se hace referencia al transistor PNP. %en el esquema del transmisor (figura \ref{fig:tx}). 
 Este transistor es utilizado como conmutador, de tal forma que, una señal digital activa o corta el paso de corriente por el circuito principal. La señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado (apartado \ref{sec:des_digital_tx}).
 
-\paragraph{}
 \paragraph{Antena y transformador de impedancias} 
+\paragraph{Antena}
+\paragraph{}
+El objetivo de este apartado es la construcción de una antena apropiada para la frecuencia de portadora ($f_0 = \SI{30.63}{\mega\hertz}$).
+La estructura de la antena será de tipo dipolo unifilar por lo que se calcula una longitud óptima de la misma de $\frac{\lambda}{4}$.
+Esto es debido analíticamente a que el patrón de radiación más óptimo para esta estructura se produce al radiar $\frac{1}{4}$ del periodo de la onda REF chapter 4 Linear wire. Para calcular $\lambda$, se realiza el siguiente desarrollo:
+\begin{align}
+   c &= \lambda \cdot f \\
+   c_0 &= \SI{3e8}{\metre\per\second} \\
+   \frac{\lambda}{4} &= \frac{c_0}{f_0 \cdot 4} = 
+\end{align}
+$\frac{\lambda}{4}$, es una longitud demasiado grande para ser práctico, por lo que se opta por realizar la antena de una longitud finalmente de: $$\frac{\lambda}{8} = $$ 
+\paragraph{}
+Para realizar las mediciones de la antena se hace uso de un dispositivo VNA (analizador vectorial de redes). Se realiza la calibración y configuración de la figura REF. 
+Se toman medidas tanto de una antena de radio comercial FM como de la antena fabricada con hilo de cobre esmaltado de longitud $\frac{\lambda}{8}$. 
+Los resultados de las mediciones se exponen en las figuras REF. En ellas se expone tanto la medida de los par\'ametros $S_{11}$ como de la carta de Smith. Las frecuencias de inter\'es se encuentran marcadas con cursores y las medidas caracter\'isticas pertenecen al cursor 0. 
+En cuanto al an\'alisis de las figuras, por un lado, en la figura REFFM, se observa que la antena es buena para las frecuencias de radio FM \SI{84}{\mega\hertz}-\SI{120}{\mega\hertz}. 
+Por otro lado, en la figura REF31, se obser se va recortando hasta conseguir 
 %CITAR TRANSFORMER BOOK
 %CALCULOS: 
 %Primero impedancia de salida del circuito sin bobina (usada de primario), y generador a la frecuencia de resonancia. 

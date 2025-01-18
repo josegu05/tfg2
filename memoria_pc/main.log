@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.6.8)  12 JAN 2025 14:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.6.8)  18 JAN 2025 14:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -697,73 +697,71 @@ Package pdftex.def Info: ./images//small_signal_tx.png  used on input line 93.
 <./images//transformer2.png, id=463, 852.18375pt x 463.7325pt>
 File: ./images//transformer2.png Graphic file (type png)
 <use ./images//transformer2.png>
-Package pdftex.def Info: ./images//transformer2.png  used on input line 259.
+Package pdftex.def Info: ./images//transformer2.png  used on input line 275.
 (pdftex.def)             Requested size: 596.52455pt x 324.61052pt.
- [21 <./images//transformer2.png>]
-<./images//sim_vc_vdigital.png, id=479, 1566.85374pt x 609.27625pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[21]
+<./images//sim_vc_vdigital.png, id=481, 1566.85374pt x 609.27625pt>
 File: ./images//sim_vc_vdigital.png Graphic file (type png)
 <use ./images//sim_vc_vdigital.png>
-Package pdftex.def Info: ./images//sim_vc_vdigital.png  used on input line 292.
+Package pdftex.def Info: ./images//sim_vc_vdigital.png  used on input line 308.
 
 (pdftex.def)             Requested size: 1253.48471pt x 487.42165pt.
-<./images//fft_vc.png, id=483, 1519.6775pt x 611.28375pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[22 <./images//transformer2.png>]
+<./images//fft_vc.png, id=500, 1519.6775pt x 611.28375pt>
 File: ./images//fft_vc.png Graphic file (type png)
 <use ./images//fft_vc.png>
-Package pdftex.def Info: ./images//fft_vc.png  used on input line 304.
+Package pdftex.def Info: ./images//fft_vc.png  used on input line 320.
 (pdftex.def)             Requested size: 1215.74368pt x 489.02766pt.
-<./images//fft_vc_zoom.png, id=484, 1563.8425pt x 615.29875pt>
+<./images//fft_vc_zoom.png, id=501, 1563.8425pt x 615.29875pt>
 File: ./images//fft_vc_zoom.png Graphic file (type png)
 <use ./images//fft_vc_zoom.png>
-Package pdftex.def Info: ./images//fft_vc_zoom.png  used on input line 310.
+Package pdftex.def Info: ./images//fft_vc_zoom.png  used on input line 326.
 (pdftex.def)             Requested size: 1251.07573pt x 492.23967pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[22 <./images//sim_vc_vdigital.png>]
-<./images//exp_tx.png, id=502, 688.5725pt x 456.70625pt>
+<./images//exp_tx.png, id=505, 688.5725pt x 456.70625pt>
 File: ./images//exp_tx.png Graphic file (type png)
 <use ./images//exp_tx.png>
-Package pdftex.def Info: ./images//exp_tx.png  used on input line 325.
+Package pdftex.def Info: ./images//exp_tx.png  used on input line 341.
 (pdftex.def)             Requested size: 413.14668pt x 274.02585pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./images//des_tx_real.jpg, id=503, 1806.75pt x 3011.25pt>
+[23 <./images//sim_vc_vdigital.png> <./images//fft_vc.png>]
+<./images//des_tx_real.jpg, id=519, 1806.75pt x 3011.25pt>
 File: ./images//des_tx_real.jpg Graphic file (type jpg)
 <use ./images//des_tx_real.jpg>
-Package pdftex.def Info: ./images//des_tx_real.jpg  used on input line 332.
+Package pdftex.def Info: ./images//des_tx_real.jpg  used on input line 348.
 (pdftex.def)             Requested size: 542.02919pt x 903.38199pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./des_rx.tex [23 <./images//fft_vc.png> <./images//fft_vc_zoom.png>]
-<./images//receptor2.png, id=516, 1178.4025pt x 856.19875pt>
+) (./des_rx.tex
+<./images//receptor2.png, id=521, 1178.4025pt x 856.19875pt>
 File: ./images//receptor2.png Graphic file (type png)
 <use ./images//receptor2.png>
 Package pdftex.def Info: ./images//receptor2.png  used on input line 17.
 (pdftex.def)             Requested size: 1178.39963pt x 856.19666pt.
-
+ [24 <./images//fft_vc_zoom.png> <./images//exp_tx.png (PNG copy)>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24 <./images//exp_tx.png (PNG copy)> <./images//des_tx_real.jpg>] [25 <./image
-s//receptor2.png>]
-<./images//small_signal_rx.png, id=539, 1688.3075pt x 891.33pt>
+[25 <./images//des_tx_real.jpg>] [26 <./images//receptor2.png>]
+<./images//small_signal_rx.png, id=559, 1688.3075pt x 891.33pt>
 File: ./images//small_signal_rx.png Graphic file (type png)
 <use ./images//small_signal_rx.png>
 Package pdftex.def Info: ./images//small_signal_rx.png  used on input line 92.
 (pdftex.def)             Requested size: 1688.30339pt x 891.32784pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[26] [27 <./images//small_signal_rx.png>]
-<./images//quench-explain.png, id=573, 1283.79625pt x 857.2025pt>
+ [27 <./images//small_signal_rx.png>] [28]
+<./images//quench-explain.png, id=591, 1283.79625pt x 857.2025pt>
 File: ./images//quench-explain.png Graphic file (type png)
 <use ./images//quench-explain.png>
 Package pdftex.def Info: ./images//quench-explain.png  used on input line 155.
@@ -772,53 +770,45 @@ Package pdftex.def Info: ./images//quench-explain.png  used on input line 155.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[28] [29 <./images//quench-explain.png>]
-<./images//simrx_zoom.png, id=600, 1583.9175pt x 611.28375pt>
+[29] [30 <./images//quench-explain.png>]
+<./images//simrx_zoom.png, id=620, 1583.9175pt x 611.28375pt>
 File: ./images//simrx_zoom.png Graphic file (type png)
 <use ./images//simrx_zoom.png>
 Package pdftex.def Info: ./images//simrx_zoom.png  used on input line 200.
 (pdftex.def)             Requested size: 1267.13574pt x 489.02766pt.
-<./images//simrx_vout.png, id=602, 1585.925pt x 483.8075pt>
+<./images//simrx_vout.png, id=622, 1585.925pt x 483.8075pt>
 File: ./images//simrx_vout.png Graphic file (type png)
 <use ./images//simrx_vout.png>
 Package pdftex.def Info: ./images//simrx_vout.png  used on input line 209.
 (pdftex.def)             Requested size: 1268.74174pt x 387.04652pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./images//exp_work_freq.png, id=607, 721.94719pt x 348.55219pt>
+<./images//exp_work_freq.png, id=627, 721.94719pt x 348.55219pt>
 File: ./images//exp_work_freq.png Graphic file (type png)
 <use ./images//exp_work_freq.png>
 Package pdftex.def Info: ./images//exp_work_freq.png  used on input line 222.
 (pdftex.def)             Requested size: 505.35959pt x 243.98485pt.
-[30 <./images//simrx_zoom.png>]
-<./images//exp_quench+VC.PNG, id=621, 541.27219pt x 315.42844pt>
+ [31 <./images//simrx_zoom.png> <./images//simrx_vout.png>]
+<./images//exp_quench+VC.PNG, id=641, 541.27219pt x 315.42844pt>
 File: ./images//exp_quench+VC.PNG Graphic file (type png)
 <use ./images//exp_quench+VC.PNG>
 Package pdftex.def Info: ./images//exp_quench+VC.PNG  used on input line 228.
 (pdftex.def)             Requested size: 378.88794pt x 220.79839pt.
-<./images//exp_quench+vout.png, id=622, 688.5725pt x 456.70625pt>
+<./images//exp_quench+vout.png, id=642, 688.5725pt x 456.70625pt>
 File: ./images//exp_quench+vout.png Graphic file (type png)
 <use ./images//exp_quench+vout.png>
 Package pdftex.def Info: ./images//exp_quench+vout.png  used on input line 234.
 
 (pdftex.def)             Requested size: 344.2854pt x 228.35255pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./images//des_rx_real.jpg, id=623, 1571.8725pt x 2523.4275pt>
+<./images//des_rx_real.jpg, id=643, 1571.8725pt x 2523.4275pt>
 File: ./images//des_rx_real.jpg Graphic file (type jpg)
 <use ./images//des_rx_real.jpg>
 Package pdftex.def Info: ./images//des_rx_real.jpg  used on input line 241.
 (pdftex.def)             Requested size: 471.5654pt x 757.0341pt.
 
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [31 <./images//simrx_vout.png> <./images//exp_work_freq.png> <./images//exp_q
-uench+VC.PNG>] (./digital_intro.tex [32 <./images//exp_quench+vout.png (PNG cop
-y)> <./images//des_rx_real.jpg>]
+) [32 <./images//exp_work_freq.png> <./images//exp_quench+VC.PNG> <./images//ex
+p_quench+vout.png (PNG copy)>] (./digital_intro.tex
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
@@ -827,39 +817,83 @@ File: lstlang2.sty 2020/03/24 1.8d listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-)
+) [33 <./images//des_rx_real.jpg>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 16.
 
 (/home/jose/Documents/tfg2/digital/gpio_signaldriven/v6_final/Makefile)
-(/home/jose/Documents/tfg2/digital/fuses.sh) [33]) (./des_digital_rx.tex
-[34] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+(/home/jose/Documents/tfg2/digital/fuses.sh)) (./des_digital_rx.tex [34]
+[35] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 (/home/jose/Documents/tfg2/digital/receptor-8mhz-mean/main.c
+Overfull \hbox (2.47626pt too wide) in paragraph at lines 18--19
+[][] 
+ []
+
 
 Package multicol Warning: I moved some lines to the next page.
-(multicol)                Footnotes on page 35 might be wrong on input line 38.
+(multicol)                Footnotes on page 36 might be wrong on input line 70.
 
 
-[35] [36])) (./des_digital_tx.tex [37]
+[36]
+Overfull \hbox (1.37622pt too wide) in paragraph at lines 128--129
+[][][][][] 
+ []
+
+
+Overfull \hbox (8.77625pt too wide) in paragraph at lines 147--148
+[][] 
+ []
+
+
+Overfull \hbox (2.47626pt too wide) in paragraph at lines 162--163
+[][][][] 
+ []
+
+
+Overfull \hbox (21.37622pt too wide) in paragraph at lines 163--164
+[][] 
+ []
+
+[37]
+Overfull \hbox (2.47626pt too wide) in paragraph at lines 166--167
+[][][][] 
+ []
+
+
+Overfull \hbox (21.37622pt too wide) in paragraph at lines 167--168
+[][] 
+ []
+
+
+Overfull \hbox (2.47626pt too wide) in paragraph at lines 170--171
+[][][][] 
+ []
+
+
+Overfull \hbox (21.37622pt too wide) in paragraph at lines 171--172
+[][] 
+ []
+
+)) (./des_digital_tx.tex [38]
 (/home/jose/Documents/tfg2/digital/transmisor-8mhz-testbutton/main.c
 
 Package multicol Warning: I moved some lines to the next page.
-(multicol)                Footnotes on page 38 might be wrong on input line 17.
+(multicol)                Footnotes on page 39 might be wrong on input line 41.
 
 
-[38] [39] [40])) [41] (./crono.tex) (./crono_txfm.tex
-<./images//crono_tx_rx_osciloscopio.jpg, id=1175, 3854.4pt x 5139.2pt>
+[39] [40] [41])) [42] (./crono.tex) (./crono_txfm.tex
+<./images//crono_tx_rx_osciloscopio.jpg, id=1197, 3854.4pt x 5139.2pt>
 File: ./images//crono_tx_rx_osciloscopio.jpg Graphic file (type jpg)
 <use ./images//crono_tx_rx_osciloscopio.jpg>
 Package pdftex.def Info: ./images//crono_tx_rx_osciloscopio.jpg  used on input 
 line 11.
 (pdftex.def)             Requested size: 1156.32895pt x 1541.77194pt.
-<./images//crono_2tx_placa.jpg, id=1176, 3854.4pt x 5139.2pt>
+<./images//crono_2tx_placa.jpg, id=1198, 3854.4pt x 5139.2pt>
 File: ./images//crono_2tx_placa.jpg Graphic file (type jpg)
 <use ./images//crono_2tx_placa.jpg>
 Package pdftex.def Info: ./images//crono_2tx_placa.jpg  used on input line 18.
@@ -868,7 +902,7 @@ Package pdftex.def Info: ./images//crono_2tx_placa.jpg  used on input line 18.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./images//crono_sch_varactor_tx.png, id=1177, 1746.525pt x 730.73pt>
+<./images//crono_sch_varactor_tx.png, id=1199, 1746.525pt x 730.73pt>
 File: ./images//crono_sch_varactor_tx.png Graphic file (type png)
 <use ./images//crono_sch_varactor_tx.png>
 Package pdftex.def Info: ./images//crono_sch_varactor_tx.png  used on input lin
@@ -877,34 +911,34 @@ e 25.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[42 <./images//crono_tx_rx_osciloscopio.jpg>]) (./crono_rxfm.tex [43 <./images/
+[43 <./images//crono_tx_rx_osciloscopio.jpg>]) (./crono_rxfm.tex [44 <./images/
 /crono_2tx_placa.jpg> <./images//crono_sch_varactor_tx.png>]
-<./images//crono_sch_receiver_varactor.png, id=1201, 1796.7125pt x 845.1575pt>
+<./images//crono_sch_receiver_varactor.png, id=1222, 1796.7125pt x 845.1575pt>
 File: ./images//crono_sch_receiver_varactor.png Graphic file (type png)
 <use ./images//crono_sch_receiver_varactor.png>
 Package pdftex.def Info: ./images//crono_sch_receiver_varactor.png  used on inp
 ut line 10.
 (pdftex.def)             Requested size: 1796.70813pt x 845.15544pt.
 )
-(./crono_digital.tex [44 <./images//crono_sch_receiver_varactor.png>]
-<./images//crono_logisim.png, id=1215, 1252.68pt x 854.19125pt>
+(./crono_digital.tex [45 <./images//crono_sch_receiver_varactor.png>]
+<./images//crono_logisim.png, id=1237, 1252.68pt x 854.19125pt>
 File: ./images//crono_logisim.png Graphic file (type png)
 <use ./images//crono_logisim.png>
 Package pdftex.def Info: ./images//crono_logisim.png  used on input line 8.
 (pdftex.def)             Requested size: 1252.67694pt x 854.18918pt.
-<./images//crono_general2.jpg, id=1216, 3396.69pt x 2890.8pt>
+<./images//crono_general2.jpg, id=1238, 3396.69pt x 2890.8pt>
 File: ./images//crono_general2.jpg Graphic file (type jpg)
 <use ./images//crono_general2.jpg>
 Package pdftex.def Info: ./images//crono_general2.jpg  used on input line 15.
 (pdftex.def)             Requested size: 2377.66685pt x 2023.54626pt.
- [45 <./images//crono_logisim.png> <./images//crono_general2.jpg>]) (./crono_di
+ [46 <./images//crono_logisim.png> <./images//crono_general2.jpg>]) (./crono_di
 recta.tex
-<./images//crono_radio2.png, id=1226, 1382.16376pt x 707.64375pt>
+<./images//crono_radio2.png, id=1250, 1382.16376pt x 707.64375pt>
 File: ./images//crono_radio2.png Graphic file (type png)
 <use ./images//crono_radio2.png>
 Package pdftex.def Info: ./images//crono_radio2.png  used on input line 8.
 (pdftex.def)             Requested size: 1382.16039pt x 707.64203pt.
-<./images//crono_radio2_real.jpg, id=1227, 3444.87pt x 1801.48032pt>
+<./images//crono_radio2_real.jpg, id=1251, 3444.87pt x 1801.48032pt>
 File: ./images//crono_radio2_real.jpg Graphic file (type jpg)
 <use ./images//crono_radio2_real.jpg>
 Package pdftex.def Info: ./images//crono_radio2_real.jpg  used on input line 15
@@ -915,21 +949,21 @@ Package pdftex.def Info: ./images//crono_radio2_real.jpg  used on input line 15
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ) (./grant.tex
-<./images//grant.png, id=1229, 770.88pt x 578.16pt>
+<./images//grant.png, id=1253, 770.88pt x 578.16pt>
 File: ./images//grant.png Graphic file (type png)
 <use ./images//grant.png>
 Package pdftex.def Info: ./images//grant.png  used on input line 4.
 (pdftex.def)             Requested size: 770.87813pt x 578.15858pt.
-) [46 <./images//crono_radio2.png>] [47 <./images//crono_radio2_real.jpg> <./im
-ages//grant.png (PNG copy)>] (./result.tex) [48] (./biblio.tex)
+) [47 <./images//crono_radio2.png>] [48 <./images//crono_radio2_real.jpg> <./im
+ages//grant.png (PNG copy)>] (./result.tex) [49] (./biblio.tex)
 (./main.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [49])
+ [50])
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
- [50] (./main.aux
+ [51] (./main.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
@@ -940,38 +974,118 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 69673938A46B4C5B9BB38A76A2301945;4731.
  ) 
 Here is how much of TeX's memory you used:
- 19403 strings out of 477916
- 364469 string characters out of 5837424
- 2212330 words of memory out of 5000000
+ 19429 strings out of 477916
+ 364899 string characters out of 5837424
+ 2211330 words of memory out of 5000000
  38437 multiletter control sequences out of 15000+600000
  523543 words of font info for 71 fonts, out of 8000000 for 9000
  85 hyphenation exceptions out of 8191
- 75i,19n,77p,1143b,2682s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/jose/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600p
-k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmtt9.pfb>
-Output written on main.pdf (51 pages, 28272897 bytes).
+ 75i,19n,77p,1143b,2684s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{figure.caption.204} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.203} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.228} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.225} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.224} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.219} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.218} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.212} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.161} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.155} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.148} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.136} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.125} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.119} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.118} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.114} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.113} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.109} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.104} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.160} has been referenced but does no
+t exist, replaced by a fixed one
+
+ </home/jose/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmtt9.pfb>
+Output written on main.pdf (52 pages, 28275586 bytes).
 PDF statistics:
- 1584 PDF objects out of 1728 (max. 8388607)
- 1418 compressed objects within 15 object streams
- 818 named destinations out of 1000 (max. 500000)
+ 1618 PDF objects out of 1728 (max. 8388607)
+ 1451 compressed objects within 15 object streams
+ 844 named destinations out of 1000 (max. 500000)
  370 words of extra memory for PDF output out of 10000 (max. 10000000)
 
