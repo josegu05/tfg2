@@ -3,7 +3,8 @@ Para establecer un canal de comunicación de datos digital, se utilizan dos micr
 
 \paragraph{Configuraci\'on del entorno de trabajo}
 \paragraph{}
-El microcontrolador se programa por medio de un proyecto escrito en C. Para ello, se trabaja con las herramientas que permiten la compilación de este lenguaje a un archivo ejecutable entendible para la plataforma de AVR.
+El microcontrolador se programa por medio de un proyecto escrito en C, utilizando como base la librería \textit{avr-libc}\footnote{\textit{AVR Libc User Manual}. (s.f.). Recuperado de https://www.nongnu.org/avr-libc/user-manual/}.
+Para ello, se trabaja con las herramientas que permiten la compilación de este lenguaje a un archivo ejecutable entendible para la plataforma de AVR.
 \paragraph{}
 En primer lugar, es necesario compilar el programa en c\'odigo fuente a un archivo binario para la plataforma objetivo, para ello se usar\'a el compilador \textit{avr-gcc}. Este archivo binario generado no puede ser grabado directamente a la flash del microcontrolador, sino que se necesita la traducción a código hexadecimal del mismo. Para ello, se utiliza el programa \textit{avr-objcopy}. 
 Finalmente, el programa es grabado en la flash. Este proceso se realiza de la siguiente forma: el archivo hexadecimal debe ser grabado en el microcontrolador configurando el microcontrolador en modo programaci\'on de la flash y transfiriendo el programa por medio del protocolo ISP. 

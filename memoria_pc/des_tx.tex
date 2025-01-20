@@ -22,12 +22,11 @@ El esquema completo del transmisor se expone en la figura \ref{fig:tx}.
     \label{fig:tx}
 \end{figure}
 
-\paragraph{Diseño del oscilador}
 \paragraph{Polarizaci\'on} %IGUAL Y MENCIONANDO EL TRANSISTOR PNP EN CORTE APROX 0.2 V DESPRECIABLE.
 \paragraph{}
-Primeramente, se debe fijar el punto de operación deseado. Se deben tener encuenta dos cosas: la zona de trabajo del transistor y la potencia del circuito. La zona de trabajo debe ser activa directa, pues para producir la oscilación, el bucle de realimentación positiva debe tener la etapa de amplificación proporcionada por el transistor. La potencia del circuito, junto a la frecuencia de diseño, acotan el modelo de transistor que se ajusta a las necesidades del circuito.
+Primeramente, se debe fijar el punto de operación deseado en el transistor $Q_1$ NPN. Se deben tener encuenta dos cosas: la zona de trabajo del transistor y la potencia del circuito. La zona de trabajo debe ser activa directa, pues para producir la oscilación, el bucle de realimentación positiva debe tener la etapa de amplificación proporcionada por el transistor. La potencia del circuito, junto a la frecuencia de diseño, acotan el modelo de transistor que se ajusta a las necesidades del circuito.
 \paragraph{}
-El transistor NPN se configura en base com\'un. En esta configuraci\'on se mantiene una tensión fija en la base y se establece como variable la tensi\'on en el emisor. Para fijar la tensión de base, $V_B$, se incorpora el condensador $C_3$, el cual, tiene un valor suficientemente alto para ello.
+El transistor se configura en base com\'un. En esta configuraci\'on se mantiene una tensión fija en la base y se establece como variable la tensi\'on en el emisor. Para fijar la tensión de base, $V_B$, se incorpora el condensador $C_3$, el cual, tiene un valor suficientemente alto para ello.
 \paragraph{}
 En primer lugar, se necesita un transistor con una frecuencia de transición $f_t > \SI{30}{\mega\hertz}$. 
 A parte de esto, el parámetro $I_{Cmax}$ debe ser suficiente para proporcionar la potencia deseada sin deteriorarse. Se elige un transistor 2N2222, cuya $f_t > \SI{30}{\mega\hertz}$ e $I_{Cmax} = \SI{0.6}{\ampere}$. Adem\'as, se fija una $V_{CC} = \SI{9}{\volt}$ el cual ser\'a el mayor valor que pueda tener, pero esto no implica que el transmisor pueda funcionar con tensiones de alimentaci\'on inferiores. Se opta por limitar a $Ic = \SI{100}{\milli\ampere}$, en funci\'on de las especificaciones del transistor. Esto supondr\'a una potencia $P_{in}$ de aproximadamente $I_C \cdot V_{CC} = \SI{0.9}{\watt}$ y $V_{CE} = \frac{V_{CC}}{2} = \SI{4.5}{\volt}$, condici\'on necesaria para trabajar en activa directa con el mayor rango de margen de distorsi\'on. 
@@ -209,40 +208,64 @@ El valor obtenido se utiliza en los c\'alculos del documento tanto en el emisor 
 % \paragraph{}
 % La obtenci\'on del diagrama de Bode se ha realizado con ayuda del programa de c\'alculo computacional Octave. Los \textit{scripts} utilizados se encuentran el el directorio octave del proyecto de GitHub\footnote{\textit{https://github.com/josegu05/tfg2}}.
 
-\paragraph{}
-\paragraph{Regulador de tensi\'on: carril de +\SI{5}{\volt}}
-\paragraph{}
-Para conseguir independencia de la fuente de alimentaci\'on general con respecto de la alimentaci\'on del microcontrolador de la parte digital, se añade un pequeño regulador de tensión formado por una resistencia, un diodo \textit{zener} y un condensador. 
-Este método también actúa a modo de protección contra posibles picos de tensión de la fuente principal, protegiendo el microcontrolador, además de proporcionar estabilidad, mejorando su rendimiento.
-En contraparte, el regulador, al tener un diseño simple, sufre de un excesivo consumo estático, siendo este, el mayor calculado independientemente del consumo de su carga.
-El cálculo del valor de la resistencia de protección se realiza según las necesidades de potencia. Se tiene:
-\begin{align*}
-   P_{zener_{max}} &= \SI{.5}{\watt} \\
-   V_{CC_{max}} &= \SI{9}{\volt} \\
-   I_{AVR_{max}} &\approx \SI{50}{\milli\ampere} \\
-   P_{load_{max}} &= V_{zener} \cdot I_{AVR_{max}} < P_{zener_{max}}\\
-   P_{R_{Lim}} &= (V_{CC_{max}} - V_{zener}) \cdot I_{AVR_{max}}
-\end{align*}
-\begin{equation}
-   R_{Lim} = \SI{78}{\ohm}
-\end{equation}
-\paragraph{}
-El valor de $R_{Lim}$ obtenido, se trata del m\'inimo para satisfacer los requisitos impuestos, pues $I_{AVR_{max}}$ se encuentra sobredimensionado. 
-\paragraph{}
-Empíricamente, en la figura \ref{fig:tx}, se usa $R_{Lim} = R_6 = \SI{100}{\ohm}$, aunque este valor puede ser aún mayor.
-En cuanto a $C_5$, se usa un valor de $C_5 = \SI{4.7}{\micro\farad}$. Este valor se considera suficientemente alto como para estabilizar la tensi\'on y adem\'as suficientemente bajo como para que, al arranque del cicuito, cuando $C_5$ se encuentre descargado, no suponga un pico de corriente muy alto y prolongado para la fuente de alimentaci\'on.
-La resistencia $R_5 = \SI{50}{\ohm}$ act\'ua de separador entre la parte de RF y digital. Además, se comporta como un filtro paso bajo, evitando que señales de RF se filtren hacia el microcontrolador.
-\paragraph{} 
-Por último, se hace referencia al transistor PNP. %en el esquema del transmisor (figura \ref{fig:tx}). 
-Este transistor es utilizado como conmutador, de tal forma que, una señal digital activa o corta el paso de corriente por el circuito principal. La señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado (apartado \ref{sec:des_digital_tx}).
 
+\paragraph{Antena}
 \paragraph{}
-\paragraph{Antena y transformador de impedancias} 
+El objetivo de este apartado es la construcción de una antena apropiada para la frecuencia de portadora $f_0 = \SI{30.63}{\mega\hertz}$.
+La estructura de la antena será de tipo dipolo unifilar, por lo que se calcula una longitud óptima de la misma de $\frac{\lambda}{4}$.
+Esto es debido analíticamente a que uno de los patrones de radiación óptimos para el dipolo se produce al radiar $\frac{1}{4}$ del periodo de la onda \footnote{Balanis, C. A. (2005). \textit{Antenna theory: Analysis and design} (Capítulo 4: Linear wire antennas). John Wiley \& Sons, Inc., Hoboken, Nueva Jersey.}. Para calcular la longitud de la antena ,$\frac{\lambda}{4}$, se realiza el siguiente desarrollo:
+\begin{align}
+   c &= \lambda \cdot f \\
+   c_0 &= \SI{3e8}{\metre\per\second} \\
+	f_0 &= \SI{30.63}{\mega\hertz} \\
+	\frac{\lambda}{4} &= \frac{c_0}{f_0 \cdot 4} = \SI{250}{\centi\metre}
+\end{align}
+$\frac{\lambda}{4}$, es una longitud demasiado grande para ser práctico, por lo que se opta por realizar la antena de una longitud finalmente de: $$\frac{\lambda}{8} = \SI{125}{\centi\metre}$$ 
+\paragraph{}
+Para realizar las mediciones de la antena se hace uso de un dispositivo VNA (analizador vectorial de redes). En las figuras \ref{fig:setup1} y \ref{fig:setup2} se muestra la configuración realizada para la obtención de las medidas.
+Se toman medidas tanto de una antena de radio comercial FM como de la antena fabricada con hilo de cobre esmaltado de longitud $\frac{\lambda}{8}$. 
+Los resultados de las mediciones se exponen en las figuras \ref{fig:Sparam_recorte} y \ref{fig:Sparam_fm}. En ellas se expone tanto la medida de los par\'ametros $S_{11}$ como de la carta de Smith. Las frecuencias de inter\'es se encuentran marcadas con cursores y las medidas caracter\'isticas pertenecen al cursor 0. 
+En cuanto al an\'alisis de las figuras, por un lado, en la figura \ref{fig:Sparam_fm}, se observa que la antena es buena para las frecuencias de radio FM (\SI{84}{\mega\hertz} - \SI{120}{\mega\hertz}). 
+Por otro lado, en la figura \ref{fig:Sparam_recorte}, se observa el comportamiento en frecuencia de la antena construida. Esta se va modificando según las medidas deseadas. Finalmente se obtiene, a la frecuencia de \SI{30}{\mega\hertz} una impedancia de \SI{1300}{\ohm}. Este valor ser\'a utilizado en el siguiente apartado para ser adaptado con la impedancia de salida del circuito.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=.7, width=.7\textwidth]{Sparam_FM}
+    \caption{Parámetros $S_{11}$ y carta de Smith para la antena de FM}
+    \label{fig:Sparam_fm}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=.7, width=.7\textwidth]{Sparam_recorte}
+	\caption{Parámetros $S_{11}$ y carta de Smith para la antena fabricada}
+    \label{fig:Sparam_recorte}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    % First figure
+    \begin{minipage}{0.35\textwidth}
+        \centering
+    \includegraphics[width=\textwidth]{Sparam_setup1}
+	    \caption{Configuraci\'on para la medida de la antena de FM}
+        \label{fig:setup1}
+    \end{minipage}
+    \hfill
+    % Second figure
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Sparam_setup2_30meg}
+        \caption{Configuraci\'on para la medida de la antena fabricada}
+        \label{fig:setup2}
+    \end{minipage}
+\end{figure}
 %CITAR TRANSFORMER BOOK
 %CALCULOS: 
 %Primero impedancia de salida del circuito sin bobina (usada de primario), y generador a la frecuencia de resonancia. 
 %segundo, modelo del transformador y transformacion de impedancias a cable de 1k aprox?
 %simulacion de potencia disipada por la antena?
+\paragraph{Transformador de impedancias}
 \paragraph{}
 Para mejorar la eficiencia de radiación del transmisor, se debe garantizar la máxima transferencia de potencia de señal a la antena.
 Para poder adaptar la impedancia de salida del circuito a la impedancia de la antena, se diseña un transformador como adaptador de impedancias. 
@@ -275,9 +298,35 @@ Siguiendo el modelo de la figura \ref{fig:transformer}, se obtienen las siguient
 %	Np/Ns = n = V2/V1 .. n^2 = zp/zs
 \paragraph{}
 En particular para el diseño propio se debe calcular tanto la impedancia de salida del transmisor como la resistencia de radiación de la entena utilizada para la frecuencia de trabajo.
-Se tiene que $Z_1 = h_{ob}^{-1}$ y que la impedancia de la antena es aproximadamente $Z_2 = R_{rad} = \SI{1}{\kilo\ohm}$.
-Por lo tanto, se usa la ecuaci\'on \ref{eq:transformer} para obtener el ratio de vueltas óptimo siendo: $$ n = \sqrt{\frac{Z_1}{Z_2}} = 10 $$
+Se tiene que $Z_1 = h_{ob}^{-1}$ y que la impedancia de la antena es aproximadamente la medida obtenida en la figura \ref{fig:Sparam_recorte} $Z_2 = R_{rad} = \SI{1.3}{\kilo\ohm}$.
+Por lo tanto, se usa la ecuaci\'on \ref{eq:transformer} para obtener el ratio de vueltas óptimo siendo: $$ n = \sqrt{\frac{Z_1}{Z_2}} \approx 11 $$
 Esta relación de vueltas óptima no es realizable, pues el bobinado primario se construye con ocho espiras. La relación de vueltas aproximada será de $ n = 8:1 $
+
+\paragraph{Regulador de tensi\'on: carril de +\SI{5}{\volt}}
+\paragraph{}
+Para conseguir independencia de la fuente de alimentaci\'on general con respecto de la alimentaci\'on del microcontrolador de la parte digital, se añade un pequeño regulador de tensión formado por una resistencia, un diodo \textit{zener} y un condensador. 
+Este método también actúa a modo de protección contra posibles picos de tensión de la fuente principal, protegiendo el microcontrolador, además de proporcionar estabilidad, mejorando su rendimiento.
+En contraparte, el regulador, al tener un diseño simple, sufre de un excesivo consumo estático, siendo este, el mayor calculado independientemente del consumo de su carga.
+El cálculo del valor de la resistencia de protección se realiza según las necesidades de potencia. Se tiene:
+\begin{align*}
+   P_{zener_{max}} &= \SI{.5}{\watt} \\
+   V_{CC_{max}} &= \SI{9}{\volt} \\
+   I_{AVR_{max}} &\approx \SI{50}{\milli\ampere} \\
+   P_{load_{max}} &= V_{zener} \cdot I_{AVR_{max}} < P_{zener_{max}}\\
+   P_{R_{Lim}} &= (V_{CC_{max}} - V_{zener}) \cdot I_{AVR_{max}}
+\end{align*}
+\begin{equation}
+   R_{Lim} = \SI{78}{\ohm}
+\end{equation}
+\paragraph{}
+El valor de $R_{Lim}$ obtenido, se trata del m\'inimo para satisfacer los requisitos impuestos, pues $I_{AVR_{max}}$ se encuentra sobredimensionado. 
+\paragraph{}
+Empíricamente, en la figura \ref{fig:tx}, se usa $R_{Lim} = R_6 = \SI{100}{\ohm}$, aunque este valor puede ser aún mayor.
+En cuanto a $C_5$, se usa un valor de $C_5 = \SI{4.7}{\micro\farad}$. Este valor se considera suficientemente alto como para estabilizar la tensi\'on y adem\'as suficientemente bajo como para que, al arranque del cicuito, cuando $C_5$ se encuentre descargado, no suponga un pico de corriente muy alto y prolongado para la fuente de alimentaci\'on.
+La resistencia $R_5 = \SI{50}{\ohm}$ act\'ua de separador entre la parte de RF y digital. Además, se comporta como un filtro paso bajo, evitando que señales de RF se filtren hacia el microcontrolador.
+\paragraph{} 
+Por último, se hace referencia al transistor PNP. %en el esquema del transmisor (figura \ref{fig:tx}). 
+Este transistor es utilizado como conmutador, de tal forma que, una señal digital activa o corta el paso de corriente por el circuito principal. La señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado (apartado \ref{sec:des_digital_tx}).
 
 
 \paragraph{Resultado de la simulaci\'on} %SIMULACION LTSPICE
