@@ -4,12 +4,14 @@
 // gestion de IRQs
 #include <stdint.h>
 // definiciones de tipos estandar
+#include "codes_table.h"
 
 //#define WAIT_TIME 1000
 #define THRESHOLD 6
 #define GATE_COUNT_LIMIT 6
 #define TIMES_STABLE_BOOT 500
-uint8_t volatile decoding = 0;
+uint8_t header = 0;
+uint16_t volatile decoding = 0;
 int32_t volatile count = 0;
 int32_t last_count = 0;
 float mean = 0;
@@ -171,29 +173,39 @@ int main(void)
 	 dif = module(count - last_count);
 	 if ( dif < THRESHOLD)
 	 {
-	    // signal detected
-	    switch (decoding)
-	    {
-	       case 0:
-		  // pd5 = 1;
-		  PORTD ^= (1 << PORTD5);
-		  break;
-	       case 1:
-		  // pd6 = 1;
-		  PORTD ^= (1 << PORTD6);
-		  break;
-	       case 2:
-		  // pd7 = 1;
-		  PORTD ^= (1 << PORTD7);
-		  break;
-	       default:
-		  break;
-	    }
-	    decoding = (decoding + 1) % 3;
+	    // '1' received
+	    decoding++;
 	 }
-	 else
+	 else if(decoding > 0)
 	 {
-	    // not detected
+	    // '0' received
+	    if (header == 1)
+	    {
+		  switch (decoding)
+		  {
+		     case CODE0:
+			// pd5 = 1;
+			PORTD ^= (1 << PORTD5);
+			break;
+		     case CODE1:
+			// pd6 = 1;
+			PORTD ^= (1 << PORTD6);
+			break;
+		     case CODE2:
+			// pd7 = 1;
+			PORTD ^= (1 << PORTD7);
+			break;
+		     default:
+			break;
+		  }
+	       header = 0;
+	    }
+	    else 
+	    {
+	       header = 1;
+	    }
+
+	    decoding = 0;
 	 }
 
 	 last_count = count;

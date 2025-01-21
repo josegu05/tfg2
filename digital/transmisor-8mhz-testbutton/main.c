@@ -4,6 +4,7 @@
 // gestion de IRQs
 #include <stdint.h>
 // definiciones de tipos estandar
+#include "codes_table.h"
 
 // while testing PB0, in board PB7
 #define PIN_OUT PINB7
@@ -14,11 +15,6 @@
 uint8_t volatile lock_button = 0;
 uint8_t volatile timer_complete = 0;
 uint16_t volatile code = 0;
-#define TEST 1
-#define CODE0 TEST
-#define CODE1 4
-#define CODE2 8
-#define CODE3 12
 
 //#define DEBUG
 void delay(void)
