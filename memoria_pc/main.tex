@@ -23,6 +23,7 @@ keywordstyle=\color{red}, % Color for keywords
     }
 
 \begin{document}
+\pagenumbering{gobble}
 %%%%%%Portada%%%%%%%
 \begin{titlepage}
 \centering
@@ -122,6 +123,9 @@ Among the fields applied to the project there can be found: a part of analog ele
 \tableofcontents
 
 \newpage
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 \section{Introducción}
    \label{sec:intro}

@@ -226,7 +226,7 @@ Para realizar las mediciones de la antena se hace uso de un dispositivo VNA (ana
 Se toman medidas tanto de una antena de radio comercial FM como de la antena fabricada con hilo de cobre esmaltado de longitud $\frac{\lambda}{8}$. 
 Los resultados de las mediciones se exponen en las figuras \ref{fig:Sparam_recorte} y \ref{fig:Sparam_fm}. En ellas se expone tanto la medida de los par\'ametros $S_{11}$ como de la carta de Smith. Las frecuencias de inter\'es se encuentran marcadas con cursores y las medidas caracter\'isticas pertenecen al cursor 0. 
 En cuanto al an\'alisis de las figuras, por un lado, en la figura \ref{fig:Sparam_fm}, se observa que la antena es buena para las frecuencias de radio FM (\SI{84}{\mega\hertz} - \SI{120}{\mega\hertz}). 
-Por otro lado, en la figura \ref{fig:Sparam_recorte}, se observa el comportamiento en frecuencia de la antena construida. Esta se va modificando según las medidas deseadas. Finalmente se obtiene, a la frecuencia de \SI{30}{\mega\hertz} una impedancia de \SI{1300}{\ohm}. Este valor ser\'a utilizado en el siguiente apartado para ser adaptado con la impedancia de salida del circuito.
+Por otro lado, en la figura \ref{fig:Sparam_recorte}, se observa el comportamiento en frecuencia de la antena construida. Esta se va modificando según las medidas deseadas. Finalmente se obtiene, a la frecuencia de \SI{30}{\mega\hertz}, una impedancia de \SI{1300}{\ohm}. Este valor ser\'a utilizado en el siguiente apartado para ser adaptado con la impedancia de salida del circuito.
 
 \begin{figure}[h!]
     \centering
@@ -297,16 +297,16 @@ Siguiendo el modelo de la figura \ref{fig:transformer}, se obtienen las siguient
 %\equation
 %	Np/Ns = n = V2/V1 .. n^2 = zp/zs
 \paragraph{}
-En particular para el diseño propio se debe calcular tanto la impedancia de salida del transmisor como la resistencia de radiación de la entena utilizada para la frecuencia de trabajo.
-Se tiene que $Z_1 = h_{ob}^{-1}$ y que la impedancia de la antena es aproximadamente la medida obtenida en la figura \ref{fig:Sparam_recorte} $Z_2 = R_{rad} = \SI{1.3}{\kilo\ohm}$.
-Por lo tanto, se usa la ecuaci\'on \ref{eq:transformer} para obtener el ratio de vueltas óptimo siendo: $$ n = \sqrt{\frac{Z_1}{Z_2}} \approx 11 $$
+En particular, para el diseño propio, se debe calcular tanto la impedancia de salida del transmisor como la resistencia de radiación de la antena utilizada para la frecuencia de trabajo.
+Se tiene que $Z_1 = h_{ob}^{-1}$ y que la impedancia de la antena es aproximadamente la medida obtenida en la figura \ref{fig:Sparam_recorte}, $Z_2 = R_{rad} = \SI{1.3}{\kilo\ohm}$.
+Por lo tanto, se usa la ecuaci\'on \ref{eq:transformer} para obtener el ratio de vueltas óptimo, siendo: $$ n = \sqrt{\frac{Z_1}{Z_2}} \approx 11 $$
 Esta relación de vueltas óptima no es realizable, pues el bobinado primario se construye con ocho espiras. La relación de vueltas aproximada será de $ n = 8:1 $
 
 \paragraph{Regulador de tensi\'on: carril de +\SI{5}{\volt}}
 \paragraph{}
-Para conseguir independencia de la fuente de alimentaci\'on general con respecto de la alimentaci\'on del microcontrolador de la parte digital, se añade un pequeño regulador de tensión formado por una resistencia, un diodo \textit{zener} y un condensador. 
+Para conseguir independencia de la fuente de alimentaci\'on general con respecto de la alimentaci\'on del microcontrolador de la parte digital, se añade un sencillo regulador de tensión formado por una resistencia, un diodo \textit{zener} y un condensador. 
 Este método también actúa a modo de protección contra posibles picos de tensión de la fuente principal, protegiendo el microcontrolador, además de proporcionar estabilidad, mejorando su rendimiento.
-En contraparte, el regulador, al tener un diseño simple, sufre de un excesivo consumo estático, siendo este, el mayor calculado independientemente del consumo de su carga.
+En contraparte, el regulador, al tener un diseño simple, sufre de un excesivo consumo estático, siendo este el mayor calculado independientemente del consumo de su carga.
 El cálculo del valor de la resistencia de protección se realiza según las necesidades de potencia. Se tiene:
 \begin{align*}
    P_{zener_{max}} &= \SI{.5}{\watt} \\
@@ -322,11 +322,11 @@ El cálculo del valor de la resistencia de protección se realiza según las nec
 El valor de $R_{Lim}$ obtenido, se trata del m\'inimo para satisfacer los requisitos impuestos, pues $I_{AVR_{max}}$ se encuentra sobredimensionado. 
 \paragraph{}
 Empíricamente, en la figura \ref{fig:tx}, se usa $R_{Lim} = R_6 = \SI{100}{\ohm}$, aunque este valor puede ser aún mayor.
-En cuanto a $C_5$, se usa un valor de $C_5 = \SI{4.7}{\micro\farad}$. Este valor se considera suficientemente alto como para estabilizar la tensi\'on y adem\'as suficientemente bajo como para que, al arranque del cicuito, cuando $C_5$ se encuentre descargado, no suponga un pico de corriente muy alto y prolongado para la fuente de alimentaci\'on.
+En cuanto a $C_5$, se usa un valor de $C_5 = \SI{4.7}{\micro\farad}$. Este valor se considera suficientemente alto como para estabilizar la tensi\'on y adem\'as suficientemente bajo como para que, al arranque del circuito, cuando $C_5$ se encuentre descargado, no suponga un pico de corriente muy alto y prolongado para la fuente de alimentaci\'on.
 La resistencia $R_5 = \SI{50}{\ohm}$ act\'ua de separador entre la parte de RF y digital. Además, se comporta como un filtro paso bajo, evitando que señales de RF se filtren hacia el microcontrolador.
 \paragraph{} 
-Por último, se hace referencia al transistor PNP. %en el esquema del transmisor (figura \ref{fig:tx}). 
-Este transistor es utilizado como conmutador, de tal forma que, una señal digital activa o corta el paso de corriente por el circuito principal. La señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado (apartado \ref{sec:des_digital_tx}).
+Por último, se hace referencia al transistor $Q_2$ PNP. %en el esquema del transmisor (figura \ref{fig:tx}). 
+Este transistor es utilizado como conmutador, de tal forma que una señal digital permite o detiene el paso de corriente por el circuito principal. La señal digital de inicio o corte es producida por el microcontrolador Atmega328p, y se desarrollará en el correspondiente apartado (apartado \ref{sec:des_digital_tx}).
 
 
 \paragraph{Resultado de la simulaci\'on} %SIMULACION LTSPICE

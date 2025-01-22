@@ -1,223 +1,223 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {paragraph}{}{1}{section*.1}%
-\contentsline {paragraph}{}{1}{section*.2}%
-\contentsline {paragraph}{}{1}{section*.3}%
-\contentsline {paragraph}{}{1}{section*.4}%
-\contentsline {section}{\numberline {1}Introducción}{4}{section.1}%
-\contentsline {paragraph}{}{4}{section*.6}%
-\contentsline {paragraph}{}{4}{section*.7}%
-\contentsline {subsection}{\numberline {1.1}Objetivos y motivaci\'on}{4}{subsection.1.1}%
-\contentsline {paragraph}{}{4}{section*.8}%
-\contentsline {section}{\numberline {2}Marco Teórico}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Sistemas de comunicaci\'on y Transmisión ASK}{4}{subsection.2.1}%
-\contentsline {paragraph}{}{4}{section*.9}%
-\contentsline {paragraph}{}{4}{section*.10}%
-\contentsline {paragraph}{Receptor}{4}{section*.11}%
-\contentsline {paragraph}{}{5}{section*.12}%
-\contentsline {paragraph}{}{5}{section*.13}%
-\contentsline {paragraph}{Transmisor}{5}{section*.14}%
-\contentsline {paragraph}{}{5}{section*.15}%
-\contentsline {paragraph}{}{5}{section*.16}%
-\contentsline {paragraph}{Modulación ASK}{5}{section*.17}%
-\contentsline {paragraph}{}{5}{section*.18}%
-\contentsline {paragraph}{}{5}{section*.20}%
-\contentsline {subsection}{\numberline {2.2}Transistores y sus parámetros característicos}{6}{subsection.2.2}%
-\contentsline {paragraph}{}{6}{section*.21}%
-\contentsline {paragraph}{}{6}{section*.22}%
-\contentsline {paragraph}{Polarizaci\'on:}{6}{section*.23}%
-\contentsline {paragraph}{Modelo de gran señal del transistor bipolar:}{6}{section*.24}%
-\contentsline {paragraph}{Pequeña señal:}{6}{section*.25}%
-\contentsline {paragraph}{}{7}{section*.27}%
-\contentsline {paragraph}{}{7}{section*.28}%
-\contentsline {paragraph}{}{7}{section*.29}%
-\contentsline {paragraph}{}{8}{section*.30}%
-\contentsline {subsection}{\numberline {2.3}Realimentaci\'on}{8}{subsection.2.3}%
-\contentsline {paragraph}{}{8}{section*.31}%
-\contentsline {paragraph}{}{8}{section*.32}%
-\contentsline {paragraph}{}{8}{section*.33}%
-\contentsline {paragraph}{}{8}{section*.34}%
-\contentsline {paragraph}{}{9}{section*.36}%
-\contentsline {paragraph}{}{9}{section*.37}%
-\contentsline {paragraph}{}{9}{section*.38}%
-\contentsline {paragraph}{}{9}{section*.39}%
-\contentsline {subsection}{\numberline {2.4}Sistemas integrados: Atmega328p}{10}{subsection.2.4}%
-\contentsline {paragraph}{}{10}{section*.42}%
-\contentsline {paragraph}{}{10}{section*.44}%
-\contentsline {paragraph}{}{11}{section*.45}%
-\contentsline {paragraph}{Mapa de memoria:}{11}{section*.46}%
-\contentsline {paragraph}{AVR Atmega328p:}{11}{section*.47}%
-\contentsline {paragraph}{}{11}{section*.49}%
-\contentsline {paragraph}{}{12}{section*.50}%
-\contentsline {paragraph}{}{12}{section*.51}%
-\contentsline {section}{\numberline {3}Desarrollo}{13}{section.3}%
-\contentsline {paragraph}{}{13}{section*.53}%
-\contentsline {paragraph}{}{13}{section*.54}%
-\contentsline {paragraph}{}{13}{section*.55}%
-\contentsline {paragraph}{}{13}{section*.56}%
-\contentsline {subsection}{\numberline {3.1}Parte anal\'ogica}{13}{subsection.3.1}%
-\contentsline {paragraph}{}{13}{section*.58}%
-\contentsline {paragraph}{Transmisor:}{13}{section*.59}%
-\contentsline {paragraph}{Receptor super-regenerativo:}{14}{section*.60}%
-\contentsline {subsubsection}{\numberline {3.1.1}Diseño de la parte anal\'ogica de RF del transmisor}{14}{subsubsection.3.1.1}%
-\contentsline {paragraph}{}{14}{section*.61}%
-\contentsline {paragraph}{}{15}{section*.62}%
-\contentsline {paragraph}{}{15}{section*.63}%
-\contentsline {paragraph}{Polarizaci\'on}{16}{section*.65}%
-\contentsline {paragraph}{}{16}{section*.66}%
-\contentsline {paragraph}{}{16}{section*.67}%
-\contentsline {paragraph}{}{16}{section*.68}%
-\contentsline {paragraph}{}{16}{section*.69}%
-\contentsline {paragraph}{}{16}{section*.70}%
-\contentsline {paragraph}{}{16}{section*.71}%
-\contentsline {paragraph}{}{17}{section*.72}%
-\contentsline {paragraph}{}{17}{section*.74}%
-\contentsline {paragraph}{Modelo en pequeña señal}{17}{section*.75}%
-\contentsline {paragraph}{}{17}{section*.76}%
-\contentsline {paragraph}{}{18}{section*.77}%
-\contentsline {paragraph}{}{18}{section*.78}%
-\contentsline {paragraph}{}{18}{section*.79}%
-\contentsline {paragraph}{}{18}{section*.80}%
-\contentsline {paragraph}{}{18}{section*.81}%
-\contentsline {paragraph}{}{18}{section*.82}%
-\contentsline {paragraph}{}{18}{section*.83}%
-\contentsline {paragraph}{}{19}{section*.84}%
-\contentsline {paragraph}{Fabricaci\'on de la inductancia del circuito tanque}{19}{section*.85}%
-\contentsline {paragraph}{}{19}{section*.86}%
-\contentsline {paragraph}{}{19}{section*.87}%
-\contentsline {paragraph}{}{19}{section*.88}%
-\contentsline {paragraph}{}{19}{section*.89}%
-\contentsline {paragraph}{}{19}{section*.90}%
-\contentsline {paragraph}{}{20}{section*.91}%
-\contentsline {paragraph}{Antena}{20}{section*.92}%
-\contentsline {paragraph}{}{20}{section*.93}%
-\contentsline {paragraph}{}{20}{section*.94}%
-\contentsline {paragraph}{Transformador de impedancias}{20}{section*.98}%
-\contentsline {paragraph}{}{21}{section*.99}%
-\contentsline {paragraph}{}{22}{section*.100}%
-\contentsline {paragraph}{}{23}{figure.caption.102}%
-\contentsline {paragraph}{}{23}{section*.103}%
-\contentsline {paragraph}{}{23}{section*.104}%
-\contentsline {paragraph}{Regulador de tensi\'on: carril de +\SI {5}{\volt }}{23}{section*.105}%
-\contentsline {paragraph}{}{23}{section*.106}%
-\contentsline {paragraph}{}{23}{section*.107}%
-\contentsline {paragraph}{}{24}{section*.108}%
-\contentsline {paragraph}{}{24}{section*.109}%
-\contentsline {paragraph}{Resultado de la simulaci\'on}{24}{section*.110}%
-\contentsline {paragraph}{}{24}{section*.111}%
-\contentsline {paragraph}{}{24}{section*.113}%
-\contentsline {paragraph}{}{24}{section*.114}%
-\contentsline {paragraph}{}{24}{section*.115}%
-\contentsline {paragraph}{Resultado de la pr\'actica}{25}{section*.118}%
-\contentsline {paragraph}{}{25}{section*.119}%
-\contentsline {paragraph}{}{25}{section*.120}%
-\contentsline {subsubsection}{\numberline {3.1.2}Diseño de la parte anal\'ogica de RF del receptor}{25}{subsubsection.3.1.2}%
-\contentsline {paragraph}{}{25}{section*.123}%
-\contentsline {paragraph}{}{25}{section*.124}%
-\contentsline {paragraph}{}{26}{section*.125}%
-\contentsline {paragraph}{}{26}{section*.126}%
-\contentsline {paragraph}{}{26}{section*.127}%
-\contentsline {paragraph}{Polarización}{26}{section*.129}%
-\contentsline {paragraph}{}{27}{section*.130}%
-\contentsline {paragraph}{}{27}{section*.131}%
-\contentsline {paragraph}{}{27}{section*.132}%
-\contentsline {paragraph}{}{28}{section*.133}%
-\contentsline {paragraph}{}{28}{section*.134}%
-\contentsline {paragraph}{Modelo en pequeña señal}{28}{section*.135}%
-\contentsline {paragraph}{}{28}{section*.136}%
-\contentsline {paragraph}{}{28}{section*.137}%
-\contentsline {paragraph}{}{28}{section*.138}%
-\contentsline {paragraph}{}{29}{section*.140}%
-\contentsline {paragraph}{}{29}{section*.141}%
-\contentsline {paragraph}{}{29}{section*.142}%
-\contentsline {paragraph}{\textit {Quench-signal}}{29}{section*.143}%
-\contentsline {paragraph}{}{29}{section*.144}%
-\contentsline {paragraph}{}{29}{section*.145}%
-\contentsline {paragraph}{}{30}{section*.146}%
-\contentsline {paragraph}{}{30}{section*.147}%
-\contentsline {paragraph}{}{30}{section*.148}%
-\contentsline {paragraph}{}{30}{section*.149}%
-\contentsline {paragraph}{}{30}{section*.150}%
-\contentsline {paragraph}{}{30}{section*.152}%
-\contentsline {paragraph}{}{31}{section*.153}%
-\contentsline {paragraph}{}{32}{section*.154}%
-\contentsline {paragraph}{Resultado de la simulaci\'on}{32}{section*.155}%
-\contentsline {paragraph}{}{32}{section*.156}%
-\contentsline {paragraph}{}{32}{section*.157}%
-\contentsline {paragraph}{}{32}{section*.159}%
-\contentsline {paragraph}{Resultado práctico}{32}{section*.161}%
-\contentsline {paragraph}{}{33}{section*.162}%
-\contentsline {subsection}{\numberline {3.2}Parte digital}{34}{subsection.3.2}%
-\contentsline {paragraph}{}{34}{section*.167}%
-\contentsline {paragraph}{Configuraci\'on del entorno de trabajo}{34}{section*.168}%
-\contentsline {paragraph}{}{34}{section*.169}%
-\contentsline {paragraph}{}{35}{section*.170}%
-\contentsline {paragraph}{}{35}{section*.171}%
-\contentsline {paragraph}{}{35}{section*.172}%
-\contentsline {paragraph}{}{35}{section*.173}%
-\contentsline {paragraph}{}{36}{section*.174}%
-\contentsline {subsubsection}{\numberline {3.2.1}Diseño del demodulador digital para la recepci\'on}{36}{subsubsection.3.2.1}%
-\contentsline {paragraph}{}{36}{section*.175}%
-\contentsline {paragraph}{Descripci\'on de funcionamiento}{36}{section*.176}%
-\contentsline {paragraph}{}{36}{section*.177}%
-\contentsline {paragraph}{}{36}{section*.178}%
-\contentsline {paragraph}{}{36}{section*.179}%
-\contentsline {paragraph}{}{36}{section*.180}%
-\contentsline {paragraph}{}{36}{section*.181}%
-\contentsline {paragraph}{}{36}{section*.182}%
-\contentsline {paragraph}{}{37}{section*.183}%
-\contentsline {paragraph}{Limitaciones}{37}{section*.184}%
-\contentsline {paragraph}{}{37}{section*.185}%
-\contentsline {paragraph}{}{37}{section*.186}%
-\contentsline {paragraph}{Presentaci\'on del c\'odigo}{37}{section*.187}%
-\contentsline {paragraph}{}{37}{section*.188}%
-\contentsline {subsubsection}{\numberline {3.2.2}Diseño del codificador digital para la transmisi\'on}{39}{subsubsection.3.2.2}%
-\contentsline {paragraph}{Introducción}{39}{section*.189}%
-\contentsline {paragraph}{}{39}{section*.190}%
-\contentsline {paragraph}{}{40}{section*.191}%
-\contentsline {paragraph}{}{40}{section*.192}%
-\contentsline {paragraph}{Codificaci\'on de los mensajes}{40}{section*.193}%
-\contentsline {paragraph}{}{40}{section*.194}%
-\contentsline {paragraph}{}{40}{section*.195}%
-\contentsline {paragraph}{}{40}{section*.196}%
-\contentsline {paragraph}{}{40}{section*.197}%
-\contentsline {paragraph}{Limitaciones}{40}{section*.198}%
-\contentsline {paragraph}{}{40}{section*.199}%
-\contentsline {paragraph}{}{40}{section*.200}%
-\contentsline {paragraph}{Presentaci\'on del c\'odigo}{40}{section*.201}%
-\contentsline {paragraph}{}{40}{section*.202}%
-\contentsline {section}{\numberline {4}Cronolog\'ia del proyecto y diagrama de Gantt}{44}{section.4}%
-\contentsline {paragraph}{}{44}{section*.203}%
-\contentsline {subsection}{\numberline {4.1}Transmisor FM a varactor}{44}{subsection.4.1}%
-\contentsline {paragraph}{Desarrollo técnico}{44}{section*.204}%
-\contentsline {paragraph}{}{44}{section*.205}%
-\contentsline {paragraph}{Motivos de reemplazo}{44}{section*.209}%
-\contentsline {paragraph}{}{44}{section*.210}%
-\contentsline {paragraph}{}{45}{section*.211}%
-\contentsline {subsection}{\numberline {4.2}Receptor superheterodino FM}{45}{subsection.4.2}%
-\contentsline {paragraph}{Desarrollo técnico}{45}{section*.212}%
-\contentsline {paragraph}{}{45}{section*.213}%
-\contentsline {paragraph}{}{46}{section*.214}%
-\contentsline {paragraph}{Motivos de reemplazo}{46}{section*.216}%
-\contentsline {paragraph}{}{46}{section*.217}%
-\contentsline {paragraph}{}{46}{section*.218}%
-\contentsline {paragraph}{}{46}{section*.219}%
-\contentsline {subsection}{\numberline {4.3}M\'aquina de estados digital}{46}{subsection.4.3}%
-\contentsline {paragraph}{Desarrollo técnico}{46}{section*.220}%
-\contentsline {paragraph}{Motivos de reemplazo}{47}{section*.223}%
-\contentsline {paragraph}{}{48}{section*.224}%
-\contentsline {subsection}{\numberline {4.4}Alternativa viable: conversi\'on directa}{48}{subsection.4.4}%
-\contentsline {paragraph}{Desarrollo técnico}{48}{section*.225}%
-\contentsline {paragraph}{}{48}{section*.226}%
-\contentsline {paragraph}{Motivos de reemplazo}{48}{section*.229}%
-\contentsline {paragraph}{}{48}{section*.230}%
-\contentsline {subsection}{\numberline {4.5}Diagrama de Gantt}{49}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Resultados y conclusiones}{50}{section.5}%
-\contentsline {paragraph}{}{50}{section*.232}%
-\contentsline {paragraph}{}{50}{section*.233}%
-\contentsline {paragraph}{}{50}{section*.234}%
-\contentsline {paragraph}{}{50}{section*.235}%
-\contentsline {paragraph}{}{50}{section*.236}%
-\contentsline {paragraph}{}{50}{section*.237}%
-\contentsline {section}{\numberline {6}Bibliografía}{51}{section.6}%
-\contentsline {paragraph}{}{51}{section*.238}%
-\contentsline {section}{\numberline {7}Indice de figuras}{51}{section.7}%
+\contentsline {paragraph}{}{}{section*.1}%
+\contentsline {paragraph}{}{}{section*.2}%
+\contentsline {paragraph}{}{}{section*.3}%
+\contentsline {paragraph}{}{}{section*.4}%
+\contentsline {section}{\numberline {1}Introducción}{1}{section.1}%
+\contentsline {paragraph}{}{1}{section*.6}%
+\contentsline {paragraph}{}{1}{section*.7}%
+\contentsline {subsection}{\numberline {1.1}Objetivos y motivaci\'on}{1}{subsection.1.1}%
+\contentsline {paragraph}{}{1}{section*.8}%
+\contentsline {section}{\numberline {2}Marco Teórico}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Sistemas de comunicaci\'on y Transmisión ASK}{1}{subsection.2.1}%
+\contentsline {paragraph}{}{1}{section*.9}%
+\contentsline {paragraph}{}{1}{section*.10}%
+\contentsline {paragraph}{Receptor}{1}{section*.11}%
+\contentsline {paragraph}{}{2}{section*.12}%
+\contentsline {paragraph}{}{2}{section*.13}%
+\contentsline {paragraph}{Transmisor}{2}{section*.14}%
+\contentsline {paragraph}{}{2}{section*.15}%
+\contentsline {paragraph}{}{2}{section*.16}%
+\contentsline {paragraph}{Modulación ASK}{2}{section*.17}%
+\contentsline {paragraph}{}{2}{section*.18}%
+\contentsline {paragraph}{}{2}{section*.20}%
+\contentsline {subsection}{\numberline {2.2}Transistores y sus parámetros característicos}{3}{subsection.2.2}%
+\contentsline {paragraph}{}{3}{section*.21}%
+\contentsline {paragraph}{}{3}{section*.22}%
+\contentsline {paragraph}{Polarizaci\'on:}{3}{section*.23}%
+\contentsline {paragraph}{Modelo de gran señal del transistor bipolar:}{3}{section*.24}%
+\contentsline {paragraph}{Pequeña señal:}{3}{section*.25}%
+\contentsline {paragraph}{}{4}{section*.27}%
+\contentsline {paragraph}{}{4}{section*.28}%
+\contentsline {paragraph}{}{4}{section*.29}%
+\contentsline {paragraph}{}{5}{section*.30}%
+\contentsline {subsection}{\numberline {2.3}Realimentaci\'on}{5}{subsection.2.3}%
+\contentsline {paragraph}{}{5}{section*.31}%
+\contentsline {paragraph}{}{5}{section*.32}%
+\contentsline {paragraph}{}{5}{section*.33}%
+\contentsline {paragraph}{}{5}{section*.34}%
+\contentsline {paragraph}{}{6}{section*.36}%
+\contentsline {paragraph}{}{6}{section*.37}%
+\contentsline {paragraph}{}{6}{section*.38}%
+\contentsline {paragraph}{}{6}{section*.39}%
+\contentsline {subsection}{\numberline {2.4}Sistemas integrados: Atmega328p}{7}{subsection.2.4}%
+\contentsline {paragraph}{}{7}{section*.42}%
+\contentsline {paragraph}{}{7}{section*.44}%
+\contentsline {paragraph}{}{8}{section*.45}%
+\contentsline {paragraph}{Mapa de memoria:}{8}{section*.46}%
+\contentsline {paragraph}{AVR Atmega328p:}{8}{section*.47}%
+\contentsline {paragraph}{}{8}{section*.49}%
+\contentsline {paragraph}{}{9}{section*.50}%
+\contentsline {paragraph}{}{9}{section*.51}%
+\contentsline {section}{\numberline {3}Desarrollo}{10}{section.3}%
+\contentsline {paragraph}{}{10}{section*.53}%
+\contentsline {paragraph}{}{10}{section*.54}%
+\contentsline {paragraph}{}{10}{section*.55}%
+\contentsline {paragraph}{}{10}{section*.56}%
+\contentsline {subsection}{\numberline {3.1}Parte anal\'ogica}{10}{subsection.3.1}%
+\contentsline {paragraph}{}{10}{section*.58}%
+\contentsline {paragraph}{Transmisor:}{10}{section*.59}%
+\contentsline {paragraph}{Receptor super-regenerativo:}{11}{section*.60}%
+\contentsline {subsubsection}{\numberline {3.1.1}Diseño de la parte anal\'ogica de RF del transmisor}{11}{subsubsection.3.1.1}%
+\contentsline {paragraph}{}{11}{section*.61}%
+\contentsline {paragraph}{}{12}{section*.62}%
+\contentsline {paragraph}{}{12}{section*.63}%
+\contentsline {paragraph}{Polarizaci\'on}{13}{section*.65}%
+\contentsline {paragraph}{}{13}{section*.66}%
+\contentsline {paragraph}{}{13}{section*.67}%
+\contentsline {paragraph}{}{13}{section*.68}%
+\contentsline {paragraph}{}{13}{section*.69}%
+\contentsline {paragraph}{}{13}{section*.70}%
+\contentsline {paragraph}{}{13}{section*.71}%
+\contentsline {paragraph}{}{14}{section*.72}%
+\contentsline {paragraph}{}{14}{section*.74}%
+\contentsline {paragraph}{Modelo en pequeña señal}{14}{section*.75}%
+\contentsline {paragraph}{}{14}{section*.76}%
+\contentsline {paragraph}{}{15}{section*.77}%
+\contentsline {paragraph}{}{15}{section*.78}%
+\contentsline {paragraph}{}{15}{section*.79}%
+\contentsline {paragraph}{}{15}{section*.80}%
+\contentsline {paragraph}{}{15}{section*.81}%
+\contentsline {paragraph}{}{15}{section*.82}%
+\contentsline {paragraph}{}{15}{section*.83}%
+\contentsline {paragraph}{}{16}{section*.84}%
+\contentsline {paragraph}{Fabricaci\'on de la inductancia del circuito tanque}{16}{section*.85}%
+\contentsline {paragraph}{}{16}{section*.86}%
+\contentsline {paragraph}{}{16}{section*.87}%
+\contentsline {paragraph}{}{16}{section*.88}%
+\contentsline {paragraph}{}{16}{section*.89}%
+\contentsline {paragraph}{}{16}{section*.90}%
+\contentsline {paragraph}{}{17}{section*.91}%
+\contentsline {paragraph}{Antena}{17}{section*.92}%
+\contentsline {paragraph}{}{17}{section*.93}%
+\contentsline {paragraph}{}{17}{section*.94}%
+\contentsline {paragraph}{Transformador de impedancias}{17}{section*.98}%
+\contentsline {paragraph}{}{18}{section*.99}%
+\contentsline {paragraph}{}{19}{section*.100}%
+\contentsline {paragraph}{}{20}{figure.caption.102}%
+\contentsline {paragraph}{}{20}{section*.103}%
+\contentsline {paragraph}{}{20}{section*.104}%
+\contentsline {paragraph}{Regulador de tensi\'on: carril de +\SI {5}{\volt }}{20}{section*.105}%
+\contentsline {paragraph}{}{20}{section*.106}%
+\contentsline {paragraph}{}{20}{section*.107}%
+\contentsline {paragraph}{}{21}{section*.108}%
+\contentsline {paragraph}{}{21}{section*.109}%
+\contentsline {paragraph}{Resultado de la simulaci\'on}{21}{section*.110}%
+\contentsline {paragraph}{}{21}{section*.111}%
+\contentsline {paragraph}{}{21}{section*.113}%
+\contentsline {paragraph}{}{21}{section*.114}%
+\contentsline {paragraph}{}{21}{section*.115}%
+\contentsline {paragraph}{Resultado de la pr\'actica}{22}{section*.118}%
+\contentsline {paragraph}{}{22}{section*.119}%
+\contentsline {paragraph}{}{22}{section*.120}%
+\contentsline {subsubsection}{\numberline {3.1.2}Diseño de la parte anal\'ogica de RF del receptor}{22}{subsubsection.3.1.2}%
+\contentsline {paragraph}{}{22}{section*.123}%
+\contentsline {paragraph}{}{22}{section*.124}%
+\contentsline {paragraph}{}{23}{section*.125}%
+\contentsline {paragraph}{}{23}{section*.126}%
+\contentsline {paragraph}{}{23}{section*.127}%
+\contentsline {paragraph}{Polarización}{23}{section*.129}%
+\contentsline {paragraph}{}{24}{section*.130}%
+\contentsline {paragraph}{}{24}{section*.131}%
+\contentsline {paragraph}{}{24}{section*.132}%
+\contentsline {paragraph}{}{25}{section*.133}%
+\contentsline {paragraph}{}{25}{section*.134}%
+\contentsline {paragraph}{Modelo en pequeña señal}{25}{section*.135}%
+\contentsline {paragraph}{}{25}{section*.136}%
+\contentsline {paragraph}{}{25}{section*.137}%
+\contentsline {paragraph}{}{25}{section*.138}%
+\contentsline {paragraph}{}{26}{section*.140}%
+\contentsline {paragraph}{}{26}{section*.141}%
+\contentsline {paragraph}{}{26}{section*.142}%
+\contentsline {paragraph}{\textit {Quench-signal}}{26}{section*.143}%
+\contentsline {paragraph}{}{26}{section*.144}%
+\contentsline {paragraph}{}{26}{section*.145}%
+\contentsline {paragraph}{}{27}{section*.146}%
+\contentsline {paragraph}{}{27}{section*.147}%
+\contentsline {paragraph}{}{27}{section*.148}%
+\contentsline {paragraph}{}{27}{section*.149}%
+\contentsline {paragraph}{}{27}{section*.150}%
+\contentsline {paragraph}{}{27}{section*.152}%
+\contentsline {paragraph}{}{28}{section*.153}%
+\contentsline {paragraph}{}{29}{section*.154}%
+\contentsline {paragraph}{Resultado de la simulaci\'on}{29}{section*.155}%
+\contentsline {paragraph}{}{29}{section*.156}%
+\contentsline {paragraph}{}{29}{section*.157}%
+\contentsline {paragraph}{}{29}{section*.159}%
+\contentsline {paragraph}{Resultado práctico}{29}{section*.161}%
+\contentsline {paragraph}{}{30}{section*.162}%
+\contentsline {subsection}{\numberline {3.2}Parte digital}{31}{subsection.3.2}%
+\contentsline {paragraph}{}{31}{section*.167}%
+\contentsline {paragraph}{Configuraci\'on del entorno de trabajo}{31}{section*.168}%
+\contentsline {paragraph}{}{31}{section*.169}%
+\contentsline {paragraph}{}{32}{section*.170}%
+\contentsline {paragraph}{}{32}{section*.171}%
+\contentsline {paragraph}{}{32}{section*.172}%
+\contentsline {paragraph}{}{32}{section*.173}%
+\contentsline {paragraph}{}{33}{section*.174}%
+\contentsline {subsubsection}{\numberline {3.2.1}Diseño del demodulador digital para la recepci\'on}{33}{subsubsection.3.2.1}%
+\contentsline {paragraph}{}{33}{section*.175}%
+\contentsline {paragraph}{Descripci\'on de funcionamiento}{33}{section*.176}%
+\contentsline {paragraph}{}{33}{section*.177}%
+\contentsline {paragraph}{}{33}{section*.178}%
+\contentsline {paragraph}{}{33}{section*.179}%
+\contentsline {paragraph}{}{33}{section*.180}%
+\contentsline {paragraph}{}{33}{section*.181}%
+\contentsline {paragraph}{}{33}{section*.182}%
+\contentsline {paragraph}{}{34}{section*.183}%
+\contentsline {paragraph}{Limitaciones}{34}{section*.184}%
+\contentsline {paragraph}{}{34}{section*.185}%
+\contentsline {paragraph}{}{34}{section*.186}%
+\contentsline {paragraph}{Presentaci\'on del c\'odigo}{34}{section*.187}%
+\contentsline {paragraph}{}{34}{section*.188}%
+\contentsline {subsubsection}{\numberline {3.2.2}Diseño del codificador digital para la transmisi\'on}{36}{subsubsection.3.2.2}%
+\contentsline {paragraph}{Introducción}{36}{section*.189}%
+\contentsline {paragraph}{}{36}{section*.190}%
+\contentsline {paragraph}{}{37}{section*.191}%
+\contentsline {paragraph}{}{37}{section*.192}%
+\contentsline {paragraph}{Codificaci\'on de los mensajes}{37}{section*.193}%
+\contentsline {paragraph}{}{37}{section*.194}%
+\contentsline {paragraph}{}{37}{section*.195}%
+\contentsline {paragraph}{}{37}{section*.196}%
+\contentsline {paragraph}{}{37}{section*.197}%
+\contentsline {paragraph}{Limitaciones}{37}{section*.198}%
+\contentsline {paragraph}{}{37}{section*.199}%
+\contentsline {paragraph}{}{37}{section*.200}%
+\contentsline {paragraph}{Presentaci\'on del c\'odigo}{37}{section*.201}%
+\contentsline {paragraph}{}{37}{section*.202}%
+\contentsline {section}{\numberline {4}Cronolog\'ia del proyecto y diagrama de Gantt}{41}{section.4}%
+\contentsline {paragraph}{}{41}{section*.203}%
+\contentsline {subsection}{\numberline {4.1}Transmisor FM a varactor}{41}{subsection.4.1}%
+\contentsline {paragraph}{Desarrollo técnico}{41}{section*.204}%
+\contentsline {paragraph}{}{41}{section*.205}%
+\contentsline {paragraph}{Motivos de reemplazo}{41}{section*.209}%
+\contentsline {paragraph}{}{41}{section*.210}%
+\contentsline {paragraph}{}{42}{section*.211}%
+\contentsline {subsection}{\numberline {4.2}Receptor superheterodino FM}{42}{subsection.4.2}%
+\contentsline {paragraph}{Desarrollo técnico}{42}{section*.212}%
+\contentsline {paragraph}{}{42}{section*.213}%
+\contentsline {paragraph}{}{43}{section*.214}%
+\contentsline {paragraph}{Motivos de reemplazo}{43}{section*.216}%
+\contentsline {paragraph}{}{43}{section*.217}%
+\contentsline {paragraph}{}{43}{section*.218}%
+\contentsline {paragraph}{}{43}{section*.219}%
+\contentsline {subsection}{\numberline {4.3}M\'aquina de estados digital}{43}{subsection.4.3}%
+\contentsline {paragraph}{Desarrollo técnico}{43}{section*.220}%
+\contentsline {paragraph}{Motivos de reemplazo}{44}{section*.223}%
+\contentsline {paragraph}{}{45}{section*.224}%
+\contentsline {subsection}{\numberline {4.4}Alternativa viable: conversi\'on directa}{45}{subsection.4.4}%
+\contentsline {paragraph}{Desarrollo técnico}{45}{section*.225}%
+\contentsline {paragraph}{}{45}{section*.226}%
+\contentsline {paragraph}{Motivos de reemplazo}{45}{section*.229}%
+\contentsline {paragraph}{}{45}{section*.230}%
+\contentsline {subsection}{\numberline {4.5}Diagrama de Gantt}{46}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Resultados y conclusiones}{47}{section.5}%
+\contentsline {paragraph}{}{47}{section*.232}%
+\contentsline {paragraph}{}{47}{section*.233}%
+\contentsline {paragraph}{}{47}{section*.234}%
+\contentsline {paragraph}{}{47}{section*.235}%
+\contentsline {paragraph}{}{47}{section*.236}%
+\contentsline {paragraph}{}{47}{section*.237}%
+\contentsline {section}{\numberline {6}Bibliografía}{48}{section.6}%
+\contentsline {paragraph}{}{48}{section*.238}%
+\contentsline {section}{\numberline {7}Indice de figuras}{48}{section.7}%
